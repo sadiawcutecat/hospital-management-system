@@ -11,7 +11,7 @@ const OurDoctors = () => {
   //   });
 
   return (
-    <div className="w-9/12 mx-auto">
+    <div className="w-9/12 mx-auto pt-[150px]">
       <div className="md:flex items-center gap-10">
         <div className="img-slide">
           <img src="https://i.ibb.co/TgnshpW/Our-Doctors.png" alt="" />
