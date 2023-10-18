@@ -40,10 +40,9 @@
 
 @keyframes animate-slide {
   0% {
-    top: 150px;
+    opacity: 0;
   }
   100% {
-    top: 50%;
+    opacity: 1;
   }
 }
-
