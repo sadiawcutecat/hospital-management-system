@@ -1,7 +1,9 @@
+import OurDoctors from "@/Components/Content/OurDoctors/OurDoctors";
+
 export default function Home() {
   return (
     <main>
-      <h1>hello developer i believe you can do it.</h1>
+      <OurDoctors />
     </main>
   );
 }
