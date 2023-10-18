@@ -1,28 +1,19 @@
 import { BsArrowRightCircle } from "react-icons/bs";
 
-const OurDoctors = () => {
-  //   conxst contents = document.querySelectorAll(".img-slide");
-
-  //   const observer = new IntersectionObserver((entries) => {
-  //     console.log(entries);
-  //   });
-  //   contents.forEach((content) => {
-  //     observer.observe(content);
-  //   });
-
+const OurTest = () => {
   return (
-    <div className="w-9/12 mx-auto">
-      <div className="md:flex items-center gap-10">
-        <div className="img-slide">
-          <img src="https://i.ibb.co/TgnshpW/Our-Doctors.png" alt="" />
+    <div className="w-9/12 mx-auto mt-52">
+      <div className="md:flex flex-row-reverse items-center gap-10">
+        <div>
+          <img src="https://i.ibb.co/J5WBFr5/test.png" alt="" />
         </div>
         <div>
-          <div className="md:w-9/12 mx-auto mt-10 img-slide">
-            <h1 className="text-3xl font-bold">Doctors</h1>
+          <div className="md:w-9/12 mt-10">
+            <h1 className="text-3xl font-bold">Best Test Report</h1>
             <p className="my-4 text-sky-900">
               With the online doctor portal, your specialists will be able to
               collect patient information and prescribe digital prescriptions in
-              a simple and secure way.
+              a simple and secure way
             </p>
             <ul className="">
               <li className="flex gap-2 my-3">
@@ -59,4 +50,4 @@ const OurDoctors = () => {
   );
 };
 
-export default OurDoctors;
+export default OurTest;
