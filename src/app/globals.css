@@ -30,7 +30,7 @@
 }
 
 .main-slider .main-slider__details {
-  @apply invisible;
+ @apply invisible;
 }
 
 .main-slider .swiper-slide-active .main-slider__details {
@@ -40,10 +40,10 @@
 
 @keyframes animate-slide {
   0% {
-    top: 150px;
+   opacity: 0;
   }
   100% {
-    top: 50%;
+   opacity: 1;
   }
 }
 
