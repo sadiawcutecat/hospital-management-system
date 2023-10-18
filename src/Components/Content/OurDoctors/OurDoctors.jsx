@@ -22,7 +22,7 @@ const OurDoctors = () => {
             <p className="my-4 text-sky-900">
               With the online doctor portal, your specialists will be able to
               collect patient information and prescribe digital prescriptions in
-              a simple and secure way.
+              a simple and secure way
             </p>
             <ul className="">
               <li className="flex gap-2 my-3">
