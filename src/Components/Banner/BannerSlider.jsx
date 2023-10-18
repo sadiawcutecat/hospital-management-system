@@ -8,7 +8,7 @@ import mainSlider from '@/Data/mainSlider';
 import SingleBannerSlider from './SingleBannerSlider';
 const BannerSlider = () => {
     return (
-        <div className='main-slider mb-10'>
+        <div className='main-slider mb-20'>
         <Swiper slidesPerView={1}
             loop
             navigation
