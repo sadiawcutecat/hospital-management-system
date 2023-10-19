@@ -65,7 +65,12 @@ const Navbar = () => {
     >
       <nav className="flex justify-between items-center">
         <div className="">
-          <h1 className="text-4xl font-bold">
+          <h1 className="text-4xl font-bold flex items-center">
+            <img
+              className="w-14 h-14"
+              src="https://i.ibb.co/NpptRzh/download-removebg-preview.png"
+              alt=""
+            />
             <Link href="/">HealthCare</Link>
           </h1>
         </div>
@@ -119,9 +124,9 @@ const Navbar = () => {
             </div>
           </>
         ) : (
-          <button className="btn btn-success">
-            <Link href="/login">Login</Link>
-          </button>
+          <Link href="/login">
+            <button className="btn btn-success">Login</button>
+          </Link>
         )}
       </nav>
     </div>
