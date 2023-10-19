@@ -11,7 +11,7 @@ const OurDoctors = () => {
   //   });
 
   return (
-    <div className="w-9/12 mx-auto">
+    <div className="w-9/12 mx-auto pt-[150px]">
       <div className="md:flex items-center gap-10">
         <div className="img-slide">
           <img src="https://i.ibb.co/TgnshpW/Our-Doctors.png" alt="" />
@@ -22,7 +22,7 @@ const OurDoctors = () => {
             <p className="my-4 text-sky-900">
               With the online doctor portal, your specialists will be able to
               collect patient information and prescribe digital prescriptions in
-              a simple and secure way.
+              a simple and secure way
             </p>
             <ul className="">
               <li className="flex gap-2 my-3">
