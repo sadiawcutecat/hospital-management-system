@@ -1,7 +1,8 @@
 "use client";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { AiOutlineClose, AiOutlineMenuUnfold } from "react-icons/ai";
+import useAuth from "../hooks/useAuth";
 // import { AuthContext } from "@/app/context/AuthProvider";
 
 const NavLinks = [
@@ -31,33 +32,16 @@ const NavLinks = [
     // icon: <RxDashboard fontSize={20} />,
   },
 ];
-const user = undefined;
+
 const Navbar = () => {
-  // const { user,googleSignIn } = useContext(AuthContext);
-  // console.log(nishat);
-  // const handleLogOut = () => {
-  //     logOut()
-  //         .then(() => { })
-  //         .catch(error => console.log(error));
-  // }
-  // const handleGoogleSignIn =async() => {
-  //    try{
-  //     await googleSignIn();
-  //    }
-  //    catch(error){
-  //     console.log(error);
-  //    }
-  // }
-
-  //   useEffect(() => {
-  //     const navbg = document.querySelector("#nav-bg");
-  //     const observer = new IntersectionObserver((entries) => {
-  //       console.log(entries);
-  //     });
-  //     observer.observe(navbg);
-  //   });
-
+  const { user, logout } = useAuth();
+  console.log(user);
   const [open, setOpen] = useState(false);
+  const handleLogOut = () => {
+    logout()
+      .then(() => {})
+      .catch((error) => console.log(error));
+  };
   return (
     <div
       className={` px-10 md:py-5 py-2 fixed z-10 top-0 left-0 w-full bg-black/20 text-white duration-400`}
@@ -65,12 +49,7 @@ const Navbar = () => {
     >
       <nav className="flex justify-between items-center">
         <div className="">
-          <h1 className="text-4xl font-bold flex items-center">
-            <img
-              className="w-14 h-14"
-              src="https://i.ibb.co/NpptRzh/download-removebg-preview.png"
-              alt=""
-            />
+          <h1 className="text-4xl font-bold">
             <Link href="/">HealthCare</Link>
           </h1>
         </div>
@@ -110,16 +89,18 @@ const Navbar = () => {
             <div className="dropdown dropdown-end">
               <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                 <div className="w-10 rounded-full">
-                  <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                  <img src={user?.photoURL} />
                 </div>
               </label>
               <ul
                 tabIndex={0}
                 className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52"
               >
-                <li className="text-black">
-                  <a>Logout</a>
-                </li>
+                <button onClick={handleLogOut}>
+                  <li className="text-black">
+                    <a>Logout</a>
+                  </li>
+                </button>
               </ul>
             </div>
           </>
