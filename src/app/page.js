@@ -8,9 +8,9 @@ export default function Home() {
   return (
     <main>
       <BannerSlider></BannerSlider>
-      <Appointment></Appointment>
       <OurDoctors />
       <OurTest />
+      <Appointment></Appointment>
       <Testimonial></Testimonial>
     </main>
   );
