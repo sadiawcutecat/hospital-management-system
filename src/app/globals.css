@@ -37,6 +37,10 @@
   @apply visible animate-[animate-slide_800ms_ease-in-out];
   animation: animate-slide 800ms ease-in-out;
 }
+.nav-bg-color {
+  background: white;
+  color: black;
+}
 
 @keyframes animate-slide {
   0% {
