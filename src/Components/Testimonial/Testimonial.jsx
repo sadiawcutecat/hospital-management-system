@@ -38,17 +38,19 @@ const Testimonial = () => {
                     {
 
                         testimonialData.map((testimonial) => <>
-                            <SwiperSlide className='shadow-lg mt-7 '>
+                            <SwiperSlide className='shadow-2xl mt-7 font-serif '>
                                 <div className='p-8'>
                                     <p className='text-justify'>{testimonial.comments}</p>
                                     <div className='flex space-x-8 mt-6'>
                                         <img src={testimonial.picture} alt="" className='h-16 w-16 rounded-full' />
                                         <div>
-                                            <p className='font-bold text-orange-400'>{testimonial.name}</p>
-                                            <p className='font-bold'>{testimonial.profession}</p>
+                                            <p className='font-bold'>{testimonial.name}</p>
+                                            <p className=''>{testimonial.profession}</p>
                                         </div>
                                     </div>
-                                    <RiDoubleQuotesL style={{}}></RiDoubleQuotesL>
+                                  <div className='flex justify-end'>
+                                  <RiDoubleQuotesL className='text-orange-500' style={{fontSize : '4rem', }}></RiDoubleQuotesL>
+                                  </div>
                                 </div>
 
 
