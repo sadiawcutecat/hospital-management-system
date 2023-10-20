@@ -1,17 +1,23 @@
+"use client";
+import { useEffect } from "react";
 import { BsArrowRightCircle } from "react-icons/bs";
 
 const OurDoctors = () => {
-  //   conxst contents = document.querySelectorAll(".img-slide");
+  useEffect(() => {
+    const contents = document.querySelectorAll(".img-slide");
 
-  //   const observer = new IntersectionObserver((entries) => {
-  //     console.log(entries);
-  //   });
-  //   contents.forEach((content) => {
-  //     observer.observe(content);
-  //   });
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        entry.target.classList.add("show");
+      });
+    });
+    contents.forEach((content) => {
+      observer.observe(content);
+    });
+  });
 
   return (
-    <div className="w-9/12 mx-auto pt-[150px]">
+    <div className="w-9/12 mx-auto mt-14">
       <div className="md:flex items-center gap-10">
         <div className="img-slide">
           <img src="https://i.ibb.co/TgnshpW/Our-Doctors.png" alt="" />
