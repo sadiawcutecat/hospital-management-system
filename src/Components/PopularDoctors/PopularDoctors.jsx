@@ -1,5 +1,5 @@
 "use client";
-import { Parallax, ParallaxLayer } from "@react-spring/parallax";
+
 import { FaArrowCircleRight } from "react-icons/fa";
 
 const PopularDoctors = () => {
@@ -20,7 +20,7 @@ const PopularDoctors = () => {
           <div>
             <img
               className="w-32 h-32 mx-auto rounded-full"
-              src="https://img.freepik.com/free-photo/beautiful-young-female-doctor-looking-camera-office_1301-7807.jpg?size=626&ext=jpg&ga=GA1.1.386372595.1697673600&semt=sph"
+              src="https://www.kauveryhospital.com/doctorimage/recent/Dr-Deepak-Kumar2022-09-12-11:55:50am.jpg"
               alt=""
             />
           </div>
@@ -46,7 +46,7 @@ const PopularDoctors = () => {
           <div>
             <img
               className="w-32 h-32 mx-auto rounded-full"
-              src="https://img.freepik.com/free-photo/beautiful-young-female-doctor-looking-camera-office_1301-7807.jpg?size=626&ext=jpg&ga=GA1.1.386372595.1697673600&semt=sph"
+              src="https://kdahweb-static.kokilabenhospital.com/kdah-2019/product/1579758867.jpg"
               alt=""
             />
           </div>
@@ -72,7 +72,7 @@ const PopularDoctors = () => {
           <div>
             <img
               className="w-32 h-32 rounded-full mx-auto"
-              src="https://img.freepik.com/free-photo/beautiful-young-female-doctor-looking-camera-office_1301-7807.jpg?size=626&ext=jpg&ga=GA1.1.386372595.1697673600&semt=sph"
+              src="https://img.freepik.com/free-photo/portrait-confident-male-doctor_329181-12190.jpg"
               alt=""
             />
           </div>
