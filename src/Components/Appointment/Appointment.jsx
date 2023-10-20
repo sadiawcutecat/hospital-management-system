@@ -54,7 +54,7 @@ const Appointment = () => {
 
           <div className="flex justify-center mt-6">
             <button className="btn btn-wide bg-emerald-500 font-bold  text-white hover:bg-emerald-600 ">
-              Make appointment
+              find Doctors
               <FaArrowCircleRight></FaArrowCircleRight>
             </button>
           </div>
