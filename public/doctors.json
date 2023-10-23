@@ -7,7 +7,8 @@
     "specialist": "Physical Medicine (Pain, Arthritis, Paralysis, Stroke) & Rehabilitation Specialist",
     "position": "Consultant, Physical Medicine & Rehabilitation",
     "place": "250 Bed General Hospital, Moulvibazar",
-    "rating": "4",
+    "rating": "(4)",
+    "price": "350",
     "Chamber & Appointment":{
       "hospital": "Ibn Sina Hospital, Sylhet",
       "address": "Sobhani Ghat Point, Mirabazar-Subhanighat Road, Sylhet",
@@ -25,7 +26,8 @@
     "specialist": "Oral, Dental & Maxillofacial Surgery Specialist",
     "position": "Chief Consultant, Dental Art",
     "place": "Dental Doctor, Bangladesh Bank",
-    "rating": "5",
+    "rating": "(5)",
+    "price": "250",
     "Chamber & Appointment":{
       "hospital": "Dental Art, Rajshahi",
       "address": "In-between Medical Ghoshpara and Fire Service Mor, West Side, Shipaipara, Rajshahi",
@@ -43,7 +45,8 @@
     "specialist": "Neurology (Brain, Stroke, Nerve, Spine, Headache) Specialist",
     "position": "Assistant Professor, Neurology",
     "place": "Bangabandhu Sheikh Mujib Medical University Hospital",
-    "rating": "3",
+    "rating": "(3)",
+    "price": "300",
     "Chamber & Appointment":{
       "hospital": "Popular Diagnostic Center, Shantinagar",
       "address": "Unit # 02, House # 15, Shantinagar, Motijheel, Dhaka",
@@ -61,7 +64,8 @@
     "specialist": "ENT (Ear, Nose, Throat) Specialist & Head Neck Surgeon",
     "position": "Consultant, Head Neck Surgery",
     "place": "Satkhira Medical College & Hospital",
-    "rating": "5",
+    "rating": "(5)",
+    "price": "150",
     "Chamber & Appointment":{
       "hospital": "CB (China Bangla) Hospital, Satkhira",
       "address": "Chaurangi Mor, Polashpole, Satkhira Sadar, Satkhira",
@@ -79,7 +83,8 @@
     "specialist": "Pediatric (Children) Surgery Specialist",
     "position": "Assistant Professor, Pediatric Surgery",
     "place": "TMSS Medical College & Rafatullah Community Hospital",
-    "rating": "5",
+    "rating": "(5)",
+    "price": "250",
     "Chamber & Appointment":{
       "hospital": "Ibn Sina Diagnostic & Consultation Center, Bogra",
       "address": "House # 1103/1116, Kanochgari, Sherpur Road, Bogura  5800",
@@ -97,7 +102,8 @@
     "specialist": "Kidney Diseases & Medicine Specialist",
     "position": "Associate Consultant, Nephrology",
     "place": "Labaid Cancer Hospital & Super Speciality Center",
-    "rating": "2",
+    "rating": "(2)",
+    "price": "350",
     "Chamber & Appointment":{
       "hospital": "Labaid Cancer Hospital & Super Speciality Center",
       "address": " 26, Green Road, Dhaka",
