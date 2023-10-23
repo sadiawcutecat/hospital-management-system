@@ -22,8 +22,8 @@ const NavLinks = [
 		// icon: <SlInfo fontSize={20} />,
 	},
 	{
-		label: 'Doctors',
-		path: '/doctors',
+		label: 'AllDoctors',
+		path: '/allDoctors',
 		// icon: <FaUserDoctor fontSize={20} ></FaUserDoctor>
 	},
 	{
