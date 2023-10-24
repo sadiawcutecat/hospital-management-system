@@ -18,7 +18,7 @@ const NavLinks = [
   },
   {
     label: "Contact",
-    path: "/Contact",
+    path: "/contact",
     // icon: <SlInfo fontSize={20} />,
   },
   {
@@ -28,7 +28,7 @@ const NavLinks = [
   },
   {
     label: "Dashboard",
-    path: "/dashboard",
+    path: "/dashboard/doctors-peation",
     // icon: <RxDashboard fontSize={20} />,
   },
 ];
@@ -50,11 +50,11 @@ const Navbar = () => {
       <nav className="flex justify-between items-center">
         <div className="">
           <h1 className="text-4xl font-bold flex items-center">
-            <img
+            {/* <img
               src="https://i.ibb.co/NpptRzh/download-removebg-preview.png"
               alt=""
               className="h-10 w-10"
-            />
+            /> */}
             <Link href="/">HealthCare</Link>
           </h1>
         </div>
