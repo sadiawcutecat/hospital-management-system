@@ -3,7 +3,7 @@ import { FaArrowCircleRight } from "react-icons/fa";
 
 const Appointment = () => {
   return (
-    <div className=" mb-20 md:p-20 p-8 mx-auto mt-10">
+    <div className=" mb-20 md:p-20 p-8 mx-auto mt-10 ">
       <h3 className="text-2xl text-orange-600  font-semibold my-4">
         Make an appointment
       </h3>
@@ -53,10 +53,10 @@ const Appointment = () => {
           </div>
 
           <div className="flex justify-center mt-6">
-            <button className="btn btn-wide bg-emerald-500 font-bold  text-white hover:bg-emerald-600 ">
+            <a href="/payment"  className="btn btn-wide bg-emerald-500 font-bold  text-white hover:bg-emerald-600 ">
               Make appointment
               <FaArrowCircleRight></FaArrowCircleRight>
-            </button>
+            </a>
           </div>
         </form>
       </div>
