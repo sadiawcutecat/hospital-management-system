@@ -39,7 +39,7 @@ const Doctors = ({ allDoctor }) => {
                     <h2 className='flex items-center gap-3'><span className='text-xl'><ImLocation2 /></span></h2>
                 </div>
                 <div className='flex flex-col my-3 '>
-                    <button className='btn btn-accent  btn-xs my-2'>View Profile</button>
+                    <button className='btn btn-primary  btn-xs my-2'>View Profile</button>
                     <button className='btn btn-outline btn-xs'>Book Appointment</button>
                 </div>
             </div>
