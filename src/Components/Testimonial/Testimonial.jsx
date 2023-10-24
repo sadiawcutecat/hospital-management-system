@@ -15,7 +15,7 @@ import { testimonialData } from "@/Data/testimonialData";
 const Testimonial = () => {
   return (
     <div className=" md:p-20 p-8 mb-10">
-      <div className="text-center">
+      <div className="text-center img-slide opacity-0 duration-1000 mx-auto">
         <h3 className="text-2xl font-bold text-orange-500">
           Feedback from our patients
         </h3>
@@ -40,7 +40,7 @@ const Testimonial = () => {
           clickable: true,
         }}
         modules={[Pagination, Autoplay]}
-        className="mySwiper"
+        className="mySwiper img-slide opacity-0 duration-1000"
       >
         <div>
           {testimonialData.map((testimonial, i) => (
