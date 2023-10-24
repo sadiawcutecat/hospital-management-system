@@ -20,81 +20,83 @@ const Dashboard = ({ children }) => {
   return (
     <div>
       <div>
-        <div
-          className={`bg-white shadow-lg   border-gray-100 border-2 fixed z-20  ${
-            open
-              ? "left-0 duration-200 md:w-[20%] w-full"
-              : "md:left-0 -left-96 duration-200 md:w-[20%] w-0"
-          }   `}
-        >
-          <div className="text-center pt-6">
-            <img
-              src="https://i.ibb.co/8crKQKx/doctor-thumb-02.jpg"
-              alt=""
-              className="h-32 w-32 rounded-full mx-auto   border-gray-100 border-8"
-            />
-            <h3 className="font-bold my-3">Dr. Fred Ortego</h3>
-            <p>BDS, MDS - Oral & Maxillofacial Surgery</p>
-          </div>
-          <div className="my-8">
-            <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-xl">
-              <Link className="flex gap-4" href="/">
-                <HiOutlineBookOpen className="mt-1 " /> Home
-              </Link>
-            </p>
-            <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-xl">
-              <Link className="flex gap-4" href="dashboard/doctors-peation">
-                <FaCalendarCheck className="mt-1 " /> Appointments
-              </Link>
-            </p>
-            <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-xl">
-              <Link className="flex gap-4" href="">
-                <FaUserInjured className="mt-1 " /> My Patients
-              </Link>
-            </p>
-            <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-xl">
-              <Link className="flex gap-4" href="">
-                <FaHourglassHalf className="mt-1 " /> Schedule Timings
-              </Link>
-            </p>
-            <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-xl">
-              <Link className="flex gap-4" href="">
-                <AiOutlineFileText className="mt-1 " />
-                Invoices
-              </Link>
-            </p>
-            <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-xl">
-              <Link className="flex gap-4" href="">
-                <FaStar className="mt-1 " /> Reviews
-              </Link>
-            </p>
-            <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-xl">
-              <Link className="flex gap-4" href="">
-                <BiSolidMessageRounded className="mt-1" /> Message
-              </Link>
-            </p>
-            <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-xl">
-              <Link className="flex gap-4" href="">
-                <FaUserCog className="mt-1" /> Profile Settings
-              </Link>
-            </p>
-            <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-xl">
-              <Link className="flex gap-4" href="">
-                <FaShareAlt className="mt-1 " />
-                Social Media
-              </Link>
-            </p>
-            <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-xl">
-              <Link className="flex gap-4" href="">
-                <FaLock className="mt-1 " />
-                Change Password
-              </Link>
-            </p>
-            <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-xl">
-              <Link className="flex gap-4" href="">
-                <HiOutlineLogout className="mt-1" /> Logout
-              </Link>
-            </p>
+        <div className="">
+          <div
+            className={`bg-white shadow-lg   border-gray-100 border-2 fixed z-20  ${
+              open
+                ? "left-0 duration-200 md:w-[20%] w-full"
+                : "md:left-0 -left-96 duration-200 md:w-[20%] w-0"
+            }   `}
+          >
+            <div className="text-center pt-6">
+              <img
+                src="https://i.ibb.co/8crKQKx/doctor-thumb-02.jpg"
+                alt=""
+                className="h-32 w-32 rounded-full mx-auto   border-gray-100 border-8"
+              />
+              <h3 className="font-bold my-3">Dr. Fred Ortego</h3>
+              <p>BDS, MDS - Oral & Maxillofacial Surgery</p>
+            </div>
+            <div className="my-8">
+              <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-xl">
+                <Link className="flex gap-4" href="/">
+                  <HiOutlineBookOpen className="mt-1 " /> Home
+                </Link>
+              </p>
+              <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-xl">
+                <Link className="flex gap-4" href="dashboard/doctors-peation">
+                  <FaCalendarCheck className="mt-1 " /> Appointments
+                </Link>
+              </p>
+              <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-xl">
+                <Link className="flex gap-4" href="">
+                  <FaUserInjured className="mt-1 " /> My Patients
+                </Link>
+              </p>
+              <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-xl">
+                <Link className="flex gap-4" href="">
+                  <FaHourglassHalf className="mt-1 " /> Schedule Timings
+                </Link>
+              </p>
+              <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-xl">
+                <Link className="flex gap-4" href="">
+                  <AiOutlineFileText className="mt-1 " />
+                  Invoices
+                </Link>
+              </p>
+              <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-xl">
+                <Link className="flex gap-4" href="">
+                  <FaStar className="mt-1 " /> Reviews
+                </Link>
+              </p>
+              <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-xl">
+                <Link className="flex gap-4" href="">
+                  <BiSolidMessageRounded className="mt-1" /> Message
+                </Link>
+              </p>
+              <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-xl">
+                <Link className="flex gap-4" href="">
+                  <FaUserCog className="mt-1" /> Profile Settings
+                </Link>
+              </p>
+              <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-xl">
+                <Link className="flex gap-4" href="">
+                  <FaShareAlt className="mt-1 " />
+                  Social Media
+                </Link>
+              </p>
+              <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-xl">
+                <Link className="flex gap-4" href="">
+                  <FaLock className="mt-1 " />
+                  Change Password
+                </Link>
+              </p>
+              <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-xl">
+                <Link className="flex gap-4" href="">
+                  <HiOutlineLogout className="mt-1" /> Logout
+                </Link>
+              </p>
+            </div>
           </div>
         </div>
 
