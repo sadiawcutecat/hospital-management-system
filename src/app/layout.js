@@ -1,5 +1,4 @@
-import Footer from '@/Components/Footer/Footer';
-import NavBar from '@/Components/NavBar/NavBar';
+
 import { Inter } from 'next/font/google';
 import AuthProvider from './(WithNavbar)/context/AuthProvider';
 import './globals.css';

@@ -2,7 +2,7 @@ import { BsArrowRightCircle } from "react-icons/bs";
 
 const OurTest = () => {
   return (
-    <div className="w-9/12 mx-auto mt-52">
+    <div className="md:w-9/12 w-10/12 mx-auto mt-14">
       <div className="md:flex flex-row-reverse items-center gap-10">
         <div>
           <img src="https://i.ibb.co/J5WBFr5/test.png" alt="" />
@@ -41,7 +41,7 @@ const OurTest = () => {
               </li>
             </ul>
             <button className="btn btn-success hover:bg-green-500 mt-5">
-              View Doctors
+              View Reports
             </button>
           </div>
         </div>

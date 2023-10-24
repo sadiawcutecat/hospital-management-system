@@ -14,7 +14,7 @@ import { testimonialData } from "@/Data/testimonialData";
 
 const Testimonial = () => {
   return (
-    <div className="mt-20 md:p-20 p-8">
+    <div className=" md:p-20 p-8 mb-10">
       <div className="text-center">
         <h3 className="text-2xl font-bold text-orange-500">
           Feedback from our patients
