@@ -39,7 +39,7 @@ const Doctors = ({ allDoctor }) => {
                 </div>
                 <div className='flex flex-col my-3 '>
                     <button className='btn btn-accent  btn-xs my-2'>View Profile</button>
-                    <button className='btn btn-primary btn-xs'>Book Appointment</button>
+                    <button className='btn btn-outline btn-xs'>Book Appointment</button>
                 </div>
             </div>
         </div>
