@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-'use client';
->>>>>>> Sraboni
 import { FcFeedback, FcGraduationCap, FcLike } from 'react-icons/fc';
 import { GrUserExpert } from 'react-icons/gr';
 import { FaUserDoctor } from 'react-icons/fa6';
@@ -42,11 +38,7 @@ const Doctors = ({ allDoctor }) => {
                     <h2 className='flex items-center gap-3'><span className='text-xl'><ImLocation2 /></span></h2>
                 </div>
                 <div className='flex flex-col my-3 '>
-<<<<<<< HEAD
                     <button className='btn btn-secondary  btn-xs my-2'>View Profile</button>
-=======
-                    <button className='btn btn-primary  btn-xs my-2'>View Profile</button>
->>>>>>> Sraboni
                     <button className='btn btn-outline btn-xs'>Book Appointment</button>
                 </div>
             </div>

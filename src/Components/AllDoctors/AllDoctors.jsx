@@ -11,11 +11,7 @@ const AllDoctors = () => {
     },[]);
 
     return (
-<<<<<<< HEAD
         <div className='bg-base-100'>
-=======
-        <div>
->>>>>>> Sraboni
             {
                 allDoctors.map(allDoctor =><Doctors key={allDoctor.id} allDoctor ={allDoctor}></Doctors>)
             }
