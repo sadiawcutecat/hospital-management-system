@@ -39,13 +39,8 @@ const Doctors = ({ allDoctor }) => {
                     <h2 className='flex items-center gap-3'><span className='text-xl'><ImLocation2 /></span>{Chamber_Appointment.address}</h2>
                 </div>
                 <div className='flex flex-col my-3 '>
-<<<<<<< HEAD
-                    <button className='btn btn-secondary  btn-xs my-2'>View Profile</button>
-                    <button className='btn btn-outline btn-xs'>Book Appointment</button>
-=======
                     <button className='btn border-green-600  my-2'>View Profile</button>
                     <button className='btn btn-success'>Book Appointment</button>
->>>>>>> Sraboni
                 </div>
             </div>
         </div>

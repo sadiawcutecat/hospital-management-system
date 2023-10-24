@@ -11,12 +11,6 @@ const AllDoctors = () => {
     }, []);
 
     return (
-<<<<<<< HEAD
-        <div className='bg-base-100'>
-            {
-                allDoctors.map(allDoctor =><Doctors key={allDoctor.id} allDoctor ={allDoctor}></Doctors>)
-            }
-=======
         <div className='my-4 container mx-auto'>
             <div className='my-2'>
                 <h2 className='text-3xl font-extrabold font-serif underline lg:w-1/3 mx-auto '><span className='text-emerald-500 mx-auto'>O</span>ur All D<span className='text-emerald-500'>o</span>ct<span className='text-emerald-500'>0r</span>s Are Here</h2>
@@ -33,7 +27,6 @@ const AllDoctors = () => {
                     allDoctors.map(allDoctor => <Doctors key={allDoctor.id} allDoctor={allDoctor}></Doctors>)
                 }
             </div>
->>>>>>> Sraboni
         </div>
     );
 };
