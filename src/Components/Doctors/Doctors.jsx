@@ -1,3 +1,4 @@
+'use client';
 import { FcFeedback, FcGraduationCap, FcLike } from 'react-icons/fc';
 import { GrUserExpert } from 'react-icons/gr';
 import { FaUserDoctor } from 'react-icons/fa6';
