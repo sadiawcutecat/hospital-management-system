@@ -7,9 +7,9 @@
     "specialist": "Physical Medicine (Pain, Arthritis, Paralysis, Stroke) & Rehabilitation Specialist",
     "position": "Consultant, Physical Medicine & Rehabilitation",
     "place": "250 Bed General Hospital, Moulvibazar",
-    "rating": "(4)",
-    "price": "350",
-    "Chamber & Appointment":{
+    "rating": 4.5,
+    "price": 350,
+    "Chamber_Appointment":{
       "hospital": "Ibn Sina Hospital, Sylhet",
       "address": "Sobhani Ghat Point, Mirabazar-Subhanighat Road, Sylhet",
       "visiting Hour": "3pm to 6pm (Closed: Friday)",
@@ -26,9 +26,9 @@
     "specialist": "Oral, Dental & Maxillofacial Surgery Specialist",
     "position": "Chief Consultant, Dental Art",
     "place": "Dental Doctor, Bangladesh Bank",
-    "rating": "(5)",
-    "price": "250",
-    "Chamber & Appointment":{
+    "rating": 4.2,
+    "price": 250,
+    "Chamber_Appointment":{
       "hospital": "Dental Art, Rajshahi",
       "address": "In-between Medical Ghoshpara and Fire Service Mor, West Side, Shipaipara, Rajshahi",
       "visiting Hour": " 5pm to 8.30pm (Closed: Friday)",
@@ -45,9 +45,9 @@
     "specialist": "Neurology (Brain, Stroke, Nerve, Spine, Headache) Specialist",
     "position": "Assistant Professor, Neurology",
     "place": "Bangabandhu Sheikh Mujib Medical University Hospital",
-    "rating": "(3)",
-    "price": "300",
-    "Chamber & Appointment":{
+    "rating": 3.9,
+    "price": 350,
+    "Chamber_Appointment":{
       "hospital": "Popular Diagnostic Center, Shantinagar",
       "address": "Unit # 02, House # 15, Shantinagar, Motijheel, Dhaka",
       "visiting Hour": "4pm to 7pm (Closed: Thu & Friday)",
@@ -64,9 +64,9 @@
     "specialist": "ENT (Ear, Nose, Throat) Specialist & Head Neck Surgeon",
     "position": "Consultant, Head Neck Surgery",
     "place": "Satkhira Medical College & Hospital",
-    "rating": "(5)",
-    "price": "150",
-    "Chamber & Appointment":{
+    "rating": 4.3,
+    "price": 150,
+    "Chamber_Appointment":{
       "hospital": "CB (China Bangla) Hospital, Satkhira",
       "address": "Chaurangi Mor, Polashpole, Satkhira Sadar, Satkhira",
       "visiting Hour": "4pm to 7pm (Closed: Thu & Friday)",
@@ -83,9 +83,9 @@
     "specialist": "Pediatric (Children) Surgery Specialist",
     "position": "Assistant Professor, Pediatric Surgery",
     "place": "TMSS Medical College & Rafatullah Community Hospital",
-    "rating": "(5)",
-    "price": "250",
-    "Chamber & Appointment":{
+    "rating": 4.3,
+    "price": 250,
+    "Chamber_Appointment":{
       "hospital": "Ibn Sina Diagnostic & Consultation Center, Bogra",
       "address": "House # 1103/1116, Kanochgari, Sherpur Road, Bogura  5800",
       "visiting Hour": " 3pm to 9pm (Everyday)",
@@ -102,9 +102,9 @@
     "specialist": "Kidney Diseases & Medicine Specialist",
     "position": "Associate Consultant, Nephrology",
     "place": "Labaid Cancer Hospital & Super Speciality Center",
-    "rating": "(2)",
-    "price": "350",
-    "Chamber & Appointment":{
+    "rating": 3.8,
+    "price": 300,
+    "Chamber_Appointment":{
       "hospital": "Labaid Cancer Hospital & Super Speciality Center",
       "address": " 26, Green Road, Dhaka",
       "visiting Hour": " 4pm to 6pm (Sun, Tue, Thu & Friday)",
