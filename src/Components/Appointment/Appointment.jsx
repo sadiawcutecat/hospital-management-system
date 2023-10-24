@@ -1,15 +1,18 @@
+import Link from "next/link";
 import React from "react";
 import { FaArrowCircleRight } from "react-icons/fa";
 
 const Appointment = () => {
   return (
-    <div className=" mb-20 md:p-20 p-8 mx-auto mt-10 ">
-      <h3 className="text-2xl text-orange-600  font-semibold my-4">
-        Make an appointment
-      </h3>
-      <h1 className="text-3xl text-sky-900  font-semibold">
-        Get the right Pediatrician book your doctor
-      </h1>
+    <div className=" mb-20 md:p-20 p-8 mx-auto mt-10 img-slide opacity-0 duration-1000">
+      <div className="text-center">
+        <h3 className="text-3xl text-orange-600  font-semibold my-4">
+          Make an appointment
+        </h3>
+        <h1 className="text-md text-sky-900/80  ">
+          Get the right Pediatrician Appoint your doctor
+        </h1>
+      </div>
       <div className="mt-10">
         <form className="">
           <div className="md:flex  gap-6 font-bold w-full">
@@ -53,10 +56,10 @@ const Appointment = () => {
           </div>
 
           <div className="flex justify-center mt-6">
-            <a href="/payment"  className="btn btn-wide bg-emerald-500 font-bold  text-white hover:bg-emerald-600 ">
-              Make appointment
+            <Link href='/payment' className="btn btn-wide bg-emerald-500 font-bold  text-white hover:bg-emerald-600 ">
+              find Doctors
               <FaArrowCircleRight></FaArrowCircleRight>
-            </a>
+            </Link>
           </div>
         </form>
       </div>

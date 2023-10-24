@@ -41,6 +41,17 @@
   background: white;
   color: black;
 }
+.background {
+  background-image: url("https://hospitalmanagementsystem.org/images/best-practice-management-system.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: auto;
+}
+.show {
+  opacity: 1;
+}
 
 @keyframes animate-slide {
   0% {
@@ -48,5 +59,33 @@
   }
   100% {
     opacity: 1;
+  }
+}
+@media screen and (max-width: 740px) {
+  /* .table {
+    margin-left: 7rem;
+  } */
+  .table thead {
+    display: none;
+  }
+  .table,
+  .table tbody,
+  .table tr,
+  .table td {
+    display: block !important;
+  }
+  td {
+    text-align: right;
+    border: 1px solid black;
+  }
+  .table tr {
+    margin-bottom: 2rem;
+  }
+  .table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+    padding-left: 10px;
   }
 }

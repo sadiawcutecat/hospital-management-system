@@ -3,7 +3,7 @@ import { FaLocationArrow } from 'react-icons/fa6';
 
 const Payment = () => {
     return (
-        <div className='mt-[90px]'>
+        <div className='mt-[90px] my-10'>
             <form action="" className='px-4'>
                 <div className=' flex flex-col lg:flex-row justify-center  gap-3'>
                     <div className='p-9 lg:pr-[300px] shadow-xl'>
