@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 
 const DoctorsPage = () => {
   const [allDoctors, setAllDoctors] = useState([]);
+
   useEffect(() => {
     fetch("doctors.json")
       .then((res) => res.json())

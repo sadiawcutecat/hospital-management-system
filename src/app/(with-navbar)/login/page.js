@@ -3,11 +3,13 @@
 import SocialLogin from "@/Components/SocialLogin/SocialLogin";
 import useAuth from "@/Components/hooks/useAuth";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Login = () => {
+  const router = useRouter();
   const { signIn } = useAuth();
   const [showPassword, setShowPassword] = useState(false);
   const {
@@ -24,6 +26,7 @@ const Login = () => {
         const loggedUser = result.user;
         reset();
         console.log(loggedUser);
+        router.push("/");
       })
       .catch((error) => {
         console.log(error);

@@ -1,15 +1,15 @@
 "use client";
 import { FaGoogle } from "react-icons/fa";
 import useAuth from "../hooks/useAuth";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 const SocialLogin = () => {
+  const router = useRouter();
   const { googleLogin } = useAuth();
 
   const handleGoogleSignIn = () => {
     googleLogin().then((result) => {
-      //   console.log(result);
-      //   usePathname("/");
+      router.push("/");
     });
   };
 
