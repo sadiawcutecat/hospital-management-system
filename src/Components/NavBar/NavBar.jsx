@@ -3,6 +3,10 @@ import Link from "next/link";
 import { useState } from "react";
 import { AiOutlineClose, AiOutlineMenuUnfold } from "react-icons/ai";
 import useAuth from "../hooks/useAuth";
+import { useRouter } from "next/router";
+import NavLink from "../Common/NavLink/NavLink";
+// import { usePathname } from "next/navigation";
+// import Classes from "../Common/utils/Classes";
 // import { AuthContext } from "@/app/context/AuthProvider";
 
 const NavLinks = [
@@ -34,6 +38,12 @@ const NavLinks = [
 ];
 
 const Navbar = () => {
+  // const currentPath = usePathname();
+  // console.log(path);
+  // const active = path.startsWith();
+  // console.log(active, path.match.path);
+  // const classesName = Classes(props.className, active && activeClassName);
+  // console.log(href);
   const { user, logout } = useAuth();
   console.log(user);
   const [open, setOpen] = useState(false);
@@ -63,15 +73,22 @@ const Navbar = () => {
             open ? "left-0 top-0 " : "left-[-500rem] top-0"
           } `}
         >
-          {NavLinks.map((item, i) => {
+          {NavLinks.map(({ label, path }) => {
             return (
               <li
-                key={i}
+                key={path}
                 className="mr-4 md:hover:text-[#0b9795] hover:text-black navBar-list md:mt-0 mt-10"
               >
-                <Link href={`${item.path}`} className="text-xl ">
-                  {item.label}
-                </Link>
+                <NavLink
+                  // className={` ${
+                  //   currentPath === path ? " text-[#0b9795] font-bold" : ""
+                  // }`}
+                  // activeClassName="text-blue-500"
+                  href={path}
+                  // className="text-xl "
+                >
+                  {label}
+                </NavLink>
               </li>
             );
           })}
