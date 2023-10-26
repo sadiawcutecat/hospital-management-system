@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import { FaArrowCircleRight } from "react-icons/fa";
 
@@ -55,10 +56,10 @@ const Appointment = () => {
           </div>
 
           <div className="flex justify-center mt-6">
-            <button className="btn btn-wide bg-emerald-500 font-bold  text-white hover:bg-emerald-600 ">
+            <Link href='/payment' className="btn btn-wide bg-emerald-500 font-bold  text-white hover:bg-emerald-600 ">
               find Doctors
               <FaArrowCircleRight></FaArrowCircleRight>
-            </button>
+            </Link>
           </div>
         </form>
       </div>
