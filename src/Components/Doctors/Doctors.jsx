@@ -14,7 +14,7 @@ const Doctors = ({ allDoctor }) => {
     const { image, name, study, specialist, position, place, rating, price,Chamber_Appointment,address } = allDoctor;
 
     return (
-        <div className='grid grid-cols-1 row lg:grid-cols-3 mx-auto card m-3 bg-base-200'>
+        <div className='grid grid-cols-1 row lg:grid-cols-3 mx-auto card m-3 bg-base-200 font-sans'>
             <figure>
                 <img className='w-3/4 p-4 shadow-lg rounded-lg' src={image} alt="" />
             </figure>
@@ -41,7 +41,7 @@ const Doctors = ({ allDoctor }) => {
                 </div>
                 <div className='flex flex-col my-3 '>
                     <button className='btn border-green-600  my-2'>View Profile</button>
-                    <button className='btn btn-success'>Book Appointment</button>
+                    <button className='btn btn-success text-white'>Book Appointment</button>
                 </div>
             </div>
         </div>

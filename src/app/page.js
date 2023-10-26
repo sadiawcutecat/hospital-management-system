@@ -1,3 +1,4 @@
+import About from "@/Components/About/About";
 import AllDoctors from "@/Components/AllDoctors/AllDoctors";
 import Appointment from "@/Components/Appointment/Appointment";
 import BannerSlider from "@/Components/Banner/BannerSlider";
@@ -9,6 +10,7 @@ export default function Home() {
   return (
     <main>
       <BannerSlider></BannerSlider>
+      <About></About>
       <OurDoctors />
       <AllDoctors></AllDoctors>
       <OurTest />
