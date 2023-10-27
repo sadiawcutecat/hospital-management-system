@@ -51,7 +51,7 @@ const About = () => {
             src="https://img.freepik.com/free-photo/team-expert-doctors-sitting-desk-hospital-conference-room-having-briefing-clinic-expert-therapist-talking-with-colleagues-about-disease-treatment-development-medicine-professional_482257-3677.jpg?size=626&ext=jpg&ga=GA1.1.1055064272.1680254175&semt=ais"
             alt=""
           />
-          <div className="justify-center text-start p-10 items-center">
+          <div className="c">
             <h1 className="text-xl font-semibold mb-4">Who We Are</h1>
             <p className="leading-8">
               We are a company with culture and codes of ethics. Our values
@@ -64,7 +64,9 @@ const About = () => {
       </div>
       <div className="bg-base-200 container mx-auto justify-center p-4 lg:p-28">
         <div className="text-center pb-4 lg:pb-16 lg:space-y-3">
-          <p className="text-sm lg:text-md">A CHOICE THAT MAKES THE DIFFERENCE</p>
+          <p className="text-sm lg:text-md">
+            A CHOICE THAT MAKES THE DIFFERENCE
+          </p>
           <h1 className="text-2xl lg:text-4xl font-bold">
             Reasons to Choose Us
           </h1>
@@ -119,6 +121,32 @@ const About = () => {
               </p>
             </div>
           </div>
+        </div>
+      </div>
+      <div className="grid grid-cols-1 lg:grid-cols-2 container mx-auto  p-8 lg:p-28 mt-4">
+        <div className="flex  -space-x-32">
+          <div>
+            <img className="rounded-lg"
+              src="https://img.freepik.com/free-photo/front-view-smiley-man-wearing-lab-coat_23-2149633830.jpg?size=626&ext=jpg&ga=GA1.1.1055064272.1680254175&semt=sph"
+              alt=""
+            />
+          </div>
+          <div className="my-4">
+            <img className="rounded-lg"
+              src="https://img.freepik.com/free-photo/asian-female-doctor-talking-mobile-phone-office-looking-records_1098-20346.jpg?size=626&ext=jpg&ga=GA1.1.1055064272.1680254175&semt=ais"
+              alt=""
+            />
+          </div>
+        </div>
+        <div className=" p-8 lg:p-28 mt-4">
+          <h1 className="text-4xl font-semibold mb-4">The Company</h1>
+          <p className="leading-8">
+            OnClick Technologies is the company behind the world`s favorite
+            Hospital Management System. OnClick Technologies is an innovative IT
+            Company that has been helping clients across the globe to achieve
+            their goals.
+          </p>
+          <button className="btn btn-outline bg-black text-white mt-5">Contact us</button>
         </div>
       </div>
     </div>
