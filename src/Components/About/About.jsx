@@ -17,11 +17,11 @@ const About = () => {
         <div className="hero-overlay bg-opacity-60"></div>
         <div className="hero-content text-center text-neutral-content">
           <div className="max-w-xl uppercase space-y-4">
-            <h1 className="underline underline-offset-8 font-bold">
-              Find the best healthcare solution for your healthy life.
-            </h1>
             <h1 className="mb-5 text-5xl lg:text-8xl font-extrabold">
               About Us
+            </h1>
+            <h1 className="underline underline-offset-8 font-bold">
+              Find the best healthcare solution for your healthy life.
             </h1>
           </div>
         </div>
@@ -64,7 +64,9 @@ const About = () => {
       </div>
       <div className="bg-base-200 container mx-auto justify-center p-4 lg:p-28">
         <div className="text-center pb-4 lg:pb-16 lg:space-y-3">
-          <p className="text-sm lg:text-md">A CHOICE THAT MAKES THE DIFFERENCE</p>
+          <p className="text-sm lg:text-md">
+            A CHOICE THAT MAKES THE DIFFERENCE
+          </p>
           <h1 className="text-2xl lg:text-4xl font-bold">
             Reasons to Choose Us
           </h1>

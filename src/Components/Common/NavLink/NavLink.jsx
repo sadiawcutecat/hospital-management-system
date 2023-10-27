@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation";
 
 const NavLink = ({ children, href, ...props }) => {
   const currentPath = usePathname();
-  console.log(href, currentPath, props.classList);
+  // console.log(href, currentPath, props.classList);
   return (
     <Link
       href={href}

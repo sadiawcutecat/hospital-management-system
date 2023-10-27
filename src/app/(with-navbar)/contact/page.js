@@ -13,7 +13,7 @@ const Contact = () => {
             className=" w-[100vw] h-[80vh] mx-auto object-cover "
             alt=""
           />
-          <div className=" absolute  w-full bg-black/50 h-full top-0 flex justify-center items-center">
+          <div className=" absolute  w-full bg-black/30 h-full top-0 flex justify-center items-center">
             <h1 className="text-4xl font-bold text-white w-full bg-black/40 text-center py-4">
               Feel Free To Contact Us
             </h1>
