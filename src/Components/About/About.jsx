@@ -140,7 +140,7 @@ const About = () => {
         </div>
         <div className=" p-8 lg:p-28 mt-4">
           <h1 className="text-4xl font-semibold mb-4">The Company</h1>
-          <p className="leading-8">
+          <p className="leading-8 font-normal">
             OnClick Technologies is the company behind the world`s favorite
             Hospital Management System. OnClick Technologies is an innovative IT
             Company that has been helping clients across the globe to achieve
