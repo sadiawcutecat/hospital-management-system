@@ -7,7 +7,7 @@ import React from "react";
 const DoctorPetain = () => {
   return (
     <div>
-      <div className="md:flex justify-center  items-center bg-white shadow-xl mx-auto max-w-screen-xl p-10 border-gray-100 border-2">
+      <div className="md:flex justify-center  items-center bg-white shadow-xl mx-auto max-w-screen-xl p-5 border-gray-100 border-2">
         <div className="flex justify-between items-center">
           <div className="h-28 w-28 border-pink-600 border-8 rounded-full">
             <img
@@ -24,7 +24,7 @@ const DoctorPetain = () => {
           </div>
         </div>
         <div className="flex justify-between items-center md:border-l-2 border-gray-400 my-10 ">
-          <div className="h-28 w-28 border-green-700 border-8 rounded-full  md:mx-6">
+          <div className="h-28 w-28 border-green-700 border-8 rounded-full md:mx-6">
             <img
               src="https://i.ibb.co/xJJcckw/icon-02.png"
               alt=""
