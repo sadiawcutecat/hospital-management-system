@@ -71,10 +71,10 @@ const DoctorPetain = () => {
           </button>
         </div>
         <hr />
-        <table className="table w-full">
+        <table className="table w-full ">
           {/* head */}
           <thead>
-            <tr className="text-black font-bold text-xl">
+            <tr className="text-black font-bold text-xl ">
               <th>Patient Name</th>
               <th>Appt. Date</th>
               <th>Purpose</th>
@@ -117,7 +117,205 @@ const DoctorPetain = () => {
                   <ImCancelCircle className=" h-4 w-4" /> Cancel
                 </button>
               </td>
-            </tr>{" "}
+            </tr>
+            <tr>
+              <td data-label="Name & Photo">
+                <div className="flex items-center justify-end gap-3">
+                  <div className="avatar">
+                    <div className="mask mask-squircle w-12 h-12">
+                      <img
+                        src="/tailwind-css-component-profile-2@56w.png"
+                        alt="Avatar Tailwind CSS Component"
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <div className="font-bold">Hart Hagerty</div>
+                    <div className="">United States</div>
+                  </div>
+                </div>
+              </td>
+              <td data-label="date & time">23/10/23 , 12:30</td>
+              <td data-label="purpose">General</td>
+              <td data-label="type">new patient</td>
+              <td data-label="price">$140</td>
+              <td className="space-x-4" data-label="#">
+                <button className="btn btn-sm text-emerald-600 bg-emerald-200  hover:bg-emerald-400">
+                  <FaEye className=" h-4 w-4" /> View
+                </button>
+                <button className="btn btn-sm text-orange-600 bg-orange-200 my-2 hover:bg-orange-400 ">
+                  <FaCheck className=" h-4 w-4" /> Accept
+                </button>
+                <button className="btn btn-sm text-red-600 bg-red-200  hover:bg-red-400 ">
+                  <ImCancelCircle className=" h-4 w-4" /> Cancel
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td data-label="Name & Photo">
+                <div className="flex items-center justify-end gap-3">
+                  <div className="avatar">
+                    <div className="mask mask-squircle w-12 h-12">
+                      <img
+                        src="/tailwind-css-component-profile-2@56w.png"
+                        alt="Avatar Tailwind CSS Component"
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <div className="font-bold">Hart Hagerty</div>
+                    <div className="">United States</div>
+                  </div>
+                </div>
+              </td>
+              <td data-label="date & time">23/10/23 , 12:30</td>
+              <td data-label="purpose">General</td>
+              <td data-label="type">new patient</td>
+              <td data-label="price">$140</td>
+              <td className="space-x-4" data-label="#">
+                <button className="btn btn-sm text-emerald-600 bg-emerald-200  hover:bg-emerald-400">
+                  <FaEye className=" h-4 w-4" /> View
+                </button>
+                <button className="btn btn-sm text-orange-600 bg-orange-200 my-2 hover:bg-orange-400 ">
+                  <FaCheck className=" h-4 w-4" /> Accept
+                </button>
+                <button className="btn btn-sm text-red-600 bg-red-200  hover:bg-red-400 ">
+                  <ImCancelCircle className=" h-4 w-4" /> Cancel
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td data-label="Name & Photo">
+                <div className="flex items-center justify-end gap-3">
+                  <div className="avatar">
+                    <div className="mask mask-squircle w-12 h-12">
+                      <img
+                        src="/tailwind-css-component-profile-2@56w.png"
+                        alt="Avatar Tailwind CSS Component"
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <div className="font-bold">Hart Hagerty</div>
+                    <div className="">United States</div>
+                  </div>
+                </div>
+              </td>
+              <td data-label="date & time">23/10/23 , 12:30</td>
+              <td data-label="purpose">General</td>
+              <td data-label="type">new patient</td>
+              <td data-label="price">$140</td>
+              <td className="space-x-4" data-label="#">
+                <button className="btn btn-sm text-emerald-600 bg-emerald-200  hover:bg-emerald-400">
+                  <FaEye className=" h-4 w-4" /> View
+                </button>
+                <button className="btn btn-sm text-orange-600 bg-orange-200 my-2 hover:bg-orange-400 ">
+                  <FaCheck className=" h-4 w-4" /> Accept
+                </button>
+                <button className="btn btn-sm text-red-600 bg-red-200  hover:bg-red-400 ">
+                  <ImCancelCircle className=" h-4 w-4" /> Cancel
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td data-label="Name & Photo">
+                <div className="flex items-center justify-end gap-3">
+                  <div className="avatar">
+                    <div className="mask mask-squircle w-12 h-12">
+                      <img
+                        src="/tailwind-css-component-profile-2@56w.png"
+                        alt="Avatar Tailwind CSS Component"
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <div className="font-bold">Hart Hagerty</div>
+                    <div className="">United States</div>
+                  </div>
+                </div>
+              </td>
+              <td data-label="date & time">23/10/23 , 12:30</td>
+              <td data-label="purpose">General</td>
+              <td data-label="type">new patient</td>
+              <td data-label="price">$140</td>
+              <td className="space-x-4" data-label="#">
+                <button className="btn btn-sm text-emerald-600 bg-emerald-200  hover:bg-emerald-400">
+                  <FaEye className=" h-4 w-4" /> View
+                </button>
+                <button className="btn btn-sm text-orange-600 bg-orange-200 my-2 hover:bg-orange-400 ">
+                  <FaCheck className=" h-4 w-4" /> Accept
+                </button>
+                <button className="btn btn-sm text-red-600 bg-red-200  hover:bg-red-400 ">
+                  <ImCancelCircle className=" h-4 w-4" /> Cancel
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td data-label="Name & Photo">
+                <div className="flex items-center justify-end gap-3">
+                  <div className="avatar">
+                    <div className="mask mask-squircle w-12 h-12">
+                      <img
+                        src="/tailwind-css-component-profile-2@56w.png"
+                        alt="Avatar Tailwind CSS Component"
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <div className="font-bold">Hart Hagerty</div>
+                    <div className="">United States</div>
+                  </div>
+                </div>
+              </td>
+              <td data-label="date & time">23/10/23 , 12:30</td>
+              <td data-label="purpose">General</td>
+              <td data-label="type">new patient</td>
+              <td data-label="price">$140</td>
+              <td className="space-x-4" data-label="#">
+                <button className="btn btn-sm text-emerald-600 bg-emerald-200  hover:bg-emerald-400">
+                  <FaEye className=" h-4 w-4" /> View
+                </button>
+                <button className="btn btn-sm text-orange-600 bg-orange-200 my-2 hover:bg-orange-400 ">
+                  <FaCheck className=" h-4 w-4" /> Accept
+                </button>
+                <button className="btn btn-sm text-red-600 bg-red-200  hover:bg-red-400 ">
+                  <ImCancelCircle className=" h-4 w-4" /> Cancel
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td data-label="Name & Photo">
+                <div className="flex items-center justify-end gap-3">
+                  <div className="avatar">
+                    <div className="mask mask-squircle w-12 h-12">
+                      <img
+                        src="/tailwind-css-component-profile-2@56w.png"
+                        alt="Avatar Tailwind CSS Component"
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <div className="font-bold">Hart Hagerty</div>
+                    <div className="">United States</div>
+                  </div>
+                </div>
+              </td>
+              <td data-label="date & time">23/10/23 , 12:30</td>
+              <td data-label="purpose">General</td>
+              <td data-label="type">new patient</td>
+              <td data-label="price">$140</td>
+              <td className="space-x-4" data-label="#">
+                <button className="btn btn-sm text-emerald-600 bg-emerald-200  hover:bg-emerald-400">
+                  <FaEye className=" h-4 w-4" /> View
+                </button>
+                <button className="btn btn-sm text-orange-600 bg-orange-200 my-2 hover:bg-orange-400 ">
+                  <FaCheck className=" h-4 w-4" /> Accept
+                </button>
+                <button className="btn btn-sm text-red-600 bg-red-200  hover:bg-red-400 ">
+                  <ImCancelCircle className=" h-4 w-4" /> Cancel
+                </button>
+              </td>
+            </tr>
             <tr>
               <td data-label="Name & Photo">
                 <div className="flex items-center justify-end gap-3">

@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { useEffect } from "react";
 import { BsArrowRightCircle } from "react-icons/bs";
 
@@ -65,7 +66,7 @@ const OurDoctors = () => {
               </li>
             </ul>
             <button className="btn btn-success hover:bg-green-500 mt-5">
-              View Doctors
+              <Link href="/doctors">View Doctors</Link>
             </button>
           </div>
         </div>

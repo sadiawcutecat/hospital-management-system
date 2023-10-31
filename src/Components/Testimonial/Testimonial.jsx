@@ -19,7 +19,7 @@ const Testimonial = () => {
         <h3 className="text-2xl font-bold text-orange-500">
           Feedback from our patients
         </h3>
-        <h1 className="text-4xl font-bold my-4">TESTIMONIALS</h1>
+        <h1 className="md:text-4xl text-xl font-bold my-4">TESTIMONIALS</h1>
       </div>
       <Swiper
         slidesPerView={3}

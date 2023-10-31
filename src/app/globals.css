@@ -39,7 +39,7 @@
 }
 .nav-bg-color {
   background: white;
-  color: black;
+  color: black !important;
 }
 .background {
   background-image: url("https://hospitalmanagementsystem.org/images/best-practice-management-system.jpg");
@@ -87,5 +87,13 @@
     left: 0;
     font-weight: bold;
     padding-left: 10px;
+  }
+}
+@media screen and (max-width: 380px) {
+  .login-button {
+    display: none;
+  }
+  #nav-bg {
+    padding: 0 0.5rem;
   }
 }

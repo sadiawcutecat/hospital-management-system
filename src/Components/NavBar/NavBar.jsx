@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { AiOutlineClose, AiOutlineMenuUnfold } from "react-icons/ai";
 import useAuth from "../hooks/useAuth";
-// import { AuthContext } from "@/app/context/AuthProvider";
+import NavLink from "../Common/NavLink/NavLink";
 
 const NavLinks = [
   {
@@ -44,51 +44,60 @@ const Navbar = () => {
   };
   return (
     <div
-      className={` px-10 md:py-5 py-2 fixed z-10 top-0 left-0 w-full bg-black/20 text-white duration-400`}
+      className={` px-3 md:py-4 py-2 fixed z-10 top-0 left-0 w-full bg-black/20 text-white duration-400`}
       id="nav-bg"
     >
       <nav className="flex justify-between items-center">
-        <div className="">
-          <h1 className="text-4xl font-bold flex items-center">
-            {/* <img
+        <div className="font-bold z-20 duration-200 menu-bars  md:hidden inline-block">
+          {open ? (
+            <AiOutlineClose
+              onClick={() => setOpen(!open)}
+              className="font-bold text-2xl"
+            ></AiOutlineClose>
+          ) : (
+            <AiOutlineMenuUnfold
+              onClick={() => setOpen(!open)}
+              className="font-bold text-2xl"
+            ></AiOutlineMenuUnfold>
+          )}
+        </div>
+        <div>
+          <h1 className="text-2xl  lg:text-4xl  font-bold flex items-center ">
+            <img
               src="https://i.ibb.co/NpptRzh/download-removebg-preview.png"
               alt=""
               className="h-10 w-10"
-            /> */}
+            />
             <Link href="/">HealthCare</Link>
           </h1>
         </div>
+
         <ul
           className={` md:static absolute md:bg-transparent bg-[#0b9795] md:p-0 p-10 md:w-auto text-center w-full   md:flex nav-box duration-300 ${
             open ? "left-0 top-0 " : "left-[-500rem] top-0"
           } `}
         >
-          {NavLinks.map((item, i) => {
+          {NavLinks.map(({ label, path }) => {
             return (
               <li
-                key={i}
+                key={path}
                 className="mr-4 md:hover:text-[#0b9795] hover:text-black navBar-list md:mt-0 mt-10"
               >
-                <Link href={`${item.path}`} className="text-xl ">
-                  {item.label}
-                </Link>
+                <NavLink
+                  // className={` ${
+                  //   currentPath === path ? " text-[#0b9795] font-bold" : ""
+                  // }`}
+                  // activeClassName="text-blue-500"
+                  href={path}
+                  // className="text-xl "
+                >
+                  {label}
+                </NavLink>
               </li>
             );
           })}
         </ul>
-        <div className="font-bold z-20 duration-200 menu-bars p-6 md:hidden inline-block">
-          {open ? (
-            <AiOutlineClose
-              onClick={() => setOpen(!open)}
-              className="font-bold text-3xl"
-            ></AiOutlineClose>
-          ) : (
-            <AiOutlineMenuUnfold
-              onClick={() => setOpen(!open)}
-              className="font-bold text-3xl"
-            ></AiOutlineMenuUnfold>
-          )}
-        </div>
+
         {user ? (
           <>
             <div className="dropdown dropdown-end">
