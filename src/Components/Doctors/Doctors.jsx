@@ -7,6 +7,7 @@ import { PiCurrencyDollarFill } from "react-icons/pi";
 import { ImLocation2 } from "react-icons/im";
 import Rating from "react-rating";
 import Link from "next/link";
+import { useEffect } from "react";
 
 const Doctors = ({ allDoctor }) => {
   const {
@@ -22,9 +23,30 @@ const Doctors = ({ allDoctor }) => {
     Chamber_Appointment,
     address,
   } = allDoctor;
+  useEffect(() => {
+    const contents = document.querySelectorAll(".img-slide");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+          } else {
+            entry.target.classList.remove("show");
+          }
+        });
+      },
+      {
+        threshold: 0.5,
+      }
+    );
+    contents.forEach((content) => {
+      observer.observe(content);
+    });
+  });
 
   return (
-    <div className="grid grid-cols-1 row lg:grid-cols-2 mx-auto card m-3 ">
+    <div className="grid grid-cols-1 row lg:grid-cols-2 mx-auto card m-3 img-slide opacity-0 duration-1000">
       <figure>
         <img className="w-1/2 p-4 shadow-lg rounded-lg" src={image} alt="" />
       </figure>

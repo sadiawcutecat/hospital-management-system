@@ -1,7 +1,11 @@
 "use client";
 import Link from "next/link";
 import { HiOutlineBookOpen, HiOutlineLogout } from "react-icons/hi";
-import { AiOutlineClose, AiOutlineFileText } from "react-icons/ai";
+import {
+  AiFillWechat,
+  AiOutlineClose,
+  AiOutlineFileText,
+} from "react-icons/ai";
 import { BiSolidMessageRounded } from "react-icons/bi";
 
 import {
@@ -71,6 +75,12 @@ const Dashboard = ({ children }) => {
                   <Link className="flex gap-4" href="">
                     <AiOutlineFileText className="mt-1 " />
                     Invoices
+                  </Link>
+                </p>
+                <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
+                  <Link className="flex gap-4" href="">
+                    <AiFillWechat className="mt-1 text-xl" />
+                    Chat
                   </Link>
                 </p>
                 <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
