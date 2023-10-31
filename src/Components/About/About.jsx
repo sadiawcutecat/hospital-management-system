@@ -1,14 +1,36 @@
 "use client";
+import { useEffect } from "react";
 import { BsPeople } from "react-icons/bs";
 import { FaRegHandshake } from "react-icons/fa";
 import { FaPeopleRobbery } from "react-icons/fa6";
 import { HiOutlineLightBulb } from "react-icons/hi";
 
 const About = () => {
+  useEffect(() => {
+    const contents = document.querySelectorAll(".img-slide");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+          } else {
+            entry.target.classList.remove("show");
+          }
+        });
+      },
+      {
+        threshold: 0.5,
+      }
+    );
+    contents.forEach((content) => {
+      observer.observe(content);
+    });
+  });
   return (
     <div>
       <div
-        className="hero min-h-screen container mx-auto"
+        className="hero min-h-screen  mx-auto "
         style={{
           backgroundImage:
             "url(https://img.freepik.com/free-photo/group-doctors-with-heart-symbol_329181-19665.jpg?w=740&t=st=1698345204~exp=1698345804~hmac=fa3dc51874c0191872dca6d1cb4b8cb18f19671277b9b9d7bf00a4bfb72a3494)",
@@ -26,7 +48,7 @@ const About = () => {
           </div>
         </div>
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-3 container mx-auto p-8 lg:p-28 mt-4">
+      <div className="grid grid-cols-1 lg:grid-cols-3 container mx-auto p-8 lg:p-28 mt-4 img-slide opacity-0 duration-1000">
         <img
           className="mt-4"
           src="https://img.freepik.com/free-photo/beautiful-young-female-doctor-looking-camera-office_1301-7807.jpg?size=626&ext=jpg&ga=GA1.1.1055064272.1680254175&semt=sph"
@@ -51,7 +73,7 @@ const About = () => {
             src="https://img.freepik.com/free-photo/team-expert-doctors-sitting-desk-hospital-conference-room-having-briefing-clinic-expert-therapist-talking-with-colleagues-about-disease-treatment-development-medicine-professional_482257-3677.jpg?size=626&ext=jpg&ga=GA1.1.1055064272.1680254175&semt=ais"
             alt=""
           />
-          <div className="justify-center text-start p-10 items-center">
+          <div className="c img-slide opacity-0 duration-1000">
             <h1 className="text-xl font-semibold mb-4">Who We Are</h1>
             <p className="leading-8">
               We are a company with culture and codes of ethics. Our values
@@ -62,7 +84,7 @@ const About = () => {
           </div>
         </div>
       </div>
-      <div className="bg-base-200 container mx-auto justify-center p-4 lg:p-28">
+      <div className="bg-base-200 container mx-auto justify-center p-4 lg:p-28 img-slide opacity-0 duration-1000">
         <div className="text-center pb-4 lg:pb-16 lg:space-y-3">
           <p className="text-sm lg:text-md">
             A CHOICE THAT MAKES THE DIFFERENCE
@@ -71,7 +93,7 @@ const About = () => {
             Reasons to Choose Us
           </h1>
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 img-slide opacity-0 duration-1000">
           <div className="bg-white rounded-lg p-8 flex justify-center">
             <div className="text-5xl text-blue-300 me-4">
               <HiOutlineLightBulb />
@@ -121,6 +143,36 @@ const About = () => {
               </p>
             </div>
           </div>
+        </div>
+      </div>
+      <div className="grid grid-cols-1 lg:grid-cols-2 container mx-auto  p-8 lg:p-28 mt-4">
+        <div className="flex  -space-x-[35px] lg:-space-x-[45px]">
+          <div>
+            <img
+              className="rounded-lg h-[300px] lg:h-[480px]"
+              src="https://img.freepik.com/free-photo/front-view-smiley-man-wearing-lab-coat_23-2149633830.jpg?size=626&ext=jpg&ga=GA1.1.1055064272.1680254175&semt=sph"
+              alt=""
+            />
+          </div>
+          <div className="my-4">
+            <img
+              className="rounded-lg h-[300px] lg:h-[480px]"
+              src="https://img.freepik.com/free-photo/asian-female-doctor-talking-mobile-phone-office-looking-records_1098-20346.jpg?size=626&ext=jpg&ga=GA1.1.1055064272.1680254175&semt=ais"
+              alt=""
+            />
+          </div>
+        </div>
+        <div className=" p-8 lg:p-28 mt-4">
+          <h1 className="text-4xl font-semibold mb-4">The Company</h1>
+          <p className="leading-8 font-normal">
+            OnClick Technologies is the company behind the world`s favorite
+            Hospital Management System. OnClick Technologies is an innovative IT
+            Company that has been helping clients across the globe to achieve
+            their goals.
+          </p>
+          <button className="btn btn-outline bg-black text-white mt-5">
+            Contact us
+          </button>
         </div>
       </div>
     </div>
