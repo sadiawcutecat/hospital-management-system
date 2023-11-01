@@ -14,24 +14,13 @@ const DoctorsPage = () => {
   return (
     <div className="my-4 container mx-auto mt-20">
       <div className="my-2">
-        <h2 className="text-3xl font-extrabold font-serif underline lg:w-1/3 mx-auto ">
-          <span className="text-emerald-500 mx-auto">O</span>ur All D
-          <span className="text-emerald-500">o</span>ct
-          <span className="text-emerald-500">0r</span>s Are Here
+        <h2 className="text-3xl font-bold font-serif leading-relaxed tracking-wide underline underline-offset-4 w-full lg:w-1/2 px-4 lg:px-32 mx-auto  list-none hover:bg-black hover:text-white">
+          We Are At Your Service
         </h2>
-        <p className="text-sm mx-auto px-4 mt-2">
-          One of the most important positions in our society is held by doctors.
-          Doctors are trained in the{" "}
-          <span className="text-black font-bold">medical profession</span>. They
-          help their patients identify the ailments they are suffering from, and
-          also give them the appropriate medicine and treatment to combat these
-          diseases or illnesses. Thus, doctors are responsible for keeping us
-          healthy, and good health is one of the utmost priorities of anyone’s
-          life. Doctors work hard every day to keep people fit and even save
-          them from life and{" "}
-          <span className="text-black font-bold">death situations</span>. The
-          profession of a doctor is an extremely noble one, helping and saving
-          those in need.
+        <p className="text-xl px-4 font-serif lg:px-36 mx-auto">
+          Doctors work hard every day to keep people fit and even save them from
+          life and{" "}
+          <span className="text-black font-bold">death situations</span>.
         </p>
       </div>
       <div>
