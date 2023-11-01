@@ -3,7 +3,7 @@
 import SocialLogin from "@/Components/SocialLogin/SocialLogin";
 import useAuth from "@/Components/hooks/useAuth";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
@@ -18,6 +18,8 @@ const Login = () => {
     reset,
     formState: { errors },
   } = useForm();
+  const location = usePathname();
+  console.log(location);
 
   const onSubmit = (data) => {
     console.log(data);
