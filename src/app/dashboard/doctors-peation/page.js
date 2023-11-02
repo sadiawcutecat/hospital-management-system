@@ -80,7 +80,7 @@ const DoctorPetain = () => {
               <th>Purpose</th>
               <th>Type</th>
               <th>Paid Amount</th>
-              <th>#</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody>

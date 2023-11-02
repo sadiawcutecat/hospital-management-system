@@ -4,16 +4,7 @@ import { HiOutlineBookOpen, HiOutlineLogout } from "react-icons/hi";
 import { AiOutlineClose, AiOutlineFileText } from "react-icons/ai";
 import { BiSolidMessageRounded } from "react-icons/bi";
 
-import {
-  FaCalendarCheck,
-  FaUserInjured,
-  FaStar,
-  FaUserCog,
-  FaShareAlt,
-  FaLock,
-  FaHourglassHalf,
-  FaBars,
-} from "react-icons/fa";
+import {  FaCalendarCheck,  FaUserInjured,  FaStar,  FaUserCog,  FaShareAlt,  FaLock,  FaHourglassHalf,  FaBars,} from "react-icons/fa";
 import React, { useState } from "react";
 import NavLink from "@/Components/Common/NavLink/NavLink";
 const Dashboard = ({ children }) => {

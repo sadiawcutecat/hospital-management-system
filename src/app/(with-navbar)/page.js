@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <main>
       <BannerSlider></BannerSlider>
-      <About></About>
+     <About/>
       <OurDoctors />
       <OurTest />
       <PopularDoctors></PopularDoctors>

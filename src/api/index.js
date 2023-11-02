@@ -46,15 +46,3 @@ app.listen(port,()=>{
     console.log(`health care is running on port:${port}`);
 })
 
-/*
-* --------------------------
-*    Naming Convention
-* --------------------------
-* users= userCollection
-* app.get('/users') ----for getting all users in server
-* app.get('/users/:id')---a particular id will get
-*app.post(/users) -----create a user
-* app.patch('/users/:id') ---particular user will update
-* app.put('/users/:id') ----update
-* app.delete('/users/:id') ----delete
-*/
