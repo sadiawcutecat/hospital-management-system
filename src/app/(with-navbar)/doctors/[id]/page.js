@@ -2,7 +2,7 @@
 import DoctorsData from "@/Components/Common/utils/DoctorsData";
 import { dataDoctors } from "@/Data/doctorsData";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import { FaHospital } from "react-icons/fa";
 import { FaUserDoctor } from "react-icons/fa6";
 import { FcFeedback, FcGraduationCap, FcLike } from "react-icons/fc";
@@ -11,6 +11,7 @@ import { ImLocation2 } from "react-icons/im";
 import { PiCurrencyDollarFill } from "react-icons/pi";
 
 const SingleDoctors = ({ params }) => {
+
   console.log(params.id);
   const [allDoctors, setAllDoctors] = useState([]);
 
