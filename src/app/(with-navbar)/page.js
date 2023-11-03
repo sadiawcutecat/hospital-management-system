@@ -1,4 +1,4 @@
-import About from "@/Components/About/About";
+
 import Appointment from "@/Components/Appointment/Appointment";
 import BannerSlider from "@/Components/Banner/BannerSlider";
 import OurDoctors from "@/Components/Content/OurDoctors/OurDoctors";
@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <main>
       <BannerSlider></BannerSlider>
-     <About/>
+     
       <OurDoctors />
       <OurTest />
       <PopularDoctors></PopularDoctors>

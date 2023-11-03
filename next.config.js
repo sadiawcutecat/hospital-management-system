@@ -9,6 +9,7 @@ const nextConfig = {
       },
     ],
   },
+  // distDir: "build-directory",
 };
 
 module.exports = nextConfig;

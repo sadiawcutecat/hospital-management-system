@@ -89,8 +89,8 @@ export default Footer;
           
           </div>
         </div>
-      </footer>
-      <div className="footer footer-center font-bold bg-[#262b35] text-[#8890a4]  p-4">
+      </footer> */}
+      {/* <div className="footer footer-center font-bold bg-[#262b35] text-[#8890a4]  p-4">
         <p>Copyright © 2023 - All right reserved by HealthCare Ltd</p>
       </div>
     </div> */}

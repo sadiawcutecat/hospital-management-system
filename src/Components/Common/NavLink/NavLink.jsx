@@ -4,12 +4,12 @@ import { usePathname } from "next/navigation";
 
 const NavLink = ({ children, href, ...props }) => {
   const currentPath = usePathname();
-  console.log(href, currentPath, props.classList);
+  // console.log(href, currentPath, props.classList);
   return (
     <Link
       href={href}
       className={` ${props.classlist} ${
-        currentPath == href ? " text-[#0b9795] font-bold" : ""
+        currentPath == href ? " md:text-[#0b9795] text-black font-bold" : ""
       }`}
       {...props}
     >

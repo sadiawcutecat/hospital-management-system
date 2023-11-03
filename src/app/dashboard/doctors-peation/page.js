@@ -117,7 +117,7 @@ const DoctorPetain = () => {
                   <ImCancelCircle className=" h-4 w-4" /> Cancel
                 </button>
               </td>
-            </tr>{" "}
+            </tr>
             <tr>
               <td data-label="Name & Photo">
                 <div className="flex items-center justify-end gap-3">
@@ -150,7 +150,7 @@ const DoctorPetain = () => {
                   <ImCancelCircle className=" h-4 w-4" /> Cancel
                 </button>
               </td>
-            </tr>{" "}
+            </tr>
             <tr>
               <td data-label="Name & Photo">
                 <div className="flex items-center justify-end gap-3">
@@ -183,7 +183,7 @@ const DoctorPetain = () => {
                   <ImCancelCircle className=" h-4 w-4" /> Cancel
                 </button>
               </td>
-            </tr>{" "}
+            </tr>
             <tr>
               <td data-label="Name & Photo">
                 <div className="flex items-center justify-end gap-3">
@@ -216,7 +216,7 @@ const DoctorPetain = () => {
                   <ImCancelCircle className=" h-4 w-4" /> Cancel
                 </button>
               </td>
-            </tr>{" "}
+            </tr>
             <tr>
               <td data-label="Name & Photo">
                 <div className="flex items-center justify-end gap-3">
@@ -249,7 +249,7 @@ const DoctorPetain = () => {
                   <ImCancelCircle className=" h-4 w-4" /> Cancel
                 </button>
               </td>
-            </tr>{" "}
+            </tr>
             <tr>
               <td data-label="Name & Photo">
                 <div className="flex items-center justify-end gap-3">
@@ -282,7 +282,7 @@ const DoctorPetain = () => {
                   <ImCancelCircle className=" h-4 w-4" /> Cancel
                 </button>
               </td>
-            </tr>{" "}
+            </tr>
             <tr>
               <td data-label="Name & Photo">
                 <div className="flex items-center justify-end gap-3">
@@ -315,7 +315,7 @@ const DoctorPetain = () => {
                   <ImCancelCircle className=" h-4 w-4" /> Cancel
                 </button>
               </td>
-            </tr>{" "}
+            </tr>
             <tr>
               <td data-label="Name & Photo">
                 <div className="flex items-center justify-end gap-3">
