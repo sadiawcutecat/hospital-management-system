@@ -11,7 +11,7 @@ import { useEffect } from "react";
 
 const Doctors = ({ allDoctor }) => {
   const {
-    id,
+    _id,
     image,
     name,
     study,
@@ -88,7 +88,7 @@ const Doctors = ({ allDoctor }) => {
           <span className="">{rating}</span>
         </p>
         <div className="flex items-center gap-7">
-          <Link href={`/doctors/${id}`}>
+          <Link href={`/doctors/${_id}`}>
             <button className="btn btn-sm border-green-600  my-2">
               View Profile
             </button>

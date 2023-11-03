@@ -3,7 +3,6 @@ import Navbar from "@/Components/NavBar/NavBar";
 import React from "react";
 
 const WithNavbar = ({ children }) => {
-  console.log(children);
   return (
     <div>
       <Navbar />
