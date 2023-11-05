@@ -12,34 +12,35 @@ import { ImLocation2 } from "react-icons/im";
 import { PiCurrencyDollarFill } from "react-icons/pi";
 
 const SingleDoctors = ({ params }) => {
-  console.log(params.id);
-  // const [allDoctors, setAllDoctors] = useState({});
-  const [single, setSingle] = useState({});
+  const [single, setSingle] = useState('');
   useEffect(() => {
     fetch(`http://localhost:3000/api/doctors/${params.id}`)
       .then((res) => res.json())
       .then((data) => {
-        setSingle(data);
+        setSingle(data.result);
       });
   }, []);
-  console.log(single);
-  // const {
-  //   image,
-  //   name,
-  //   study,
-  //   specialist,
-  //   position,
-  //   place,
-  //   rating,
-  //   price,
-  //   Chamber_Appointment,
-  // } = allDoctors?.result;
-  // const data = dataDoctors.filter((item) => item.id == params.id);
-  // console.log(_id);
-  // console.log(data);
+  if (!single) {
+    return <p>Loading...</p>;
+  }
+
+  const {
+    _id,
+    image,
+    name,
+    study,
+    specialist,
+    position,
+    place,
+    rating,
+    price,
+    Chamber_Appointment,
+  } = single;
+  console.log(single)
+  
   return (
     <div className="mt-28 my-28">
-      {/* <div>
+      <div>
         <h1 className="text-4xl font-bold text-center">{name}</h1>
         <div className="grid grid-cols-1 row lg:grid-cols-3 mx-auto card m-3 px-10">
           <figure>
@@ -121,7 +122,7 @@ const SingleDoctors = ({ params }) => {
           </h2>
           <p>{Chamber_Appointment.about}</p>
         </div>
-      </div> */}
+      </div>
     </div>
   );
 };

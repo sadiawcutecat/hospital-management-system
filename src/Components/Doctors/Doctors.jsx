@@ -77,14 +77,14 @@ const Doctors = ({ allDoctor }) => {
           {place}
         </p>
         <p className="flex items-center gap-2">
-          {/* <Rating
+          <Rating
             className="text-warning"
             placeholderRating={rating}
             readonly
             emptySymbol={<FaRegStar></FaRegStar>}
             placeholderSymbol={<FaStar></FaStar>}
             fullSymbol={<FaStar></FaStar>}
-          /> */}
+          />
           <span className="">{rating}</span>
         </p>
         <div className="flex items-center gap-7">
@@ -93,11 +93,12 @@ const Doctors = ({ allDoctor }) => {
               View Profile
             </button>
           </Link>
-          <button className="btn btn-sm btn-success">Book Appointment</button>
+          <Link href={`/payments/${_id}`}><button className="btn btn-sm btn-success">Book Appointment</button></Link>
+          
         </div>
       </div>
       <div className="w-1/2 mx-auto lg:mt-3">
-        {/* <div>
+        <div>
           <h2 className="flex items-center gap-3">
             <span className="text-xl">
               <FcLike />
@@ -122,7 +123,7 @@ const Doctors = ({ allDoctor }) => {
             </span>
             {Chamber_Appointment.address}
           </h2>
-        </div> */}
+        </div>
       </div>
     </div>
   );
