@@ -8,9 +8,9 @@ export const GET = async (req, cont) => {
   const doctorId = cont.params.doctorId;
   const filter = { _id: doctorId };
   await mongoose.connect(dbConnection);
-  const result = await Doctor.findById(filter);
+  const result = await Doctor.findOne(filter);
   // const result = [data];
   // console.log(result);
 
-  return NextResponse.json({ result, success: true });
+  return NextResponse.json({ result: [result], success: true });
 };
