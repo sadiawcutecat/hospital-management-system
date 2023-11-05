@@ -6,7 +6,7 @@ const Appointment = () => {
   return (
     <div className=" mb-20 md:p-20 p-8 mx-auto mt-10 img-slide opacity-0 duration-1000">
       <div className="text-center">
-        <h3 className="text-3xl text-orange-600  font-semibold my-4">
+        <h3 className="md:text-3xl text-xl text-orange-600  font-semibold my-4">
           Make an appointment
         </h3>
         <h1 className="text-md text-sky-900/80  ">
@@ -56,7 +56,10 @@ const Appointment = () => {
           </div>
 
           <div className="flex justify-center mt-6">
-            <Link href='/payment' className="btn btn-wide bg-emerald-500 font-bold  text-white hover:bg-emerald-600 ">
+            <Link
+              href="/payment"
+              className="btn btn-wide bg-emerald-500 font-bold  text-white hover:bg-emerald-600 "
+            >
               find Doctors
               <FaArrowCircleRight></FaArrowCircleRight>
             </Link>
