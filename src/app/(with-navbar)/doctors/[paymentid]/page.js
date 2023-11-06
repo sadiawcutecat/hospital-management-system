@@ -1,7 +1,22 @@
-import React from 'react';
+"use client";
+
+
+import React, { useEffect, useState } from 'react';
 import { FaLocationArrow } from 'react-icons/fa6';
 
 const Payment = () => {
+   
+  
+ 
+    // const [allDoctors, setAllDoctors] = useState([]);
+    // useEffect(() => {
+    //   fetch(`http://localhost:3000/api/doctors/${params._id}`)
+    //     .then((res) => res.json())
+    //     .then((data) => {
+    //       setAllDoctors(data);
+    //     });
+    // }, []);
+  
     return (
         <div className='mt-[90px] my-10'>
             <form action="" className='px-4'>
