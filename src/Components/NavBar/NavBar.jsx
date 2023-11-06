@@ -4,6 +4,7 @@ import { useState } from "react";
 import { AiOutlineClose, AiOutlineMenuUnfold } from "react-icons/ai";
 import useAuth from "../hooks/useAuth";
 import NavLink from "../Common/NavLink/NavLink";
+import PrivetRoute from "../PrivetRoute/PrivetRoute";
 
 const NavLinks = [
   {
@@ -26,11 +27,11 @@ const NavLinks = [
     path: "/doctors",
     // icon: <FaUserDoctor fontSize={20} ></FaUserDoctor>
   },
-  {
-    label: "Dashboard",
-    path: "/dashboard/doctors-peation",
-    // icon: <RxDashboard fontSize={20} />,
-  },
+  // {
+  //   label: "Dashboard",
+  //   path: "/dashboard/doctors-peation",
+  //   // icon: <RxDashboard fontSize={20} />,
+  // },
 ];
 
 const Navbar = () => {
@@ -96,6 +97,20 @@ const Navbar = () => {
               </li>
             );
           })}
+          <PrivetRoute>
+            <li className="mr-4 md:hover:text-[#0b9795] hover:text-black navBar-list md:mt-0 mt-10">
+              <NavLink
+                // className={` ${
+                //   currentPath === path ? " text-[#0b9795] font-bold" : ""
+                // }`}
+                // activeClassName="text-blue-500"
+                href="/dashboard/doctors-peation"
+                // className="text-xl "
+              >
+                Dashboard
+              </NavLink>
+            </li>
+          </PrivetRoute>
         </ul>
 
         {user ? (

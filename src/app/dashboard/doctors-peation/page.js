@@ -112,7 +112,7 @@ const DoctorPetain = () => {
                   <td data-label="purpose">{patient.purpose}</td>
                   <td data-label="type">{patient.type}</td>
                   <td data-label="price">{patient.paid}</td>
-                  <td className="space-x-4 " data-label="#">
+                  <td className="space-x-4 flex items-center " data-label="#">
                     <button className="btn btn-sm text-emerald-600 bg-emerald-200  hover:bg-emerald-400">
                       <FaEye className=" h-4 w-4" /> View
                     </button>

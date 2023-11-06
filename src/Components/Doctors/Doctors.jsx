@@ -11,7 +11,7 @@ import { useEffect } from "react";
 
 const Doctors = ({ allDoctor }) => {
   const {
-    id,
+    _id,
     image,
     name,
     study,
@@ -77,18 +77,10 @@ const Doctors = ({ allDoctor }) => {
           {place}
         </p>
         <p className="flex items-center gap-2">
-          {/* <Rating
-            className="text-warning"
-            placeholderRating={rating}
-            readonly
-            emptySymbol={<FaRegStar></FaRegStar>}
-            placeholderSymbol={<FaStar></FaStar>}
-            fullSymbol={<FaStar></FaStar>}
-          /> */}
           <span className="">{rating}</span>
         </p>
         <div className="flex items-center gap-7">
-          <Link href={`/doctors/${id}`}>
+          <Link href={`/doctors/${_id}`}>
             <button className="btn btn-sm border-green-600  my-2">
               View Profile
             </button>
@@ -96,34 +88,7 @@ const Doctors = ({ allDoctor }) => {
           <button className="btn btn-sm btn-success">Book Appointment</button>
         </div>
       </div>
-      <div className="w-1/2 mx-auto lg:mt-3">
-        {/* <div>
-          <h2 className="flex items-center gap-3">
-            <span className="text-xl">
-              <FcLike />
-            </span>{" "}
-            90%
-          </h2>
-          <h2 className="flex items-center gap-3">
-            <span className="text-xl">
-              <FcFeedback />
-            </span>{" "}
-            20 Feedback
-          </h2>
-          <h2 className="flex items-center gap-3">
-            <span className="text-xl">
-              <PiCurrencyDollarFill />
-            </span>
-            ${price}
-          </h2>
-          <h2 className="flex items-center gap-3">
-            <span className="text-xl">
-              <ImLocation2 />
-            </span>
-            {Chamber_Appointment.address}
-          </h2>
-        </div> */}
-      </div>
+      <div className="w-1/2 mx-auto lg:mt-3"></div>
     </div>
   );
 };

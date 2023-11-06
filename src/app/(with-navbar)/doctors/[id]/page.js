@@ -11,20 +11,27 @@ import { ImLocation2 } from "react-icons/im";
 import { PiCurrencyDollarFill } from "react-icons/pi";
 
 const SingleDoctors = ({ params }) => {
+<<<<<<< HEAD
 
   console.log(params.id);
+=======
+  // console.log(params.id);
+>>>>>>> 050aff13d08556e3a99b66bfb036e80feca4c994
   const [allDoctors, setAllDoctors] = useState([]);
+  useEffect(() => {
+    fetch(`http://localhost:3000/api/doctors/${params.id}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setAllDoctors(data);
+      });
+  }, []);
 
-  // .then((res) => res.json())
-  // .then((data) => {
-  //   console.log(data);
-  // });
-  const data = dataDoctors.filter((item) => item.id == params.id);
+  // const data = dataDoctors.filter((item) => item.id == params.id);
 
-  console.log(data);
+  console.log(allDoctors);
   return (
     <div className="mt-28 my-28">
-      {data.map(
+      {allDoctors?.result?.map(
         ({
           id,
           image,

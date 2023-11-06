@@ -4,11 +4,11 @@ import Doctors from "../Doctors/Doctors";
 
 const AllDoctors = () => {
   const [allDoctors, setAllDoctors] = useState([]);
-  useEffect(() => {
-    fetch("doctors.json")
-      .then((res) => res.json())
-      .then((data) => setAllDoctors(data));
-  }, []);
+  // useEffect(() => {
+  fetch("http://localhost:3000/api/doctors")
+    .then((res) => res.json())
+    .then((data) => setAllDoctors(data.result));
+  // }, []);
 
   return (
     <div className="my-10 container mx-auto mt-28">
