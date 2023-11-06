@@ -88,7 +88,7 @@ const Dashboard = ({ children }) => {
                     </NavLink>
                   </p>
                   <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
-                    <NavLink classlist="flex gap-4" href="/dashboard/allUsers">
+                    <NavLink classlist="flex gap-4" href="/dashboard/all-users">
                       <FaUserInjured className="mt-1 " /> All Users
                     </NavLink>
                   </p>
@@ -146,31 +146,6 @@ const Dashboard = ({ children }) => {
               }`}
                     onClick={() => setOpen(!open)}
                   ></FaBars>
-
-                  <div className="flex gap-x-4 items-center">
-                    <img
-                      className={`cursor-pointer duration-500 w-10 ${
-                        open && "rotate-[360deg]"
-                      }`}
-                      src="https://cdn-icons-png.flaticon.com/512/3703/3703377.png"
-                    />
-
-                    <h1
-                      className={` origin-left font-medium text-xl duration-200 `}
-                    >
-                      <Link
-                        href="/"
-                        className=" text-2xl font-bold uppercase font-mono"
-                      >
-                        Sk Mustakin
-                      </Link>
-                    </h1>
-                  </div>
-                  {/* <img
-                    className="w-10 h-10 rounded-full"
-                    src={isAdmin.photo}
-                    alt=""
-                  /> */}
                 </div>
               </div>
               {children}
