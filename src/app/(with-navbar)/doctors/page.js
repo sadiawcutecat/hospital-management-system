@@ -1,15 +1,14 @@
 "use client";
-import Doctors from "@/Components/Doctors/Doctors";
+import AllDoctors from "@/Components/AllDoctors/AllDoctors";
+
 import { useEffect, useState } from "react";
 
 const DoctorsPage = () => {
   const [allDoctors, setAllDoctors] = useState([]);
 
-  useEffect(() => {
-    fetch("doctors.json")
-      .then((res) => res.json())
-      .then((data) => setAllDoctors(data));
-  }, []);
+  // useEffect(() => {
+
+  // }, []);
 
   return (
     <div className="my-4 container mx-auto mt-20">
@@ -28,6 +27,7 @@ const DoctorsPage = () => {
           <Doctors key={allDoctor.id} allDoctor={allDoctor}></Doctors>
         ))}
       </div>
+      <AllDoctors></AllDoctors>
     </div>
   );
 };
