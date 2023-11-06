@@ -58,7 +58,7 @@ const Dashboard = ({ children }) => {
                   </NavLink>
                 </p>
                 <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
-                  <NavLink classlist="flex gap-4" href="">
+                  <NavLink classlist="flex gap-4" href="/dashboard/doctor_appointment">
                     <FaCalendarCheck className="mt-1 " /> Appointments
                   </NavLink>
                 </p>
@@ -112,7 +112,7 @@ const Dashboard = ({ children }) => {
               // open
               // ? "left-[300px] md:w-[calc(100%-300px)] w-0 "
               // : "md:left-[100px] md:w-[calc(100%-100px)] w-full duration-300"
-              " md:left-[300px] md:w-[calc(100%-300px)] w-full "
+              " md:left-[20%] md:w-[calc(100%-20%)] w-full "
             } overflow-hidden md:duration-300 `}
           >
             <div>

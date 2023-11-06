@@ -11,7 +11,9 @@ export const testimonialData = [
     type:"New patient",
     paid:"$200",
     date: "11 Nov 2023",
-    time:"10.00 AM"
+    time:"10.00 AM",
+    location: "4417 Goosetown Drive, Taylorsville, North Carolina, 28681",
+    contact: " 8286329170"
   },
   {
     _id: "2",
@@ -25,7 +27,9 @@ export const testimonialData = [
     type:"New patient",
     paid:"$100",
     date: "11 Nov 2023",
-    time:"10.00 AM"
+    time:"10.00 AM",
+    location: "  1214 Hamill Avenue, Del Mar, California, 92014",
+    contact: "  8582595285"
   },
   {
     _id: "3",
@@ -39,7 +43,9 @@ export const testimonialData = [
     type:"Old patient",
     paid:"$200",
     date: "11 Nov 2023",
-    time:"10.00 AM"
+    time:"10.00 AM",
+    location: " 1299 Star Trek Drive, Panama City, Florida, 32405",
+    contact: "  8503584445"
   },
   {
 
@@ -54,7 +60,9 @@ export const testimonialData = [
     type:"New patient",
     paid:"$160",
     date: "11 Nov 2023",
-    time:"10.00 AM"
+    time:"10.00 AM",
+    location: "4914 Hilltop Haven Drive, Passaic, New Jersey, 07055",
+    contact: "   9737739497"
   },
   {
 
@@ -69,7 +77,9 @@ export const testimonialData = [
     type:"Old patient",
     paid:"$300",
     date: "11 Nov 2023",
-    time:"10.00 AM"
+    time:"10.00 AM",
+    location: "  644 Coffman Alley, Bowling Green, Kentucky, 42101",
+    contact: "  3153844562"
   },
   {
     _id: "6",
@@ -83,7 +93,9 @@ export const testimonialData = [
     type:"New patient",
     paid:"$400",
     date: "11 Nov 2023",
-    time:"10.00 AM"
+    time:"10.00 AM",
+    location: "  888 Everette Alley, Hialeah, Florida, 33012",
+    contact: "9548207887"
   },
   {
 
@@ -98,7 +110,9 @@ export const testimonialData = [
     type:"New patient",
     paid:"$200",
     date: "11 DEC 2023",
-    time:"10.00 AM"
+    time:"10.00 AM",
+    location: "  2037 Pearcy Avenue, Decatur, Indiana, 46733",
+    contact: " 5043686874"
   },
   {
 
@@ -113,6 +127,8 @@ export const testimonialData = [
     type:"Old patient",
     paid:"$150",
     date: "11 OCT 2023",
-    time:"6.00 PM"
+    time:"6.00 PM",
+    location: "2037 Pearcy Avenue, Decatur, Indiana, 46733",
+    contact: " 2607247769"
   }
 ]
