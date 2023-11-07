@@ -53,7 +53,7 @@ const paymentPage = ({ params }) => {
                     paymentMethod: paymentMethod.id,
                 }),
             });
-            if (!response.ok) return alert("Payment unsucc                                  essful!");
+            if (!response.ok) return alert("Payment unsuccessful!");
             const data = await response.json();
             const confirm = await stripe.confirmCardPayment(data.clientSecret);
             if (confirm.error) return alert("Payment unsuccessful!");
@@ -65,7 +65,7 @@ const paymentPage = ({ params }) => {
     };
 
     return (
-      <Elements stripe={stripePromise}>
+     <Elements stripe={stripePromise}>
          {user ? (
             <div className="mt-10 lg:mt-28 my-28">
                 {doctor?.result?.map( ({ _id,image,name, study, specialist, rating, price, Chamber_Appointment }) => {
@@ -164,7 +164,7 @@ const paymentPage = ({ params }) => {
          ) : (
             <Login />
          )}
-      </Elements>
+     </Elements>
     );
 };
 
