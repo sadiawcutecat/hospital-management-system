@@ -134,7 +134,7 @@ const Dashboard = ({ children }) => {
                 // open
                 // ? "left-[300px] md:w-[calc(100%-300px)] w-0 "
                 // : "md:left-[100px] md:w-[calc(100%-100px)] w-full duration-300"
-                " md:left-[300px] md:w-[calc(100%-20%)] w-full "
+                " md:left-[20%] md:w-[calc(100%-20%)] w-full "
               } overflow-hidden md:duration-300 `}
             >
               <div>
