@@ -19,9 +19,7 @@ const Doctors = ({ allDoctor }) => {
     position,
     place,
     rating,
-    price,
-    Chamber_Appointment,
-    address,
+   
   } = allDoctor;
   useEffect(() => {
     const contents = document.querySelectorAll(".img-slide");
@@ -85,7 +83,7 @@ const Doctors = ({ allDoctor }) => {
               View Profile
             </button>
           </Link>
-          <Link href={`/payments/${_id}`}><button className="btn btn-sm btn-success">Book Appointment</button></Link>
+          <Link href={`/payment/${_id}`}><button className="btn btn-sm btn-success">Book Appointment</button></Link>
           
         </div>
       </div>
