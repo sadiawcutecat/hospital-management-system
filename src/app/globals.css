@@ -1,3 +1,6 @@
+/* color we use */
+/* light-bg:E0F4FF */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -51,6 +54,13 @@
 }
 .show {
   opacity: 1;
+}
+.show-image {
+  transform: translateY(0);
+  opacity: 1;
+}
+.banner-image-custom-style {
+  border-radius: 51% 40% 31% 35%/50% 46% 28% 60%;
 }
 
 @keyframes animate-slide {

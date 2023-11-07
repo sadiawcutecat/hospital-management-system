@@ -36,7 +36,7 @@ const NavLinks = [
 
 const Navbar = () => {
   const { user, logout } = useAuth();
-  console.log(user);
+ 
   const [open, setOpen] = useState(false);
   const handleLogOut = () => {
     logout()
