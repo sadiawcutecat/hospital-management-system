@@ -21,6 +21,8 @@
     "flowbite": "^2.0.0",
     "flowbite-react": "^0.6.4",
     "json-server": "^0.17.4",
+    "localforage": "^1.10.0",
+    "match-sorter": "^6.3.1",
     "mongodb": "^6.2.0",
     "mongoose": "^8.0.0",
     "next": "^14.0.1",
@@ -30,9 +32,14 @@
     "react-icons": "^4.11.0",
     "react-parallax": "^3.5.1",
     "react-rating": "^2.0.5",
+    "react-router-dom": "^6.18.0",
     "react-stars": "^2.2.5",
     "react-text-modifier": "^1.0.0",
+<<<<<<< HEAD
     "stripe": "^14.3.0",
+=======
+    "sort-by": "^1.2.0",
+>>>>>>> 24b610b880a50740db407a401be7bb47915d1025
     "swiper": "^11.0.1"
   },
   "devDependencies": {

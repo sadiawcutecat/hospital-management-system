@@ -1,4 +1,3 @@
-
 import Stripe from "stripe";
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
@@ -25,7 +24,7 @@ export default async function handler(req, res) {
           price_data: {
             currency: "Taka",
             appoinment: appoinment.id,
-            unit_amount: "500",
+            unit_amount: price,
           
           },
         },
