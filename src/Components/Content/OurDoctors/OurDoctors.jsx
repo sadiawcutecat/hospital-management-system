@@ -18,7 +18,7 @@ const OurDoctors = () => {
         });
       },
       {
-        threshold: 0.5,
+        // threshold: 0.5,
       }
     );
     contents.forEach((content) => {

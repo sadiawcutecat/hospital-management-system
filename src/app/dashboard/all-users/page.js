@@ -39,25 +39,25 @@ const DoctorPetain = () => {
             {users?.data?.result.map((user) => (
               <tr key={user._id}>
                 <td data-label="Name & Photo">
-                <div className="avatar mask mask-squircle w-12 h-12">
-                      <img
-                        src={user.userPhoto}
-                        alt="Avatar Tailwind CSS Component"
-                      />
-                    </div>
+                  <div className="avatar mask mask-squircle w-12 h-12">
+                    <img
+                      src={user.userPhoto}
+                      alt="Avatar Tailwind CSS Component"
+                    />
+                  </div>
                 </td>
                 <td data-label="purpose">{user.userName}</td>
                 <td data-label="type">{user.userEmail}</td>
                 <td data-label="type">{user.userRole}</td>
                 <td className="space-x-4 flex items-center " data-label="#">
-                  <button className="btn btn-sm text-emerald-600 bg-emerald-200  hover:bg-emerald-400">
+                  <button className="btn btn-sm text-white bg-[#0174BE]  hover:bg-emerald-400">
                     <FaEye className=" h-4 w-4" /> View
                   </button>
-                  <button className="btn btn-sm text-orange-600 bg-orange-200 my-2 hover:bg-orange-400 ">
-                    <FaCheck className=" h-4 w-4" /> Accept
+                  <button className="btn btn-sm text-white bg-[#3876BF] my-2 hover:bg-orange-400 ">
+                    <FaCheck className=" h-4 w-4" /> Make Admin
                   </button>
                   <button className="btn btn-sm text-red-600 bg-red-200  hover:bg-red-400 ">
-                    <ImCancelCircle className=" h-4 w-4" /> Cancel
+                    <ImCancelCircle className=" h-4 w-4" /> Make User
                   </button>
                 </td>
               </tr>
