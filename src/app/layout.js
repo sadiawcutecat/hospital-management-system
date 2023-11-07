@@ -13,7 +13,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" data-theme="light">
       <body className={inter.className}>
-        <AuthProvider>{children}</AuthProvider>
+        <AuthProvider>
+          {console.log(children.props.segmentPath[1])}
+          {children}
+        </AuthProvider>
       </body>
     </html>
   );

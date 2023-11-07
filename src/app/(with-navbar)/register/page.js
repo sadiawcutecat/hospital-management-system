@@ -27,6 +27,20 @@ const Register = () => {
 				const user = result.user;
 				console.log(user);
 				profileUpdate(data.name, data.photoURL);
+				const userInfo = {
+					userName: data.name,
+					userEmail: data.email,
+					userPhoto: data.photoURL,
+					userRole: 'user',
+				};
+
+				fetch('http://localhost:3000/api/user', {
+					method: 'POST',
+					body: JSON.stringify(userInfo),
+				})
+					.then((req) => req.json())
+					.then((data) => console.log(data));
+
 				reset();
 			})
 			.catch((error) => {
@@ -37,7 +51,7 @@ const Register = () => {
 		<div className="hero min-h-screen mt-20">
 			<div className="hero-content flex-col lg:flex-row gap-12">
 				<div className="text-center lg:text-left w-1/2">
-					<img src="https://i.ibb.co/NYJ19PB/undraw-Sign-up-n6im.png" alt="" />
+					<img src=" https://i.ibb.co/vv5Rxq4/register.png" alt="" />
 				</div>
 				<div className="card flex-shrink-0 max-w-sm shadow-2xl bg-base-100 w-1/2">
 					<form onSubmit={handleSubmit(onSubmit)}>
