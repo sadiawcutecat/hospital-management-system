@@ -11,7 +11,7 @@ import { PiCurrencyDollarFill } from "react-icons/pi";
 const SingleDoctors = ({ params }) => {
   const [allDoctors, setAllDoctors] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:3000/api/doctors/${params.id}`)
+    fetch(`/api/doctors/${params.id}`)
       .then((res) => res.json())
       .then((data) => {
         setAllDoctors(data);

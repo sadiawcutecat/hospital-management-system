@@ -1,10 +1,10 @@
 'use client';
 import useAuth from '@/Components/hooks/useAuth';
-import React, { useEffect, useState } from 'react';
+import { CardElement, Elements, useElements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements, } from '@stripe/react-stripe-js';
 import { Label } from 'flowbite-react';
-import Login from '../../login/page';
+import { useEffect, useState } from 'react';
 import { FaStar } from 'react-icons/fa';
 import CheckOutForm from '@/Components/CheckOutForm/CheckOutForm';
 
@@ -20,7 +20,7 @@ const paymentPage = ({ params }) => {
     
     
     useEffect(() => {
-      fetch(`http://localhost:3000/api/doctors/${params.paymentid}`)
+      fetch(`/api/doctors/${params.paymentid}`)
         .then((res) => res.json())
         .then((data) => {
             setDoctor(data);

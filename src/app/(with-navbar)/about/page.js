@@ -150,4 +150,4 @@ const About = () => {
 </div>;
 };
 
-export default AboutPage;
+export default About;
