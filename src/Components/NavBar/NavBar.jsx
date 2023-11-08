@@ -73,7 +73,6 @@ const Navbar = () => {
             <Link href="/">HealthCare</Link>
           </h1>
         </div>
-
         <ul
           className={` md:static absolute md:bg-transparent bg-[#0b9795] md:p-0 p-10 md:w-auto text-center w-full   md:flex nav-box duration-300 ${
             open ? "left-0 top-0 " : "left-[-500rem] top-0"
@@ -113,7 +112,6 @@ const Navbar = () => {
             </li>
           </PrivetRoute>
         </ul>
-
         {user ? (
           <>
             <div>
