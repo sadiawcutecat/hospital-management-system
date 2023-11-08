@@ -10,6 +10,13 @@ const nextConfig = {
       {
         protocol: "https",
         hostname: "i.ibb.co",
+      }, 
+      {
+        protocol: "https",
+        hostname: "lh3.googleusercontent.com",
+      },{
+        protocol: "https",
+        hostname: "scontent.fdac41-1.fna.fbcdn.net",
       },
     ],
   },

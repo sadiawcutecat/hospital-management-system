@@ -34,7 +34,7 @@ const Register = () => {
           userRole: "user",
         };
 
-        fetch("http://localhost:3000/api/user", {
+        fetch("/api/user", {
           method: "POST",
           body: JSON.stringify(userInfo),
         })
