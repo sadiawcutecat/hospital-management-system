@@ -3,16 +3,18 @@ import useAuth from '@/Components/hooks/useAuth';
 import React, { useEffect, useState } from 'react';
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements, } from '@stripe/react-stripe-js';
-
+import { Label } from 'flowbite-react';
 import Login from '../../login/page';
-
+import { FaStar } from 'react-icons/fa';
 import CheckOutForm from '@/Components/CheckOutForm/CheckOutForm';
 
 const paymentPage = ({ params }) => {
     const { user, loading } = useAuth();
     if(loading){
         return "loading";
-    } 
+    }
+ 
+    
 
     const [doctor, setDoctor] = useState([]);
     
@@ -25,7 +27,9 @@ const paymentPage = ({ params }) => {
         });
     }, []);
 
-    const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY); 
+    const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY);
+
+    
 
     return (
      <Elements stripe={stripePromise}>

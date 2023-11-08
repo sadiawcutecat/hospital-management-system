@@ -1,29 +1,9 @@
 "use client";
 import Link from "next/link";
 import { HiOutlineBookOpen, HiOutlineLogout } from "react-icons/hi";
-import {
-  AiFillWechat,
-  AiOutlineClose,
-  AiOutlineFileText,
-} from "react-icons/ai";
-import { BiSolidMessageRounded } from "react-icons/bi";
-
-<<<<<<< HEAD
+import {  AiFillWechat,  AiOutlineClose,  AiOutlineFileText,} from "react-icons/ai";
 import {  FaCalendarCheck,  FaUserInjured,  FaStar,  FaUserCog,  FaShareAlt,  FaLock,  FaHourglassHalf,  FaBars,} from "react-icons/fa";
-import React, { useState } from "react";
-=======
-import {
-  FaCalendarCheck,
-  FaUserInjured,
-  FaStar,
-  FaUserCog,
-  FaShareAlt,
-  FaLock,
-  FaHourglassHalf,
-  FaBars,
-} from "react-icons/fa";
-import React, { useContext, useState } from "react";
->>>>>>> 3bb38e2a3310fe4bdd90d8beb0cc61e32f29943f
+import  { useContext, useState } from "react";
 import NavLink from "@/Components/Common/NavLink/NavLink";
 import { redirect } from "next/navigation";
 import { AuthContext } from "../(with-navbar)/context/AuthContext";
