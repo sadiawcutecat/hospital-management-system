@@ -9,13 +9,13 @@ import { AiOutlineClockCircle, AiOutlineMail } from "react-icons/ai";
 const doctor_appointment = () => {
     return (
         <div>
-            -
+            
             {
                 testimonialData.map(patientAppoint => {
 
                     return <div key={patientAppoint._id} className="">
                         <div className=" flex  shadow-lg p-8 ">
-                            <img src={patientAppoint.picture} alt="" className="mask mask-squircle w-24 h-24 mt-3" />
+                            <img src={patientAppoint.picture} alt="" className="rounded-md ms-6 w-24 h-24 mt-3" />
                            
                                 <div className="ms-6">
                                     <h2 className="font-bold">{patientAppoint.name}</h2>
