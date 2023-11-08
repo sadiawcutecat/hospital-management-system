@@ -1,12 +1,11 @@
 "use client";
 
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 // import { Swiper, SwiperSlide } from "swiper/react";
 // import { Navigation, EffectFade, Autoplay } from "swiper/modules";
 // import "swiper/css/bundle";
 // import mainSlider from "@/Data/mainSlider";
 // import SingleBannerSlider from "./SingleBannerSlider";
-import moduleName from "next/image";
 import Image from "next/image";
 const BannerSlider = () => {
   useEffect(() => {
@@ -81,8 +80,7 @@ const BannerSlider = () => {
                 height={500}
                 width={500}
                 className=" mx-auto -mt-10 z-20"
-                src="https://i.ibb.co/sg3sH29/pexels-antoni-shkraba-5215024.png
-"
+                src="https://i.ibb.co/sg3sH29/pexels-antoni-shkraba-5215024.png"
                 alt="doctor image"
               />
               {/* <div className="bg-orange-700/40 absolute w-[300px] h-[300px] banner-image-custom-style top-28  -z-10"></div> */}
@@ -95,8 +93,7 @@ const BannerSlider = () => {
                 height={100}
                 width={100}
                 className=" object-contain mx-auto -mb-20"
-                src=" https://i.ibb.co/Nt7HNyk/pexels-pavel-danilyuk-5998474.png
-"
+                src="https://i.ibb.co/Nt7HNyk/pexels-pavel-danilyuk-5998474.png"
                 alt="doctor image"
               />
               {/* <div className="bg-orange-700/40 absolute w-[300px] h-[300px] banner-image-custom-style top-28  -z-10"></div> */}
@@ -111,7 +108,7 @@ const BannerSlider = () => {
                 height={300}
                 width={300}
                 className=" object-contain mx-auto "
-                src=" https://i.ibb.co/SPBwFHC/pexels-jrfotosgrand-fotografia-12660379.png"
+                src="https://i.ibb.co/SPBwFHC/pexels-jrfotosgrand-fotografia-12660379.png"
                 alt="doctor image"
               />
               {/* <div className="bg-orange-700/40 absolute w-[300px] h-[300px] banner-image-custom-style top-28  -z-10"></div> */}
