@@ -3,12 +3,14 @@ import { useEffect, useState } from "react";
 import Doctors from "../Doctors/Doctors";
 
 const AllDoctors = () => {
-  const [allDoctors, setAllDoctors] = useState([]);
+  const [allDoctors, setAllDoctors] = useState([]); // Initialize as an empty array
+
   useEffect(() => {
-    fetch("doctors.json")
+    fetch("http://localhost:3000/api/doctors")
       .then((res) => res.json())
-      .then((data) => setAllDoctors(data));
+      .then((data) => setAllDoctors(data.result));
   }, []);
+  
 
   return (
     <div className="my-10 container mx-auto mt-28">
@@ -22,9 +24,13 @@ const AllDoctors = () => {
         </p>
       </div>
       <div className="mx-auto my-10">
-        {allDoctors.map((allDoctor) => (
-          <Doctors key={allDoctor.id} allDoctor={allDoctor}></Doctors>
-        ))}
+      {allDoctors.length > 0 ? (
+          allDoctors.map((allDoctor) => (
+            <Doctors key={allDoctor.id} allDoctor={allDoctor}></Doctors>
+          ))
+        ) : (
+          <p>No doctors available.</p>
+        )}
       </div>
     </div>
   );
