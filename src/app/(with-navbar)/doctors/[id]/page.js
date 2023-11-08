@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import {  useState } from "react";
+import { useState } from "react";
 import { FaHospital } from "react-icons/fa";
 import { FaUserDoctor } from "react-icons/fa6";
 import { FcFeedback, FcGraduationCap, FcLike } from "react-icons/fc";
@@ -20,7 +20,19 @@ const SingleDoctors = ({ params }) => {
 
   return (
     <div className="mt-28 my-28">
-      {allDoctors?.result?.map( ({ _id,image,name, study, specialist,  position, place,  rating, price,  Chamber_Appointment, }) => {
+      {allDoctors?.result?.map(
+        ({ 
+          _id,
+          image,
+          name,
+          study,
+          specialist,
+          position,
+          place,
+          rating,
+          price,
+          Chamber_Appointment,
+        }) => {
           return (
             <div key={_id}>
               <h1 className="text-4xl font-bold text-center">{name}</h1>
@@ -59,7 +71,6 @@ const SingleDoctors = ({ params }) => {
                     {place}
                   </p>
                   <p className="flex items-center gap-2">
-                
                     <span className="">{rating}</span>
                   </p>
                 </div>
@@ -68,7 +79,7 @@ const SingleDoctors = ({ params }) => {
                     <h2 className="flex items-center gap-3">
                       <span className="text-xl">
                         <FcLike />
-                      </span>{" "}
+                      </span>
                       90%
                     </h2>
                     <h2 className="flex items-center gap-3">

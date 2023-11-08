@@ -35,11 +35,8 @@
     "react-router-dom": "^6.18.0",
     "react-stars": "^2.2.5",
     "react-text-modifier": "^1.0.0",
-<<<<<<< HEAD
     "stripe": "^14.3.0",
-=======
     "sort-by": "^1.2.0",
->>>>>>> 24b610b880a50740db407a401be7bb47915d1025
     "swiper": "^11.0.1"
   },
   "devDependencies": {
