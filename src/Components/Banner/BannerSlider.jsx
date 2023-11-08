@@ -70,7 +70,7 @@ const BannerSlider = () => {
             <button className="btn btn-success">Make appointment</button>
           </div>
         </div>
-        <div className="md:flex gap-4 w-full mt-10 z-20">
+        <div className="md:flex gap-4 w-full mt-10 ">
           <div className="w-8/12 mx-auto">
             <div
               className=" bg-[#00A9FF]/80  md:w-[300px] w-[250px] md:h-[300px] h-[250px] banner-image-custom-style   -z-10 overflow-hidden translate-y-32 opacity-0 duration-500"
@@ -79,7 +79,7 @@ const BannerSlider = () => {
               <Image
                 height={500}
                 width={500}
-                className=" mx-auto -mt-10 z-20"
+                className=" mx-auto -mt-10 "
                 src="https://i.ibb.co/sg3sH29/pexels-antoni-shkraba-5215024.png"
                 alt="doctor image"
               />
@@ -92,7 +92,7 @@ const BannerSlider = () => {
               <Image
                 height={100}
                 width={100}
-                className=" object-contain mx-auto -mb-20"
+                className="object-contain mx-auto -mb-20"
                 src="https://i.ibb.co/Nt7HNyk/pexels-pavel-danilyuk-5998474.png"
                 alt="doctor image"
               />
@@ -107,7 +107,7 @@ const BannerSlider = () => {
               <Image
                 height={300}
                 width={300}
-                className=" object-contain mx-auto "
+                className=" object-contain mx-auto -z-10"
                 src="https://i.ibb.co/SPBwFHC/pexels-jrfotosgrand-fotografia-12660379.png"
                 alt="doctor image"
               />

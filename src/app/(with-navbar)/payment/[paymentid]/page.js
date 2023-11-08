@@ -1,11 +1,11 @@
 'use client';
 import useAuth from '@/Components/hooks/useAuth';
-import React, { useEffect, useState } from 'react';
+import { CardElement, Elements, useElements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
-import { CardElement, Elements, useElements, useStripe } from '@stripe/react-stripe-js';
 import { Label } from 'flowbite-react';
-import Login from '../../login/page';
+import { useEffect, useState } from 'react';
 import { FaStar } from 'react-icons/fa';
+import Login from '../../login/page';
 
 const paymentPage = ({ params }) => {
     const { user,loading } = useAuth();
@@ -22,7 +22,7 @@ const paymentPage = ({ params }) => {
     const [doctor, setDoctor] = useState([]);
     
     useEffect(() => {
-      fetch(`http://localhost:3000/api/doctors/${params.paymentid}`)
+      fetch(`/api/doctors/${params.paymentid}`)
         .then((res) => res.json())
         .then((data) => {
             setDoctor(data);
@@ -39,7 +39,7 @@ const paymentPage = ({ params }) => {
                 type: "card",
                 card: elements.getElement(CardElement),
             });
-            const response = await fetch("http://localhost:3000/api/checkout", {
+            const response = await fetch("/api/checkout", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

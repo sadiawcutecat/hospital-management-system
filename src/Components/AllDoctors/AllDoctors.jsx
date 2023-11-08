@@ -6,7 +6,7 @@ const AllDoctors = () => {
   const [allDoctors, setAllDoctors] = useState([]); // Initialize as an empty array
 
   useEffect(() => {
-    fetch("http://localhost:3000/api/doctors")
+    fetch("/api/doctors")
       .then((res) => res.json())
       .then((data) => setAllDoctors(data.result));
   }, []);

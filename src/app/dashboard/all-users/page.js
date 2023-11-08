@@ -1,13 +1,13 @@
 "use client";
 
+import { useEffect, useState } from "react";
+import { FaCheck, FaEye } from "react-icons/fa";
 import { ImCancelCircle } from "react-icons/im";
-import { FaEye, FaCheck } from "react-icons/fa";
-import React, { useEffect, useState } from "react";
 
 const DoctorPetain = () => {
   const [users, setUser] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:3000/api/allUser")
+    fetch("/api/allUser")
       .then((res) => res.json())
       .then((data) => {
         setUser({ data });
