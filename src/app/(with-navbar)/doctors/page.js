@@ -1,7 +1,7 @@
 "use client";
 import AllDoctors from "@/Components/AllDoctors/AllDoctors";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const DoctorsPage = () => {
   const [allDoctors, setAllDoctors] = useState([]);

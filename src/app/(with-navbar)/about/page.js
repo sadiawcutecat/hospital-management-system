@@ -3,7 +3,7 @@ import { BsPeople } from "react-icons/bs";
 import { FaRegHandshake } from "react-icons/fa";
 import { FaPeopleRobbery } from "react-icons/fa6";
 import { HiOutlineLightBulb } from "react-icons/hi";
-const About = () => {
+const AboutPage = () => {
   return   <div>
   <div
     className="hero min-h-screen  mx-auto"
