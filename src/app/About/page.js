@@ -1,11 +1,11 @@
-import React from 'react';
+import React from "react";
 
 const About = () => {
-    return (
-        <div>
-            
-        </div>
-    );
+  return (
+    <div>
+      <textarea name="" id="" cols="30" rows="10"></textarea>
+    </div>
+  );
 };
 
 export default About;

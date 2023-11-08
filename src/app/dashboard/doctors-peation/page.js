@@ -2,7 +2,7 @@
 
 import { ImCancelCircle } from "react-icons/im";
 import { FaEye, FaCheck } from "react-icons/fa";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { testimonialData } from "@/Data/testimonialData";
 
 const DoctorPetain = () => {
@@ -74,9 +74,8 @@ const DoctorPetain = () => {
         <hr />
         <table className="table w-full ">
           {/* head */}
-          
+
           <thead>
-            
             <tr className="text-black font-bold text-xl ">
               <th>Patient Name</th>
               <th>Appt. Date</th>
@@ -88,45 +87,43 @@ const DoctorPetain = () => {
           </thead>
           <tbody className="p-10">
             {/* row 1 */}
-            {
-              testimonialData.map(patient => 
-
-                <tr key={patient._id} >
-                  <td data-label="Name & Photo">
-                    <div className="flex items-center  gap-3">
-                      <div className="avatar">
-                        <div className="mask mask-squircle w-12 h-12">
-                          <img
-                            src={patient.picture}
-                            alt="Avatar Tailwind CSS Component"
-                          />
-                        </div>
-                      </div>
-                      <div>
-                        <div className="font-bold">{patient.name}</div>
-                        <div className="">{patient.serial}</div>
+            {testimonialData.map((patient) => (
+              <tr key={patient._id}>
+                <td data-label="Name & Photo">
+                  <div className="flex items-center  gap-3">
+                    <div className="avatar">
+                      <div className="mask mask-squircle w-12 h-12">
+                        <img
+                          src={patient.picture}
+                          alt="Avatar Tailwind CSS Component"
+                        />
                       </div>
                     </div>
-                  </td>
-                  <td data-label="date & time">{patient.date} , {patient.time}</td>
-                  <td data-label="purpose">{patient.purpose}</td>
-                  <td data-label="type">{patient.type}</td>
-                  <td data-label="price">{patient.paid}</td>
-                  <td className="space-x-4 flex items-center " data-label="#">
-                    <button className="btn btn-sm text-emerald-600 bg-emerald-200  hover:bg-emerald-400">
-                      <FaEye className=" h-4 w-4" /> View
-                    </button>
-                    <button className="btn btn-sm text-orange-600 bg-orange-200 my-2 hover:bg-orange-400 ">
-                      <FaCheck className=" h-4 w-4" /> Accept
-                    </button>
-                    <button className="btn btn-sm text-red-600 bg-red-200  hover:bg-red-400 ">
-                      <ImCancelCircle className=" h-4 w-4" /> Cancel
-                    </button>
-                  </td>
-                </tr>
-             
-              )
-            }
+                    <div>
+                      <div className="font-bold">{patient.name}</div>
+                      <div className="">{patient.serial}</div>
+                    </div>
+                  </div>
+                </td>
+                <td data-label="date & time">
+                  {patient.date} , {patient.time}
+                </td>
+                <td data-label="purpose">{patient.purpose}</td>
+                <td data-label="type">{patient.type}</td>
+                <td data-label="price">{patient.paid}</td>
+                <td className="space-x-4 flex items-center " data-label="#">
+                  <button className="btn btn-sm text-emerald-600 bg-emerald-200  hover:bg-emerald-400">
+                    <FaEye className=" h-4 w-4" /> View
+                  </button>
+                  <button className="btn btn-sm text-orange-600 bg-orange-200 my-2 hover:bg-orange-400 ">
+                    <FaCheck className=" h-4 w-4" /> Accept
+                  </button>
+                  <button className="btn btn-sm text-red-600 bg-red-200  hover:bg-red-400 ">
+                    <ImCancelCircle className=" h-4 w-4" /> Cancel
+                  </button>
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>
