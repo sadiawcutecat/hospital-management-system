@@ -62,6 +62,9 @@ const Review = () => {
 				<label className="text-gray-700">Description:</label>
 				<br />
 				<textarea
+					rows="50"
+					cols="30"
+					style={{ height: '180px' }}
 					className="input input-bordered w-full"
 					{...register('description', { required: true })}
 				/>

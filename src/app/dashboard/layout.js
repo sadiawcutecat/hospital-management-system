@@ -68,7 +68,10 @@ const Dashboard = ({ children }) => {
 										</NavLink>
 									</p>
 									<p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
-										<NavLink classlist="flex gap-4" href="">
+										<NavLink
+											classlist="flex gap-4"
+											href="/dashboard/doctor_appointment"
+										>
 											<FaCalendarCheck className="mt-1 " /> Appointments
 										</NavLink>
 									</p>
@@ -78,6 +81,11 @@ const Dashboard = ({ children }) => {
 											href="/dashboard/doctors-peation"
 										>
 											<FaUserInjured className="mt-1 " /> My Patients
+										</NavLink>
+									</p>
+									<p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
+										<NavLink classlist="flex gap-4" href="/dashboard/all-users">
+											<FaUserInjured className="mt-1 " /> All Users
 										</NavLink>
 									</p>
 
@@ -122,7 +130,7 @@ const Dashboard = ({ children }) => {
 								// open
 								// ? "left-[300px] md:w-[calc(100%-300px)] w-0 "
 								// : "md:left-[100px] md:w-[calc(100%-100px)] w-full duration-300"
-								' md:left-[300px] md:w-[calc(100%-300px)] w-full '
+								' md:left-[20%] md:w-[calc(100%-20%)] w-full '
 							} overflow-hidden md:duration-300 `}
 						>
 							<div>
@@ -134,31 +142,6 @@ const Dashboard = ({ children }) => {
 							}`}
 										onClick={() => setOpen(!open)}
 									></FaBars>
-
-									<div className="flex gap-x-4 items-center">
-										<img
-											className={`cursor-pointer duration-500 w-10 ${
-												open && 'rotate-[360deg]'
-											}`}
-											src="https://cdn-icons-png.flaticon.com/512/3703/3703377.png"
-										/>
-
-										<h1
-											className={` origin-left font-medium text-xl duration-200 `}
-										>
-											<Link
-												href="/"
-												className=" text-2xl font-bold uppercase font-mono"
-											>
-												Sk Mustakin
-											</Link>
-										</h1>
-									</div>
-									{/* <img
-                    className="w-10 h-10 rounded-full"
-                    src={isAdmin.photo}
-                    alt=""
-                  /> */}
 								</div>
 							</div>
 							{children}
