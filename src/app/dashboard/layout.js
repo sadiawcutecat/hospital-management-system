@@ -1,26 +1,22 @@
 "use client";
 import Link from "next/link";
-import { HiOutlineBookOpen, HiOutlineLogout } from "react-icons/hi";
 import {
   AiFillWechat,
   AiOutlineClose,
   AiOutlineFileText,
 } from "react-icons/ai";
-import { BiSolidMessageRounded } from "react-icons/bi";
+import { HiOutlineBookOpen, HiOutlineLogout } from "react-icons/hi";
 
-import {
-  FaCalendarCheck,
-  FaUserInjured,
-  FaStar,
-  FaUserCog,
-  FaShareAlt,
-  FaLock,
-  FaHourglassHalf,
-  FaBars,
-} from "react-icons/fa";
-import React, { useContext, useState } from "react";
 import NavLink from "@/Components/Common/NavLink/NavLink";
 import { redirect } from "next/navigation";
+import { useContext, useState } from "react";
+import {
+  FaBars,
+  FaCalendarCheck,
+  FaShareAlt,
+  FaStar,
+  FaUserInjured
+} from "react-icons/fa";
 import { AuthContext } from "../(with-navbar)/context/AuthContext";
 
 const Dashboard = ({ children }) => {
@@ -29,7 +25,9 @@ const Dashboard = ({ children }) => {
   const [open, setOpen] = useState(false);
   const { user, loading } = useContext(AuthContext);
   if (loading) {
-    return <span className="loading loading-spinner loading-lg"></span>;
+    return <div className="w-full h-[100vh] flex justify-center items-center">
+      <span className="loading loading-spinner loading-lg"></span>
+    </div>;
   }
   if (!user) {
     redirect("/login");
