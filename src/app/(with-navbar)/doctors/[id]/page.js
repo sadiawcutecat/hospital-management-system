@@ -1,8 +1,6 @@
 "use client";
-import DoctorsData from "@/Components/Common/utils/DoctorsData";
-import { dataDoctors } from "@/Data/doctorsData";
 import Link from "next/link";
-import {  useState } from "react";
+import { useEffect, useState } from "react";
 import { FaHospital } from "react-icons/fa";
 import { FaUserDoctor } from "react-icons/fa6";
 import { FcFeedback, FcGraduationCap, FcLike } from "react-icons/fc";
@@ -11,24 +9,20 @@ import { ImLocation2 } from "react-icons/im";
 import { PiCurrencyDollarFill } from "react-icons/pi";
 
 const SingleDoctors = ({ params }) => {
-  // console.log(params.id);
   const [allDoctors, setAllDoctors] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:3000/api/doctors/${params.id}`)
+    fetch(`/api/doctors/${params.id}`)
       .then((res) => res.json())
       .then((data) => {
         setAllDoctors(data);
       });
   }, []);
 
-  // const data = dataDoctors.filter((item) => item.id == params.id);
-
-  console.log(allDoctors);
   return (
     <div className="mt-28 my-28">
       {allDoctors?.result?.map(
-        ({
-          id,
+        ({ 
+          _id,
           image,
           name,
           study,
@@ -38,11 +32,9 @@ const SingleDoctors = ({ params }) => {
           rating,
           price,
           Chamber_Appointment,
-          address,
-          about,
         }) => {
           return (
-            <div key={id}>
+            <div key={_id}>
               <h1 className="text-4xl font-bold text-center">{name}</h1>
               <div className="grid grid-cols-1 row lg:grid-cols-3 mx-auto card m-3 px-10">
                 <figure>
@@ -79,14 +71,6 @@ const SingleDoctors = ({ params }) => {
                     {place}
                   </p>
                   <p className="flex items-center gap-2">
-                    {/* <Rating
-              className="text-warning"
-              placeholderRating={rating}
-              readonly
-              emptySymbol={<FaRegStar></FaRegStar>}
-              placeholderSymbol={<FaStar></FaStar>}
-              fullSymbol={<FaStar></FaStar>}
-            /> */}
                     <span className="">{rating}</span>
                   </p>
                 </div>
@@ -95,7 +79,7 @@ const SingleDoctors = ({ params }) => {
                     <h2 className="flex items-center gap-3">
                       <span className="text-xl">
                         <FcLike />
-                      </span>{" "}
+                      </span>
                       90%
                     </h2>
                     <h2 className="flex items-center gap-3">
@@ -118,7 +102,7 @@ const SingleDoctors = ({ params }) => {
                     </h2>
                   </div>
                   <div className="flex items-center gap-7">
-                    <Link href="/payment">
+                    <Link href={`/payment/${_id}`}>
                       <button className="btn btn-sm btn-success my-6">
                         Book Appointment
                       </button>

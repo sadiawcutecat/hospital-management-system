@@ -1,10 +1,11 @@
 "use client";
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { AiOutlineClose, AiOutlineMenuUnfold } from "react-icons/ai";
-import useAuth from "../hooks/useAuth";
 import NavLink from "../Common/NavLink/NavLink";
 import PrivetRoute from "../PrivetRoute/PrivetRoute";
+import useAuth from "../hooks/useAuth";
 
 const NavLinks = [
   {
@@ -36,7 +37,7 @@ const NavLinks = [
 
 const Navbar = () => {
   const { user, logout } = useAuth();
-  console.log(user);
+
   const [open, setOpen] = useState(false);
   const handleLogOut = () => {
     logout()
@@ -72,7 +73,6 @@ const Navbar = () => {
             <Link href="/">HealthCare</Link>
           </h1>
         </div>
-
         <ul
           className={` md:static absolute md:bg-transparent bg-[#0b9795] md:p-0 p-10 md:w-auto text-center w-full   md:flex nav-box duration-300 ${
             open ? "left-0 top-0 " : "left-[-500rem] top-0"
@@ -112,30 +112,35 @@ const Navbar = () => {
             </li>
           </PrivetRoute>
         </ul>
-
         {user ? (
           <>
-            <div className="dropdown dropdown-end">
-              <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                <div className="w-10 rounded-full">
-                  <img src={user?.photoURL} />
-                </div>
-              </label>
-              <ul
-                tabIndex={0}
-                className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52"
-              >
-                <button onClick={handleLogOut}>
-                  <li className="text-black">
-                    <a>Logout</a>
+            <div>
+              <div className="dropdown dropdown-end z-50">
+                <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                  <div className="w-10 rounded-full">
+                    <Image
+                      width={40}
+                      height={40}
+                      className="rounded-full"
+                      src={user.photoURL}
+                      alt="User Photo"
+                    />
+                  </div>
+                </label>
+                <ul
+                  tabIndex={0}
+                  className="mt-3  p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52 z-50"
+                >
+                  <li onClick={handleLogOut} className="text-black">
+                    <button>Logout</button>
                   </li>
-                </button>
-              </ul>
+                </ul>
+              </div>
             </div>
           </>
         ) : (
-          <Link href="/login" className="btn btn-success">
-            <button>Login</button>
+          <Link href="/login" className="btn btn-success z-[100]">
+            <button className="z-50">Login</button>
           </Link>
         )}
       </nav>
