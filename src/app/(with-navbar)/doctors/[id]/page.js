@@ -21,7 +21,7 @@ const SingleDoctors = ({ params }) => {
   return (
     <div className="mt-28 my-28">
       {allDoctors?.result?.map(
-        ({
+        ({ 
           _id,
           image,
           name,
@@ -79,7 +79,7 @@ const SingleDoctors = ({ params }) => {
                     <h2 className="flex items-center gap-3">
                       <span className="text-xl">
                         <FcLike />
-                      </span>{" "}
+                      </span>
                       90%
                     </h2>
                     <h2 className="flex items-center gap-3">
