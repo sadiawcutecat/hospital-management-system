@@ -86,34 +86,6 @@ const Dashboard = ({ children }) => {
 										</NavLink>
 									</p>
                   <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
-<<<<<<< HEAD
-                    <NavLink className="flex gap-4" href="/">
-                      <HiOutlineBookOpen className="mt-1 " /> Home
-                    </NavLink>
-                  </p>
-                  <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
-                    <NavLink
-                      classlist="flex gap-4"
-                      href="/dashboard/doctor_appointment"
-                    >
-                      <FaCalendarCheck className="mt-1 " /> Appointments
-                    </NavLink>
-                  </p>
-                  <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
-                    <NavLink
-                      classlist="flex gap-4"
-                      href="/dashboard/doctors-peation"
-                    >
-                      <FaUserInjured className="mt-1 " /> My Patients
-                    </NavLink>
-                  </p>
-                  
-                  <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
-                    <NavLink classlist="flex gap-4" href="/dashboard/all-users">
-                      <FaUserInjured className="mt-1 " /> All Users
-                    </NavLink>
-                  </p>
-=======
 										<Link className="flex gap-4" href="">
 											<AiFillWechat className="mt-1 text-xl" />
 											Chat
@@ -126,7 +98,6 @@ const Dashboard = ({ children }) => {
 											<FaUserInjured className="mt-1 " /> All Users
 										</NavLink>
 									</p>:""}
->>>>>>> 24a7ffddacb9c23159d35c4523e360ea79bcdc01
 
 									
 									
