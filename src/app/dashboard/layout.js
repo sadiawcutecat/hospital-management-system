@@ -56,6 +56,7 @@ const Dashboard = ({ children }) => {
                   className={` cursor-pointer z-20 font-bold md:hidden inline-block ml-10
                   mt-10
               text-3xl text-black  duration-150 ${
+<<<<<<< HEAD
 								open && 'md:-right-3 right-6'
 							}`}
 									onClick={() => setOpen(!open)}
@@ -85,6 +86,22 @@ const Dashboard = ({ children }) => {
 											<FaUserInjured className="mt-1 " /> My Patients
 										</NavLink>
 									</p>
+=======
+                open && "md:-right-3 right-6"
+              }`}
+                  onClick={() => setOpen(!open)}
+                ></AiOutlineClose>
+                <div className="text-center pt-6">
+                  <img
+                    src={user.photoURL}
+                    alt=""
+                    className="h-32 w-32 rounded-full mx-auto   border-gray-100 border-8"
+                  />
+                  <h3 className="font-bold my-3">{user.displayName}</h3>
+                  <p>BDS, MDS - Oral & Maxillofacial Surgery</p>
+                </div>
+                <div className="my-8">
+>>>>>>> Sraboni
                   <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
 										<Link className="flex gap-4" href="">
 											<AiFillWechat className="mt-1 text-xl" />
