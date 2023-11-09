@@ -9,6 +9,7 @@ const DoctorsPage = () => {
 
   return (
     <div className="my-4 container mx-auto mt-20">
+     
       <div>
         {allDoctors.map((allDoctor) => (
           <Doctors key={allDoctor.id} allDoctor={allDoctor}></Doctors>

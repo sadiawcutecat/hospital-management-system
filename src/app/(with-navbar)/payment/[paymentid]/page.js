@@ -1,12 +1,11 @@
 'use client';
 import useAuth from '@/Components/hooks/useAuth';
-import { CardElement, Elements, useElements } from '@stripe/react-stripe-js';
+import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
-import { Elements, } from '@stripe/react-stripe-js';
-import { Label } from 'flowbite-react';
-import { useEffect, useState } from 'react';
-import { FaStar } from 'react-icons/fa';
+
 import CheckOutForm from '@/Components/CheckOutForm/CheckOutForm';
+import { useEffect, useState } from 'react';
+import Login from '../../login/page';
 
 const paymentPage = ({ params }) => {
     const { user, loading } = useAuth();
