@@ -34,12 +34,12 @@ const Register = () => {
 					userRole: 'user',
 				};
 
-				fetch('http://localhost:3000/api/user', {
-					method: 'POST',
-					body: JSON.stringify(userInfo),
-				})
-					.then((req) => req.json())
-					.then((data) => console.log(data));
+        fetch("/api/user", {
+          method: "POST",
+          body: JSON.stringify(userInfo),
+        })
+          .then((req) => req.json())
+          .then((data) => console.log(data));
 
 				reset();
 			})

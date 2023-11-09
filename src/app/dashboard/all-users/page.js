@@ -1,20 +1,24 @@
 "use client";
 
-import { ImCancelCircle } from "react-icons/im";
-import { FaEye, FaCheck } from "react-icons/fa";
+<<<<<<< HEAD
 import React, { useEffect, useState } from "react";
+import TableData from "./TableData";
+=======
+import { useEffect, useState } from "react";
+import { FaCheck, FaEye } from "react-icons/fa";
+import { ImCancelCircle } from "react-icons/im";
+>>>>>>> 24a7ffddacb9c23159d35c4523e360ea79bcdc01
 
 const DoctorPetain = () => {
   const [users, setUser] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:3000/api/allUser")
+    fetch("/api/allUser")
       .then((res) => res.json())
       .then((data) => {
         setUser({ data });
       });
   }, []);
-  console.log(users?.data?.result);
-
+  
   return (
     <div>
       <div>
@@ -36,6 +40,12 @@ const DoctorPetain = () => {
             </tr>
           </thead>
           <tbody className="p-10">
+<<<<<<< HEAD
+            {users?.data?.result.map((user) => <TableData 
+              user={user}
+              key={user._id}
+            ></TableData> )}
+=======
             {users?.data?.result.map((user) => (
               <tr key={user._id}>
                 <td data-label="Name & Photo">
@@ -62,6 +72,7 @@ const DoctorPetain = () => {
                 </td>
               </tr>
             ))}
+>>>>>>> 24a7ffddacb9c23159d35c4523e360ea79bcdc01
           </tbody>
         </table>
       </div>

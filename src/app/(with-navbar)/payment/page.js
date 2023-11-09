@@ -1,7 +1,4 @@
 const Payment = () => {
-
- 
-  
     return (
         <div >
             
