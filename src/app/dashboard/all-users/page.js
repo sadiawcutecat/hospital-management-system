@@ -16,11 +16,11 @@ const DoctorPetain = () => {
   return (
     <div>
       <div>
-        <h2 className="text-2xl my-8 font-bold text-center">All Users</h2>
+        <h2 className="text-2xl mb-8 font-bold text-center">All Users</h2>
       </div>
       {/* --------------table----------*/}
 
-      <div className="overflow-x-auto bg-white shadow-xl p-16 border-gray-100 border-2">
+      <div className="overflow-x-auto bg-white shadow-xl lg:p-10 border-gray-100 border-2">
         <table className="table w-full ">
           {/* head */}
 
@@ -33,8 +33,8 @@ const DoctorPetain = () => {
               <th>Action</th>
             </tr>
           </thead>
-          <tbody className="p-10">
-            {users?.data?.result.map((user) => <TableData 
+          <tbody className="lg:p-10">
+            {users?.data?.result.map((user) => <TableData
               user={user}
               key={user._id}
             ></TableData> )}

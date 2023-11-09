@@ -17,5 +17,15 @@ export async function GET(request, { params }) {
   const user = await AllUser.findOne({ _id: id });
   return NextResponse.json({ user }, { status: 200 });
 }
+export async function DELETE(request,content) {
+const userId = content.params.id;
+const filter ={_id:userId}
+// console.log(userId,filter);
+  await mongoose.connect(dbConnection);
+  const result = await AllUser.deleteOne(filter)
+  return NextResponse.json({result, message: "Topic deleted", success:true }, { status: 200 });
+}
+
+
   
   

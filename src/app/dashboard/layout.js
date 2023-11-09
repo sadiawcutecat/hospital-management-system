@@ -59,11 +59,11 @@ const Dashboard = ({ children }) => {
                 ></AiOutlineClose>
                 <div className="text-center pt-6">
                   <img
-                    src="https://i.ibb.co/8crKQKx/doctor-thumb-02.jpg"
+                    src={user.photoURL}
                     alt=""
                     className="h-32 w-32 rounded-full mx-auto   border-gray-100 border-8"
                   />
-                  <h3 className="font-bold my-3">Dr. Fred Ortego</h3>
+                  <h3 className="font-bold my-3">{user.displayName}</h3>
                   <p>BDS, MDS - Oral & Maxillofacial Surgery</p>
                 </div>
                 <div className="my-8">
