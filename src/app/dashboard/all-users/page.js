@@ -1,13 +1,10 @@
 "use client";
 
-<<<<<<< HEAD
 import React, { useEffect, useState } from "react";
 import TableData from "./TableData";
-=======
 import { useEffect, useState } from "react";
 import { FaCheck, FaEye } from "react-icons/fa";
 import { ImCancelCircle } from "react-icons/im";
->>>>>>> 24a7ffddacb9c23159d35c4523e360ea79bcdc01
 
 const DoctorPetain = () => {
   const [users, setUser] = useState([]);
@@ -22,11 +19,11 @@ const DoctorPetain = () => {
   return (
     <div>
       <div>
-        <h2 className="text-2xl mb-8 font-bold text-center">All Users</h2>
+        <h2 className="text-2xl my-8 font-bold text-center">All Users</h2>
       </div>
       {/* --------------table----------*/}
 
-      <div className="overflow-x-auto bg-white shadow-xl lg:p-10 border-gray-100 border-2">
+      <div className="overflow-x-auto bg-white shadow-xl p-16 border-gray-100 border-2">
         <table className="table w-full ">
           {/* head */}
 
@@ -39,18 +36,11 @@ const DoctorPetain = () => {
               <th>Action</th>
             </tr>
           </thead>
-<<<<<<< HEAD
           <tbody className="p-10">
-<<<<<<< HEAD
             {users?.data?.result.map((user) => <TableData 
-=======
-          <tbody className="lg:p-10">
-            {users?.data?.result.map((user) => <TableData
->>>>>>> Sraboni
               user={user}
               key={user._id}
             ></TableData> )}
-=======
             {users?.data?.result.map((user) => (
               <tr key={user._id}>
                 <td data-label="Name & Photo">
@@ -77,7 +67,6 @@ const DoctorPetain = () => {
                 </td>
               </tr>
             ))}
->>>>>>> 24a7ffddacb9c23159d35c4523e360ea79bcdc01
           </tbody>
         </table>
       </div>

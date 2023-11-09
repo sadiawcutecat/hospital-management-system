@@ -37,11 +37,8 @@ const NavLinks = [
 
 const Navbar = () => {
   const { user, logout } = useAuth();
-<<<<<<< HEAD
 
-=======
   // console.log(user);
->>>>>>> Sraboni
   const [open, setOpen] = useState(false);
   const handleLogOut = () => {
     logout()
