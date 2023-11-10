@@ -7,6 +7,7 @@ import { useEffect } from "react";
 // import mainSlider from "@/Data/mainSlider";
 // import SingleBannerSlider from "./SingleBannerSlider";
 import Image from "next/image";
+import Link from "next/link";
 const BannerSlider = () => {
   useEffect(() => {
     const banner = document.querySelector("#banner");
@@ -67,7 +68,9 @@ const BannerSlider = () => {
               ducimus! Lorem ipsum dolor sit amet consectetur, adipisicing elit.
               Magnam, magni!
             </p>
-            <button className="btn btn-success">Make appointment</button>
+            <Link className="btn btn-success" href="/doctors">
+              Make appointment
+            </Link>
           </div>
         </div>
         <div className="md:flex gap-4 w-full mt-10 ">

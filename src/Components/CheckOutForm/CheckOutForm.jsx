@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
-import { useElements, useStripe, CardElement } from "@stripe/react-stripe-js";
+import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
+import { useEffect, useState } from "react";
 import { FaStar } from "react-icons/fa";
+import Swal from "sweetalert2";
 
 const CheckOutForm = ({ doctor, user }) => {
   const [name, setName] = useState(user?.displayName || "");
@@ -11,10 +12,22 @@ const CheckOutForm = ({ doctor, user }) => {
 
   const elements = useElements();
   const stripe = useStripe();
+  console.log(doctor);
 
   useEffect(() => {
     if (doctor?.result?.at(0)?.price) setPrice(doctor?.result?.at(0)?.price);
   }, [doctor]);
+  // const retrievePaymentDetails = async (paymentIntentId) => {
+  //   try {
+  //     const paymentIntent = await stripe.paymentIntents.retrieve(
+  //       paymentIntentId
+  //     );
+  //     return paymentIntent;
+  //   } catch (error) {
+  //     console.error("Error retrieving payment details:", error);
+  //     throw error; // Handle or rethrow the error as needed
+  //   }
+  // };
 
   const handlePayment = async () => {
     try {
@@ -25,7 +38,7 @@ const CheckOutForm = ({ doctor, user }) => {
 
       if (error) throw new Error(error.message);
 
-      const response = await fetch("http://localhost:3000/api/checkout", {
+      const response = await fetch("/api/checkout", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -39,8 +52,6 @@ const CheckOutForm = ({ doctor, user }) => {
         }),
       });
 
-      
-
       if (!response.ok) return alert("Payment unsuccessful!");
       const data = await response.json();
 
@@ -53,9 +64,61 @@ const CheckOutForm = ({ doctor, user }) => {
           },
         },
       });
+      console.log(confirm);
 
-      if (confirm.error) return alert("Payment unsuccessful!");
-      alert("Payment Successful! Appointment Done.");
+      if (confirm.error) {
+        // Handle payment confirmation error
+        console.error("Payment confirmation error:", confirm.error);
+      } else if (
+        confirm.paymentIntent &&
+        confirm.paymentIntent.status === "succeeded"
+      ) {
+        const { paymentIntent } = await stripe.retrievePaymentIntent(
+          data.clientSecret
+        );
+        if (confirm.paymentIntent.id) {
+          const paidUser = {
+            payment_id: confirm.paymentIntent.id,
+            petainName: user?.displayName,
+            petainEmail: user?.email,
+            petainPhoto: user?.photoURL,
+            doctor: doctor?.result[0].name,
+            doctorId: doctor?.result[0]._id,
+            doctorPhoto: doctor?.result[0].image,
+            date: new Date(),
+            status: "pending",
+          };
+          fetch("/api/payment", {
+            method: "POST",
+            headers: {
+              "content-type": "application/json",
+            },
+            body: JSON.stringify(paidUser),
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              console.log(data);
+              Swal.fire({
+                position: "center",
+                icon: "success",
+                title: "Your Payment is Succeed",
+                showConfirmButton: false,
+                timer: 1000,
+              });
+            });
+        }
+
+        console.log("Payment succeeded:", confirm.paymentIntent);
+        console.log("paymentIntent:", paymentIntent);
+        // const paymentMethod = await stripe.paymentMethod.retrievePaymentIntent;
+        // console.log("paymentMethod Details:", paymentMethod);
+      } else {
+        // Handle other payment confirmation states
+        console.log(
+          "Payment confirmation status:",
+          confirm.paymentIntent.status
+        );
+      }
     } catch (err) {
       console.error(err);
       alert("Payment failed! " + err.message);

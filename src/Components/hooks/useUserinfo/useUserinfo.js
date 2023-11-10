@@ -1,7 +1,6 @@
 import { AuthContext } from "@/app/(with-navbar)/context/AuthContext";
 import { useContext, useEffect, useState } from "react";
 
-
 const useUserinfo = () => {
   const { user } = useContext(AuthContext);
   const [userRole, setUserRole] = useState({});
@@ -11,7 +10,7 @@ const useUserinfo = () => {
     fetch(`/api/user/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
-        // console.log(data);
+        console.log(data);
         setUserRole({ data });
       });
   }, [user]);

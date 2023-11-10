@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { BsArrowRightCircle } from "react-icons/bs";
 
 const OurTest = () => {
@@ -40,9 +41,12 @@ const OurTest = () => {
                 </span>
               </li>
             </ul>
-            <button className="btn btn-success btn-sm hover:bg-green-500 mt-5">
+            <Link
+              href="/dashboard/view-reports"
+              className="btn btn-success btn-sm hover:bg-green-500 mt-5"
+            >
               View Reports
-            </button>
+            </Link>
           </div>
         </div>
       </div>
