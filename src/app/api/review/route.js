@@ -7,6 +7,7 @@ export const POST = async (req) => {
 	const review = await req.json();
 	await mongoose.connect(dbConnection);
 	const reviews = new reviewSchema(review);
+	console.log(reviews);
 	const result = await reviews.save();
 	return NextResponse.json({ result, success: true });
 };

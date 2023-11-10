@@ -1,7 +1,6 @@
 import { AuthContext } from "@/app/(with-navbar)/context/AuthContext";
 import { useContext, useEffect, useState } from "react";
 
-
 const useUserinfo = () => {
   const { user } = useContext(AuthContext);
   const [userRole, setUserRole] = useState({});
@@ -14,7 +13,7 @@ const useUserinfo = () => {
         // console.log(data);
         setUserRole({ data });
       });
-  }, [user]);
+  }, []);
 
   return userRole;
 };

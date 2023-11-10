@@ -37,6 +37,7 @@ const NavLinks = [
 const Navbar = () => {
   const { user, logout } = useAuth();
 
+  // console.log(user);
   const [open, setOpen] = useState(false);
   const handleLogOut = () => {
     logout()
@@ -97,18 +98,20 @@ const Navbar = () => {
             );
           })}
           <PrivetRoute>
-            <li className="mr-4 md:hover:text-[#0b9795] hover:text-black navBar-list md:mt-0 mt-10">
-              <NavLink
-                // className={` ${
-                //   currentPath === path ? " text-[#0b9795] font-bold" : ""
-                // }`}
-                // activeClassName="text-blue-500"
-                href="/dashboard/doctors-peation"
-                // className="text-xl "
-              >
-                Dashboard
-              </NavLink>
-            </li>
+            {
+              <li className="mr-4 md:hover:text-[#0b9795] hover:text-black navBar-list md:mt-0 mt-10">
+                <NavLink
+                  // className={` ${
+                  //   currentPath === path ? " text-[#0b9795] font-bold" : ""
+                  // }`}
+                  // activeClassName="text-blue-500"
+                  href="/dashboard/doctors-peation"
+                  // className="text-xl "
+                >
+                  Dashboard
+                </NavLink>
+              </li>
+            }
           </PrivetRoute>
         </ul>
         {user ? (
