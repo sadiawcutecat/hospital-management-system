@@ -16,8 +16,11 @@ import {
   FaCheck,
 } from "react-icons/fa";
 import React from "react";
+import useAuth from "../hooks/useAuth";
 
 const Dashboard = () => {
+  const { user } = useAuth();
+  console.log(user)
   return (
     <div className="flex justify-evenly item-center my-10">
       {/* -------------------------sidebar------------------------------- */}
