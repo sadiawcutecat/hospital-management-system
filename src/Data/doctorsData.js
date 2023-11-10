@@ -82,6 +82,12 @@ export const dataDoctors = [
     },
   },
   {
+    email: "mustakimjihan4@gmail.com",
+    name: "Jihan Rahman",
+    photo:"https://scontent.fdac5-2.fna.fbcdn.net/v/t39.30808-6/323623926_7242143…",
+    role: "user",
+  },
+  {
     id: 5,
     image:
       "https://img.freepik.com/free-photo/confident-attractive-male-doctor-wearing-white-lab-coat-while-standing-with-arms-crossed-against-turquoise-background_662251-1654.jpg?size=626&ext=jpg&ga=GA1.1.1055064272.1680254175&semt=sph",

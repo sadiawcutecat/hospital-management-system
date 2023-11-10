@@ -1,12 +1,11 @@
 "use client";
 
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 // import { Swiper, SwiperSlide } from "swiper/react";
 // import { Navigation, EffectFade, Autoplay } from "swiper/modules";
 // import "swiper/css/bundle";
 // import mainSlider from "@/Data/mainSlider";
 // import SingleBannerSlider from "./SingleBannerSlider";
-import moduleName from "next/image";
 import Image from "next/image";
 const BannerSlider = () => {
   useEffect(() => {
@@ -71,18 +70,17 @@ const BannerSlider = () => {
             <button className="btn btn-success">Make appointment</button>
           </div>
         </div>
-        <div className="md:flex gap-4 w-full mt-10 z-20">
+        <div className="md:flex gap-4 w-full mt-10 ">
           <div className="w-8/12 mx-auto">
             <div
               className=" bg-[#00A9FF]/80  md:w-[300px] w-[250px] md:h-[300px] h-[250px] banner-image-custom-style   -z-10 overflow-hidden translate-y-32 opacity-0 duration-500"
               id="image-aos"
             >
-              <Image
+              <img
                 height={500}
                 width={500}
-                className=" mx-auto -mt-10 z-20"
-                src="https://i.ibb.co/sg3sH29/pexels-antoni-shkraba-5215024.png
-"
+                className=" mx-auto -mt-10 "
+                src="https://i.ibb.co/sg3sH29/pexels-antoni-shkraba-5215024.png"
                 alt="doctor image"
               />
               {/* <div className="bg-orange-700/40 absolute w-[300px] h-[300px] banner-image-custom-style top-28  -z-10"></div> */}
@@ -91,12 +89,11 @@ const BannerSlider = () => {
               className=" bg-[#00A9FF]/80   md:w-[150px] w-[100px] md:h-[150px] h-[100px] banner-image-custom-style   -z-10 overflow-hidden translate-y-32 opacity-0 duration-500 delay-100"
               id="image-aos"
             >
-              <Image
+              <img
                 height={100}
                 width={100}
-                className=" object-contain mx-auto -mb-20"
-                src=" https://i.ibb.co/Nt7HNyk/pexels-pavel-danilyuk-5998474.png
-"
+                className="object-contain mx-auto -mb-20"
+                src="https://i.ibb.co/Nt7HNyk/pexels-pavel-danilyuk-5998474.png"
                 alt="doctor image"
               />
               {/* <div className="bg-orange-700/40 absolute w-[300px] h-[300px] banner-image-custom-style top-28  -z-10"></div> */}
@@ -107,11 +104,11 @@ const BannerSlider = () => {
               className=" bg-[#2192FF]/80  md:w-[350px] w-[300px] md:h-[350px]  h-[300px] banner-image-custom-style   -z-10 overflow-hidden translate-y-32 opacity-0 duration-500 delay-150"
               id="image-aos"
             >
-              <Image
+              <img
                 height={300}
                 width={300}
-                className=" object-contain mx-auto "
-                src=" https://i.ibb.co/SPBwFHC/pexels-jrfotosgrand-fotografia-12660379.png"
+                className=" object-contain mx-auto -z-10"
+                src="https://i.ibb.co/SPBwFHC/pexels-jrfotosgrand-fotografia-12660379.png"
                 alt="doctor image"
               />
               {/* <div className="bg-orange-700/40 absolute w-[300px] h-[300px] banner-image-custom-style top-28  -z-10"></div> */}
@@ -120,7 +117,7 @@ const BannerSlider = () => {
               className=" bg-[#00A9FF]/80   w-[120px] h-[120px] banner-image-custom-style   -z-10 overflow-hidden translate-y-32 opacity-0 duration-500 delay-75"
               id="image-aos"
             >
-              <Image
+              <img
                 height={350}
                 width={350}
                 className=" object-contain mx-auto -mt-8"
