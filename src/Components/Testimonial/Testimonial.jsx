@@ -9,10 +9,20 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 // import required modules
+import { useEffect, useState } from "react";
 import { Autoplay, Pagination } from "swiper/modules";
-import { testimonialData } from "@/Data/testimonialData";
 
 const Testimonial = () => {
+  const [isTestimonial, setIsTestimonial] = useState([]);
+
+  useEffect(() => {
+    fetch("/api/review")
+      .then((res) => res?.json())
+      .then((data) => {
+        setIsTestimonial(data);
+      });
+  }, []);
+
   return (
     <div className=" md:p-20 p-8 mb-10">
       <div className="text-center img-slide opacity-0 duration-1000 mx-auto">
@@ -43,7 +53,7 @@ const Testimonial = () => {
         className="mySwiper img-slide opacity-0 duration-1000"
       >
         <div>
-          {testimonialData.map((testimonial, i) => (
+          {isTestimonial?.result?.map((testimonial, i) => (
             <SwiperSlide key={i} className="shadow-2xl mt-7 font-serif ">
               <div className="p-8">
                 <p className="text-justify">{testimonial.comments}</p>

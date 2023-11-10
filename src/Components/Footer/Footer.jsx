@@ -1,79 +1,75 @@
 import Link from "next/link";
-import { FaYoutube, FaFacebookF, FaTwitter } from "react-icons/fa";
+import { FaFacebookF, FaTwitter, FaYoutube } from "react-icons/fa";
 
 const Footer = () => {
+  const links = [
+    {
+      label: "Home",
+      path: "/",
+      // icon: <GiFamilyHouse fontSize={20} />,
+    },
+    {
+      label: "About",
+      path: "/about",
+      // icon: <SlInfo fontSize={20} />,
+    },
+    {
+      label: "Contact",
+      path: "/contact",
+      // icon: <SlInfo fontSize={20} />,
+    },
+    {
+      label: "Doctors",
+      path: "/doctors",
+      // icon: <FaUserDoctor fontSize={20} ></FaUserDoctor>
+    },
+    // {
+    //   label: "Dashboard",
+    //   path: "/dashboard/doctors-peation",
+    //   // icon: <RxDashboard fontSize={20} />,
+    // },
+  ];
   return (
     <div>
-      {/* <footer className="footer p-16 bg-[#262b35] grid md:grid-cols-4 grid-cols-1  text-[#8890a4]">
-        <div>
-          <h1 className="flex items-center text-2xl font-bold">
-            <span>
-              {" "}
-              <img
-                src="https://i.ibb.co/NpptRzh/download-removebg-preview.png"
-                alt=""
-                className="h-10 w-10"
-              />
-            </span>
-            <span>HealthCare</span>
-          </h1>
-
-          <p className="font-bold">
-            <br />
-            Providing reliable treatment since 2000
+      <footer className="footer p-10 bg-black text-white ">
+        <nav className="mx-auto md:text-left text-center">
+          <header className="footer-title md:mx-0 mx-auto">Services</header>
+          <p className=" md:mx-0 mx-auto">Best Test Report</p>
+          <p className=" md:mx-0 mx-auto">Best Professional Doctors</p>
+          <p className=" md:mx-0 mx-auto">Admitted Hospital & Best Service</p>
+          <p className=" md:mx-0 mx-auto">Best Petain Care</p>
+        </nav>
+        <nav className="md:text-left text-center mx-auto">
+          <header className="footer-title md:mx-0 mx-auto">Navigation's</header>
+          {links.map((link) => {
+            return (
+              <Link
+                className="md:mx-0 mx-auto link link-hover"
+                key={link.path}
+                href={link.path}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
+        </nav>
+        <nav className="md:text-left text-center mx-auto">
+          <header className="footer-title md:mx-0 mx-auto">Address</header>
+          <p className="md:mx-0 mx-auto">
+            {" "}
+            <strong className="text-slate-300">Email</strong>:{" "}
+            <span className="text-slate-400">health@care.com</span>{" "}
           </p>
-        </div>
-
-        <div className="mx-auto text-center">
-          <span className="  font-bold">Navigation's</span>
-          <Link href="/">Home</Link>
-          <Link href="/about">About</Link>
-          <Link href="/contacts">Contacts</Link>
-          <Link href="/doctors">Doctors</Link>
-        </div>
-        <div className="mx-auto">
-          <span className="font-bold">Contact</span>
-          <div>
-            <p className="text-md">
-              <strong>Email</strong> : jihanstk@gmail.com
-            </p>
-            <p className="text-md">
-              <strong>Address</strong> : Sector-12,Uttara Dhaka
-            </p>
-          </div>
-        </div>
-        <div className="mx-auto">
-          <span className="font-bold text-center ">Social</span>
-          <div className="grid grid-flow-col gap-4 text-white">
-            <FaTwitter style={{ fontSize: "2rem" }}></FaTwitter>
-            <FaYoutube style={{ fontSize: "2rem" }}></FaYoutube>
-            <FaFacebookF style={{ fontSize: "2rem" }}></FaFacebookF>
-          </div>
-        </div>
-      </footer> */}
-      {/* <div className="footer footer-center font-bold bg-[#262b35] text-[#8890a4]  p-4">
-        <p>Copyright © 2023 - All right reserved by HealthCare Ltd</p>
-      </div> */}
-      <footer className="footer p-10 bg-black text-white">
-        <nav>
-          <header className="footer-title">Services</header>
-          <a className="link link-hover">Branding</a>
-          <a className="link link-hover">Design</a>
-          <a className="link link-hover">Marketing</a>
-          <a className="link link-hover">Advertisement</a>
-        </nav>
-        <nav>
-          <header className="footer-title">Company</header>
-          <a className="link link-hover">About us</a>
-          <a className="link link-hover">Contact</a>
-          <a className="link link-hover">Jobs</a>
-          <a className="link link-hover">Press kit</a>
-        </nav>
-        <nav>
-          <header className="footer-title">Legal</header>
-          <a className="link link-hover">Terms of use</a>
-          <a className="link link-hover">Privacy policy</a>
-          <a className="link link-hover">Cookie policy</a>
+          <p className="md:mx-0 mx-auto">
+            {" "}
+            <strong className="text-slate-300">Phone</strong>:{" "}
+            <span className="text-slate-400">+880134XXXXXXX</span>{" "}
+          </p>
+          <p className="md:mx-0 mx-auto">
+            {" "}
+            <strong className="text-slate-300">Location</strong>:{" "}
+            <span className="text-slate-400">Dhaka,Gazipur</span>{" "}
+          </p>
         </nav>
       </footer>
       <footer className="footer px-10 py-4 border-t bg-black text-white border-base-300">
@@ -102,9 +98,18 @@ const Footer = () => {
             <div className="mx-auto">
               <span className="font-bold text-center ">Social</span>
               <div className="grid grid-flow-col gap-4 text-white">
-                <FaTwitter style={{ fontSize: "2rem" }}></FaTwitter>
-                <FaYoutube style={{ fontSize: "2rem" }}></FaYoutube>
-                <FaFacebookF style={{ fontSize: "2rem" }}></FaFacebookF>
+                <a href="https://www.twitter.com" target="blank">
+                  {" "}
+                  <FaTwitter style={{ fontSize: "2rem" }}></FaTwitter>
+                </a>
+                <a href="https://www.youtube.com" target="blank">
+                  {" "}
+                  <FaYoutube style={{ fontSize: "2rem" }}></FaYoutube>
+                </a>
+                <a href="https://www.facebook.com" target="blank">
+                  {" "}
+                  <FaFacebookF style={{ fontSize: "2rem" }}></FaFacebookF>
+                </a>
               </div>
             </div>
           </div>

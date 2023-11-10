@@ -8,26 +8,24 @@ import {
 import { HiOutlineBookOpen, HiOutlineLogout } from "react-icons/hi";
 
 import NavLink from "@/Components/Common/NavLink/NavLink";
+
+import Loading from "@/Components/Common/Loading/Loading";
+import useAuth from "@/Components/hooks/useAuth";
+import useUserinfo from "@/Components/hooks/useUserinfo/useUserinfo";
 import { redirect } from "next/navigation";
 import { useContext, useState } from "react";
-import {
-  FaBars,
-  FaCalendarCheck,
-  FaShareAlt,
-  FaStar,
-  FaUserInjured
-} from "react-icons/fa";
+import { FaBars, FaCalendarCheck, FaStar, FaUserInjured } from "react-icons/fa";
 import { AuthContext } from "../(with-navbar)/context/AuthContext";
 
 const Dashboard = ({ children }) => {
-  // const session =
-
+  const { data } = useUserinfo();
+  const roleUser = data?.result;
+  console.log(roleUser);
+  const { logout } = useAuth();
   const [open, setOpen] = useState(false);
   const { user, loading } = useContext(AuthContext);
   if (loading) {
-    return <div className="w-full h-[100vh] flex justify-center items-center">
-      <span className="loading loading-spinner loading-lg"></span>
-    </div>;
+    return <Loading />;
   }
   if (!user) {
     redirect("/login");
@@ -56,12 +54,16 @@ const Dashboard = ({ children }) => {
                 ></AiOutlineClose>
                 <div className="text-center pt-6">
                   <img
-                    src="https://i.ibb.co/8crKQKx/doctor-thumb-02.jpg"
+                    src={user?.photoURL}
                     alt=""
                     className="h-32 w-32 rounded-full mx-auto   border-gray-100 border-8"
                   />
-                  <h3 className="font-bold my-3">Dr. Fred Ortego</h3>
-                  <p>BDS, MDS - Oral & Maxillofacial Surgery</p>
+                  <h3 className="font-bold my-3">{roleUser?.userName}</h3>
+                  {roleUser?.userRole === "doctor" ? (
+                    <p>{roleUser?.doctorBio}</p>
+                  ) : (
+                    ""
+                  )}
                 </div>
                 <div className="my-8">
                   <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
@@ -69,57 +71,83 @@ const Dashboard = ({ children }) => {
                       <HiOutlineBookOpen className="mt-1 " /> Home
                     </NavLink>
                   </p>
-                  <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
-                    <NavLink
-                      classlist="flex gap-4"
-                      href="/dashboard/doctor_appointment"
-                    >
-                      <FaCalendarCheck className="mt-1 " /> Appointments
-                    </NavLink>
-                  </p>
-                  <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
-                    <NavLink
-                      classlist="flex gap-4"
-                      href="/dashboard/doctors-peation"
-                    >
-                      <FaUserInjured className="mt-1 " /> My Patients
-                    </NavLink>
-                  </p>
-                  <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
-                    <NavLink classlist="flex gap-4" href="/dashboard/all-users">
-                      <FaUserInjured className="mt-1 " /> All Users
-                    </NavLink>
-                  </p>
+
+                  {roleUser?.userRole === "doctor" ? (
+                    <div>
+                      <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
+                        <NavLink
+                          classlist="flex gap-4"
+                          href="/dashboard/doctors-peation"
+                        >
+                          <FaUserInjured className="mt-1 " /> My Patients
+                        </NavLink>
+                      </p>
+                      <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
+                        <Link className="flex gap-4" href="">
+                          <AiFillWechat className="mt-1 text-xl" />
+                          Chat
+                        </Link>
+                      </p>
+                    </div>
+                  ) : (
+                    ""
+                  )}
+                  {roleUser?.userRole === "admin" ? (
+                    <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
+                      <NavLink
+                        classlist="flex gap-4"
+                        href="/dashboard/all-users"
+                      >
+                        <FaUserInjured className="mt-1 " /> All Users
+                      </NavLink>
+                    </p>
+                  ) : (
+                    ""
+                  )}
+
+                  {roleUser?.userRole === "user" ? (
+                    <div>
+                      <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
+                        <NavLink
+                          classlist="flex gap-4"
+                          href="/dashboard/doctor_appointment"
+                        >
+                          <FaCalendarCheck className="mt-1 " /> Appointments
+                        </NavLink>
+                      </p>
+                      <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
+                        <Link className="flex gap-4" href="">
+                          <AiFillWechat className="mt-1 text-xl" />
+                          Chat
+                        </Link>
+                      </p>
+                      <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
+                        <Link className="flex gap-4" href="">
+                          <AiOutlineFileText className="mt-1 " />
+                          Invoices
+                        </Link>
+                      </p>
+                      <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
+                        <Link className="flex gap-4" href="/dashboard/review">
+                          <FaStar className="mt-1 " /> Reviews
+                        </Link>
+                      </p>
+                    </div>
+                  ) : (
+                    ""
+                  )}
+
+                  {/* <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
+										<Link className="flex gap-4" href="">
+											<FaShareAlt className="mt-1 " />
+											Social Media
+										</Link>
+									</p> */}
 
                   <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
-                    <Link className="flex gap-4" href="">
-                      <AiOutlineFileText className="mt-1 " />
-                      Invoices
-                    </Link>
-                  </p>
-                  <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
-                    <Link className="flex gap-4" href="">
-                      <AiFillWechat className="mt-1 text-xl" />
-                      Chat
-                    </Link>
-                  </p>
-                  <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
-                    <Link className="flex gap-4" href="">
-                      <FaStar className="mt-1 " /> Reviews
-                    </Link>
-                  </p>
-
-                  <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
-                    <Link className="flex gap-4" href="">
-                      <FaShareAlt className="mt-1 " />
-                      Social Media
-                    </Link>
-                  </p>
-
-                  <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
-                    <Link className="flex gap-4" href="">
+                    <button className="flex gap-4" onClick={() => logout()}>
                       <HiOutlineLogout className="mt-1" /> Logout
-                    </Link>
+                    </button>
                   </p>
                 </div>
               </div>

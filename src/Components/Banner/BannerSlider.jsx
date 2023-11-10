@@ -7,6 +7,7 @@ import { useEffect } from "react";
 // import mainSlider from "@/Data/mainSlider";
 // import SingleBannerSlider from "./SingleBannerSlider";
 import Image from "next/image";
+import Link from "next/link";
 const BannerSlider = () => {
   useEffect(() => {
     const banner = document.querySelector("#banner");
@@ -67,7 +68,9 @@ const BannerSlider = () => {
               ducimus! Lorem ipsum dolor sit amet consectetur, adipisicing elit.
               Magnam, magni!
             </p>
-            <button className="btn btn-success">Make appointment</button>
+            <Link className="btn btn-success" href="/doctors">
+              Make appointment
+            </Link>
           </div>
         </div>
         <div className="md:flex gap-4 w-full mt-10 ">
@@ -76,7 +79,7 @@ const BannerSlider = () => {
               className=" bg-[#00A9FF]/80  md:w-[300px] w-[250px] md:h-[300px] h-[250px] banner-image-custom-style   -z-10 overflow-hidden translate-y-32 opacity-0 duration-500"
               id="image-aos"
             >
-              <Image
+              <img
                 height={500}
                 width={500}
                 className=" mx-auto -mt-10 "
@@ -89,7 +92,7 @@ const BannerSlider = () => {
               className=" bg-[#00A9FF]/80   md:w-[150px] w-[100px] md:h-[150px] h-[100px] banner-image-custom-style   -z-10 overflow-hidden translate-y-32 opacity-0 duration-500 delay-100"
               id="image-aos"
             >
-              <Image
+              <img
                 height={100}
                 width={100}
                 className="object-contain mx-auto -mb-20"
@@ -104,7 +107,7 @@ const BannerSlider = () => {
               className=" bg-[#2192FF]/80  md:w-[350px] w-[300px] md:h-[350px]  h-[300px] banner-image-custom-style   -z-10 overflow-hidden translate-y-32 opacity-0 duration-500 delay-150"
               id="image-aos"
             >
-              <Image
+              <img
                 height={300}
                 width={300}
                 className=" object-contain mx-auto -z-10"
@@ -117,7 +120,7 @@ const BannerSlider = () => {
               className=" bg-[#00A9FF]/80   w-[120px] h-[120px] banner-image-custom-style   -z-10 overflow-hidden translate-y-32 opacity-0 duration-500 delay-75"
               id="image-aos"
             >
-              <Image
+              <img
                 height={350}
                 width={350}
                 className=" object-contain mx-auto -mt-8"

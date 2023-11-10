@@ -46,12 +46,13 @@ const Register = () => {
       .catch((error) => {
         console.log("Firebase error:", error.code, error.message);
       });
+    return;
   };
   return (
     <div className="hero min-h-screen mt-20">
       <div className="hero-content flex-col lg:flex-row gap-12">
         <div className="text-center lg:text-left w-1/2">
-          <img src="https://i.ibb.co/NYJ19PB/undraw-Sign-up-n6im.png" alt="" />
+          <img src=" https://i.ibb.co/vv5Rxq4/register.png" alt="" />
         </div>
         <div className="card flex-shrink-0 max-w-sm shadow-2xl bg-base-100 w-1/2">
           <form onSubmit={handleSubmit(onSubmit)}>

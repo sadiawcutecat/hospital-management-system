@@ -1,8 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { FaCheck, FaEye } from "react-icons/fa";
-import { ImCancelCircle } from "react-icons/im";
+import React, { useEffect, useState } from "react";
+import TableData from "./TableData";
+// import { FaCheck, FaEye } from "react-icons/fa";
+// import { ImCancelCircle } from "react-icons/im";
 
 const DoctorPetain = () => {
   const [users, setUser] = useState([]);
@@ -13,8 +14,7 @@ const DoctorPetain = () => {
         setUser({ data });
       });
   }, []);
-  console.log(users?.data?.result);
-
+  
   return (
     <div>
       <div>
@@ -36,7 +36,11 @@ const DoctorPetain = () => {
             </tr>
           </thead>
           <tbody className="p-10">
-            {users?.data?.result.map((user) => (
+            {users?.data?.result.map((user) => <TableData 
+              user={user}
+              key={user._id}
+            ></TableData> )}
+            {/* {users?.data?.result.map((user) => (
               <tr key={user._id}>
                 <td data-label="Name & Photo">
                   <div className="avatar mask mask-squircle w-12 h-12">
@@ -61,7 +65,7 @@ const DoctorPetain = () => {
                   </button>
                 </td>
               </tr>
-            ))}
+            ))} */}
           </tbody>
         </table>
       </div>

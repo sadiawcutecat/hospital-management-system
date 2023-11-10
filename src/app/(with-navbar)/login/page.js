@@ -40,10 +40,7 @@ const Login = () => {
       <div className="hero min-h-screen mt-20">
         <div className="hero-content flex-col lg:flex-row gap-12">
           <div className="text-center lg:text-left w-1/2">
-            <img
-              src="https://i.ibb.co/BfN0wg3/undraw-Login-re-4vu2.png"
-              alt=""
-            />
+            <img src="https://i.ibb.co/hsLV6cW/login.png" alt="" />
           </div>
           <div className="card flex-shrink-0 max-w-sm shadow-2xl bg-base-100 w-1/2">
             <form onSubmit={handleSubmit(onSubmit)}>
