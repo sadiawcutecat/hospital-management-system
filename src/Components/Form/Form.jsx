@@ -44,14 +44,14 @@ const Form = ({patient}) => {
     return (
         <div>
             <form onSubmit={(e)=> handlePrescription(e)} >
-                <div className='flex gap-6 font-bold '>
-                {/* <div className="form-control w-1/2">
+                <div className='grid grid-cols-1 lg:grid-cols-2 gap-2  font-bold '>
+                {/* <div className="form-control full">
                         <label className="label">
                             <span className="label-text">Photo Url</span>
                         </label>
                         <input type="url" name='photo' placeholder="photo url" className="input input-bordered" />
                     </div> */}
-                    <div className="form-control w-1/2">
+                    <div className="form-control full">
                         <label className="label">
                             <span className="label-text">Name</span>
                         </label>
@@ -59,14 +59,14 @@ const Form = ({patient}) => {
                     </div>
 
                 </div>
-                <div className='flex gap-6 font-bold '>
-                    <div className="form-control w-1/2">
+                <div className='grid grid-cols-1 lg:grid-cols-2 gap-2  font-bold '>
+                    <div className="form-control full">
                         <label className="label">
                             <span className="label-text">email</span>
                         </label>
                         <input type="email" name='email'value={patient.email} placeholder="email" className="input input-bordered" required/>
                     </div>
-                    <div className="form-control w-1/2">
+                    <div className="form-control full">
                         <label className="label">
                             <span className="label-text">APPt.Date</span>
                         </label>
@@ -74,14 +74,14 @@ const Form = ({patient}) => {
                     </div>
 
                 </div>
-                <div className='flex gap-6 font-bold '>
-                    <div className="form-control w-1/2">
+                <div className='grid grid-cols-1 lg:grid-cols-2 gap-2  font-bold '>
+                    <div className="form-control full">
                     <label className="label">
                                 <span className="label-text">Purpose</span>
                             </label>
                             <input type="text" name='Purpose' placeholder="Purpose" className="input input-bordered" required />
                     </div>
-                    <div className="form-control w-1/2">
+                    <div className="form-control full">
                     <label className='mt-2' for="category">Type</label>
                         <select className='h-12 mt-2 input input-bordered' name="Type" id='Type' required >
 
@@ -93,17 +93,17 @@ const Form = ({patient}) => {
                     </div>
                 </div>
             
-                <div className='flex gap-6 font-bold '>
+                <div className='grid grid-cols-1 lg:grid-cols-2 gap-2  font-bold '>
                     <div className="form-control w-full">
                         <label className="label">
                             <span className="label-text">Prescription</span>
                         </label>
-                        <textarea  type="text" cols="30" rows="10" name='Prescription' placeholder=" write prescription..." className='rounded-xl' required/>
+                        <textarea  type="text" cols="30" rows="5" name='Prescription' placeholder=" write prescription..." className='rounded-xl' required/>
                     </div>
 
                 </div>
             
-                <input type='submit'  value= "ADD A Prescription " className=" my-9 btn btn-block bg-emerald-500 hover:bg-emerald-700 text-white font-serif font-bold "/>
+                <input type='submit'  value= "ADD A Prescription " className=" my-9 btn btn-md lg:btn-block bg-emerald-500 hover:bg-emerald-700 text-white font-serif font-bold "/>
                     
 
 
