@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { AiOutlineClose, AiOutlineMenuUnfold } from "react-icons/ai";
@@ -118,11 +117,10 @@ const Navbar = () => {
               <div className="dropdown dropdown-end z-50">
                 <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                   <div className="w-10 rounded-full">
-                    <Image
-                      width={40}
-                      height={40}
-                      className="rounded-full"
-                      src={user.photoURL}
+                    <img
+                      className="rounded-full w-10 h-10"
+                      title={user.displayName}
+                      src={user?.photoURL}
                       alt="User Photo"
                     />
                   </div>
