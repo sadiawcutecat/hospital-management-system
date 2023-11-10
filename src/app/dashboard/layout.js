@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 'use client';
 import Link from 'next/link';
 import {
@@ -19,37 +18,18 @@ import {
 	FaUserInjured,
 } from 'react-icons/fa';
 import { AuthContext } from '../(with-navbar)/context/AuthContext';
-=======
-"use client";
-import Link from "next/link";
-import {
-  AiFillWechat,
-  AiOutlineClose,
-  AiOutlineFileText,
-} from "react-icons/ai";
-import { HiOutlineBookOpen, HiOutlineLogout } from "react-icons/hi";
-
-import NavLink from "@/Components/Common/NavLink/NavLink";
-import { redirect } from "next/navigation";
-import { useContext, useState } from "react";
-import {
-  FaBars,
-  FaCalendarCheck,
-  FaShareAlt,
-  FaStar,
-  FaUserInjured
-} from "react-icons/fa";
-import { AuthContext } from "../(with-navbar)/context/AuthContext";
->>>>>>> 77d4f1ec3b8b8fd095766132cd82e1c6c1cc6a6f
 
 const Dashboard = ({ children }) => {
 	// const session =
 
-<<<<<<< HEAD
 	const [open, setOpen] = useState(false);
 	const { user, loading } = useContext(AuthContext);
 	if (loading) {
-		return <span className="loading loading-spinner loading-lg"></span>;
+		return (
+			<div className="w-full h-[100vh] flex justify-center items-center">
+				<span className="loading loading-spinner loading-lg"></span>
+			</div>
+		);
 	}
 	if (!user) {
 		redirect('/login');
@@ -70,34 +50,6 @@ const Dashboard = ({ children }) => {
 							>
 								<AiOutlineClose
 									className={` cursor-pointer z-20 font-bold md:hidden inline-block ml-10
-=======
-  const [open, setOpen] = useState(false);
-  const { user, loading } = useContext(AuthContext);
-  if (loading) {
-    return <div className="w-full h-[100vh] flex justify-center items-center">
-      <span className="loading loading-spinner loading-lg"></span>
-    </div>;
-  }
-  if (!user) {
-    redirect("/login");
-  } else {
-    return (
-      <div>
-        <div className="flex justify-between">
-          <div
-            className={`fixed z-20  ${
-              open
-                ? "left-0 duration-200 md:w-[20%] w-full"
-                : "md:left-0 -left-96 duration-200 md:w-[20%] w-0"
-            }   `}
-          >
-            <div className="">
-              <div
-                className={`bg-white shadow-lg  overflow-scroll h-[100dvh] border-gray-100 border-2 `}
-              >
-                <AiOutlineClose
-                  className={` cursor-pointer z-20 font-bold md:hidden inline-block ml-10
->>>>>>> 77d4f1ec3b8b8fd095766132cd82e1c6c1cc6a6f
                   mt-10
               text-3xl text-black  duration-150 ${
 								open && 'md:-right-3 right-6'
