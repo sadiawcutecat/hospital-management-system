@@ -10,10 +10,10 @@ const useUserinfo = () => {
     fetch(`/api/user/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
-        // console.log(data);
+        console.log(data);
         setUserRole({ data });
       });
-  }, []);
+  }, [user]);
 
   return userRole;
 };

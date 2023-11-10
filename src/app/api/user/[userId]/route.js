@@ -6,9 +6,9 @@ import { NextResponse } from "next/server";
 export const GET = async (req, { params }) => {
   console.log(params);
   const filter = {
-    userEmail:  params.userId,
+    userEmail: params.userId,
   };
-  await mongoose.connect(dbConnection)
-  const result = await UserSchema.findOne(filter)
+  await mongoose.connect(dbConnection);
+  const result = await UserSchema.findOne(filter);
   return NextResponse.json({ result, success: true });
 };
