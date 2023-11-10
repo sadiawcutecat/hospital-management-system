@@ -1,14 +1,13 @@
 "use client";
 // import { useForm } from "react-hook-form";
+import { FaCheck, FaEye } from "react-icons/fa";
 import { ImCancelCircle } from "react-icons/im";
-import { FaEye, FaCheck } from "react-icons/fa";
 // import React, { useEffect, useState } from "react";
-import { testimonialData } from "@/Data/testimonialData";
 import Form from "@/Components/Form/Form";
+import { testimonialData } from "@/Data/testimonialData";
 // import { Link } from "react-router-dom";
 
 const DoctorPetain = () => {
-
   // const { register, handleSubmit } = useForm();
   // const onSubmit = (data) => console.log(data);
 
@@ -118,23 +117,33 @@ const DoctorPetain = () => {
                 <td data-label="type">{patient.type}</td>
                 <td data-label="price">{patient.paid}</td>
                 <td className="space-x-4 flex items-center " data-label="#">
-
-
                   {/* The button to open modal */}
-                  <label htmlFor={`my-modal-${patient._id}`} className="btn btn-sm text-emerald-600 bg-emerald-200  hover:bg-emerald-400">
-                    <FaEye className=" h-4 w-4" /> View</label>
+                  <label
+                    htmlFor={`my-modal-${patient._id}`}
+                    className="btn btn-sm text-emerald-600 bg-emerald-200  hover:bg-emerald-400"
+                  >
+                    <FaEye className=" h-4 w-4" /> View
+                  </label>
 
                   {/* Put this part before </body> tag */}
-                  <input type="checkbox" id={`my-modal-${patient._id}`} className="modal-toggle" />
+                  <input
+                    type="checkbox"
+                    id={`my-modal-${patient._id}`}
+                    className="modal-toggle"
+                  />
                   <div className="modal modal-bottom sm:modal-middle ">
                     <div className="modal-box">
-                 <Form patient={patient}></Form>
+                      <Form patient={patient}></Form>
                       <div className="modal-action">
-                        <label htmlFor={`my-modal-${patient._id}`} className="btn bg-orange-400 text-white font-bold hover:bg-orange-600">cancel</label>
+                        <label
+                          htmlFor={`my-modal-${patient._id}`}
+                          className="btn bg-orange-400 text-white font-bold hover:bg-orange-600"
+                        >
+                          cancel
+                        </label>
                       </div>
                     </div>
                   </div>
-
 
                   {/* <button className="btn btn-sm text-emerald-600 bg-emerald-200  hover:bg-emerald-400">
                     <FaEye className=" h-4 w-4" /> View
