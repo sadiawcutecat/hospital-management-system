@@ -119,7 +119,7 @@ const Navbar = () => {
               <div className="dropdown dropdown-end z-50">
                 <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                   <div className="w-10 rounded-full">
-                    <Image
+                    <img
                       width={40}
                       height={40}
                       className="rounded-full"

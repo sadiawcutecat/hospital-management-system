@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { HiOutlineTrash } from "react-icons/hi";
 import Swal from "sweetalert2";
+import {  useRouter } from "next/navigation";
 
 const TableData = ({ user }) => {
+  const router = useRouter();
   const [newRole, setNewRole] = useState();
   const { userPhoto, userEmail, userName, userRole, _id } = user;
 
@@ -15,8 +17,9 @@ const TableData = ({ user }) => {
           "Content-type": "application/json",
         },
       });
-      if (!res.ok) {
-        throw new Error("Failed to update topic");
+      if (res.ok) {
+        router.reload();
+        // throw new Error("Failed to update topic");
       }
     } catch (error) {
       console.log(error);
@@ -43,8 +46,9 @@ const TableData = ({ user }) => {
                 "Content-type": "application/json",
               },
             });
-            if (!res.ok) {
-              throw new Error("Failed to update topic");
+            if (res.ok) {
+              // throw new Error("Failed to update topic");
+              router.reload();
             }
           } catch (error) {
             console.log(error);
@@ -76,7 +80,7 @@ const TableData = ({ user }) => {
               <option value="doctor">Doctor</option>
             </select>
             <button
-              className="btn btn-sm text-black  bg-green-400 my-2 hover:bg-green-600 hover:text-white "
+              className="btn btn-sm text-white bg-[#3876BF] my-2 hover:bg-orange-400 "
               onClick={() => handleSubmit(_id)}
             >
               Update
