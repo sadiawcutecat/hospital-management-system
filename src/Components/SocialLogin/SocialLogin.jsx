@@ -1,7 +1,7 @@
 "use client";
+import { useRouter } from "next/navigation";
 import { FaGoogle } from "react-icons/fa";
 import useAuth from "../hooks/useAuth";
-import { usePathname, useRouter } from "next/navigation";
 
 const SocialLogin = () => {
 
@@ -10,11 +10,11 @@ const SocialLogin = () => {
 
   const handleGoogleSignIn = () => {
     googleLogin().then((result) => {
-      console.log(result)
+      console.log(result);
       const socialInfo = {
-        userName: result.displayName,
-        userEmail: result.email,
-        userPhoto: result.photoURL,
+        userName: result.user.displayName,
+        userEmail: result.user.email,
+        userPhoto: result.user.photoURL,
         userRole: "user",
       };
       console.log(socialInfo);

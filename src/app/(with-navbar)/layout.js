@@ -1,12 +1,20 @@
+"use client";
+
+import Loading from "@/Components/Common/Loading/Loading";
 import Footer from "@/Components/Footer/Footer";
 import Navbar from "@/Components/NavBar/NavBar";
-import React from "react";
+import useAuth from "@/Components/hooks/useAuth";
 
 const WithNavbar = ({ children }) => {
+  const { loading } = useAuth();
+  if (loading) {
+    return <Loading></Loading>;
+  }
   return (
     <div>
       <Navbar />
-      {children}
+
+      <div className="w-full min-h-[70vh]">{children}</div>
       <Footer />
     </div>
   );
