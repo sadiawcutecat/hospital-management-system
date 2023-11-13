@@ -61,7 +61,7 @@ const Register = () => {
             <div className="hero-overlay bg-opacity-75 rounded-r-3xl"></div>
             <div className="hero-content text-center text-neutral-content">
               <div className="">
-                <h1 className="text-4xl leading-relaxed font-bold mb-48">
+                <h1 className=" text-3xl lg:text-4xl leading-relaxed font-bold mb-48">
                   We take care of your Billing
                   <br />
                   You take care of Patient
