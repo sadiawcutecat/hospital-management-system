@@ -1,7 +1,16 @@
 import mongoose from 'mongoose';
 
 const doctor = new mongoose.Schema({
-	id: Number,
+	// id: Number,
+	// image: String,
+	// name: String,
+	// study: String,
+	// specialist: String,
+	// position: String,
+	// place: String,
+	// rating: Number,
+	// price: Number,
+	// Chamber_Appointment: Object,
 	image: String,
 	name: String,
 	study: String,
@@ -10,7 +19,13 @@ const doctor = new mongoose.Schema({
 	place: String,
 	rating: Number,
 	price: Number,
-	Chamber_Appointment: Object,
+	Chamber_Appointment: {
+		hospital: String,
+		address: String,
+		visiting_Hour: String,
+		appointment: String,
+		about: String,
+	},
 });
 export const Doctor =
 	mongoose.models.doctors || mongoose.model('doctors', doctor);

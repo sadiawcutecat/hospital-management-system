@@ -97,14 +97,24 @@ const Dashboard = ({ children }) => {
 										''
 									)}
 									{roleUser?.userRole === 'admin' ? (
-										<p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
-											<NavLink
-												classlist="flex gap-4"
-												href="/dashboard/all-users"
-											>
-												<FaUserInjured className="mt-1 " /> All Users
-											</NavLink>
-										</p>
+										<div>
+											<p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
+												<NavLink
+													classlist="flex gap-4"
+													href="/dashboard/all-users"
+												>
+													<FaUserInjured className="mt-1 " /> All Users
+												</NavLink>
+											</p>
+											<p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
+												<NavLink
+													classlist="flex gap-4"
+													href="/dashboard/addDoctor"
+												>
+													<FaUserInjured className="mt-1 " /> Add Doctor
+												</NavLink>
+											</p>
+										</div>
 									) : (
 										''
 									)}

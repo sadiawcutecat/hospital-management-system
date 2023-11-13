@@ -1,9 +1,33 @@
+'use client';
 import contact from '@/assets/contact.jpg';
+import { init } from 'emailjs-com';
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaArrowCircleRight } from 'react-icons/fa';
-
+init('n-mJ6Lj9j7HI9fZVB');
 const Contact = () => {
+	const message = document.querySelector('textarea[name="description"]')?.value;
+	const name = document.querySelector('input[name="name"]')?.value;
+	const email = document.querySelector('input[name="email"]')?.value;
+	const submitEmail = (event) => {
+		event.preventDefault();
+		const templateParams = {
+			to_email: email,
+			from_name: name,
+			message: message,
+		};
+		console.log(templateParams);
+		emailjs
+			.send('service_iurxik5', 'template_wob7rzn', templateParams)
+			.then((response) => {
+				console.log('Email sent successfully:', response);
+			})
+			.catch((error) => {
+				console.error('Error sending email:', error);
+			});
+	};
+
 	return (
 		<div>
 			<div className=" mt-24">
@@ -66,12 +90,12 @@ const Contact = () => {
 				<h1 className="md:text-3xl text-2xl font-bold text-center mb-5 text-slate-500">
 					Send Message
 				</h1>
-				<form className="">
+				<form className="" onClick={submitEmail}>
 					<div className="md:flex  gap-6 font-bold w-full">
 						<div className="form-control md:w-1/2 w-full my-2">
 							<input
 								type="text"
-								name="YourName"
+								name="name"
 								placeholder="Your Name"
 								className="input input-bordered bg-slate-200"
 							/>
