@@ -43,14 +43,14 @@ const Login = () => {
         <div className="hero-content flex-col lg:flex-row text-white bg-green-500 p-0">
           <div className="text-center container lg:text-left  p-0">
             <img
-              className="lg:min-h-screen  p-0 rounded-r-3xl"
+              className="lg:min-h-screen  p-0 rounded-r-3xl "
               src="https://img.freepik.com/free-photo/sign-up-user-password-privacy-concept_53876-123680.jpg?size=626&ext=jpg&ga=GA1.1.1055064272.1680254175&semt=ais"
               alt=""
             />
           </div>
-          <div className="card flex-shrink-0 p-0 shadow-2xl ">
+          <div className="card flex-shrink-0 p-0 shadow-2xl lg:w-1/2">
             <form onSubmit={handleSubmit(onSubmit)}>
-              <div className="card-body w-full">
+              <div className="card-body">
                 <div className="form-control">
                   <h2 className="text-2xl">Welcome Back !</h2>
                   <p className="text-md lg:my-2">

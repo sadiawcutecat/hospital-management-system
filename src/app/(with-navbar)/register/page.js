@@ -61,7 +61,7 @@ const Register = () => {
             <div className="hero-overlay bg-opacity-75 rounded-r-3xl"></div>
             <div className="hero-content text-center text-neutral-content">
               <div className="">
-                <h1 className=" text-4xl leading-relaxed font-bold mb-48">
+                <h1 className="text-4xl leading-relaxed font-bold mb-48">
                   We take care of your Billing
                   <br />
                   You take care of Patient
@@ -69,10 +69,11 @@ const Register = () => {
               </div>
             </div>
           </div>
-          <div className="card flex-shrink-0 p-0 shadow-2xl w-1/2">
+          <div className="card flex-shrink-0 p-0 shadow-2xl lg:w-1/2">
             <form onSubmit={handleSubmit(onSubmit)}>
               <div className="card-body">
                 <div className="form-control">
+                  <h2 className="text-white text-2xl text-center">Create An Account</h2>
                   <label className="label">
                     <span className="label-text text-white">Name</span>
                   </label>
