@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { AiOutlineClose, AiOutlineMenuUnfold } from "react-icons/ai";
@@ -99,18 +98,22 @@ const Navbar = () => {
             );
           })}
           <PrivetRoute>
-            <li className="mr-4 md:hover:text-[#0b9795] hover:text-black navBar-list md:mt-0 mt-10">
-              <NavLink
-                // className={` ${
-                //   currentPath === path ? " text-[#0b9795] font-bold" : ""
-                // }`}
-                // activeClassName="text-blue-500"
-                href="/dashboard/doctors-peation"
-                // className="text-xl "
-              >
-                Dashboard
-              </NavLink>
-            </li>
+            {user ? (
+              <li className="mr-4 md:hover:text-[#0b9795] hover:text-black navBar-list md:mt-0 mt-10">
+                <NavLink
+                  // className={` ${
+                  //   currentPath === path ? " text-[#0b9795] font-bold" : ""
+                  // }`}
+                  // activeClassName="text-blue-500"
+                  href={`/dashboard/doctors-peation `}
+                  // className="text-xl "
+                >
+                  Dashboard
+                </NavLink>
+              </li>
+            ) : (
+              ""
+            )}
           </PrivetRoute>
         </ul>
         {user ? (
@@ -120,10 +123,9 @@ const Navbar = () => {
                 <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                   <div className="w-10 rounded-full">
                     <img
-                      width={40}
-                      height={40}
-                      className="rounded-full"
-                      src={user.photoURL}
+                      className="rounded-full w-10 h-10"
+                      title={user.displayName}
+                      src={user?.photoURL}
                       alt="User Photo"
                     />
                   </div>

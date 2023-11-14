@@ -18,13 +18,12 @@ console.log(email)
     // Create a product
     // const appoinment = await stripe.appoinments.create({
     //   name: "confirm payment",
-    // });
-    // Create a payment
+    // });  
+    // Create a payment   
     const amount = parseFloat((price * 100).toFixed(2));
   
 
     const paymentIntent = await stripe.paymentIntents.create({
-
       amount,
       currency: "usd",
       payment_method_types: ["card"],

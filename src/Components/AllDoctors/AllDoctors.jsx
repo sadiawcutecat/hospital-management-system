@@ -8,9 +8,9 @@ const AllDoctors = () => {
   useEffect(() => {
     fetch("/api/doctors")
       .then((res) => res.json())
-      .then((data) => setAllDoctors(data.result));
+      .then((data) => setAllDoctors(data.result))
+      .catch((err) => console.log(err.message));
   }, []);
-  
 
   return (
     <div className="my-10 container mx-auto mt-28">
@@ -24,7 +24,7 @@ const AllDoctors = () => {
         </p>
       </div>
       <div className="mx-auto my-10">
-      {allDoctors.length > 0 ? (
+        {allDoctors.length > 0 ? (
           allDoctors.map((allDoctor) => (
             <Doctors key={allDoctor.id} allDoctor={allDoctor}></Doctors>
           ))

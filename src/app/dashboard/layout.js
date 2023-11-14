@@ -9,6 +9,7 @@ import { HiOutlineBookOpen, HiOutlineLogout } from 'react-icons/hi';
 
 import NavLink from '@/Components/Common/NavLink/NavLink';
 
+import Loading from '@/Components/Common/Loading/Loading';
 import useAuth from '@/Components/hooks/useAuth';
 import useUserinfo from '@/Components/hooks/useUserinfo/useUserinfo';
 import { redirect } from 'next/navigation';
@@ -23,13 +24,8 @@ const Dashboard = ({ children }) => {
 	const { logout } = useAuth();
 	const [open, setOpen] = useState(false);
 	const { user, loading } = useContext(AuthContext);
-	console.log(user);
 	if (loading) {
-		return (
-			<div className="w-full h-[100vh] flex justify-center items-center">
-				<span className="loading loading-spinner loading-lg"></span>
-			</div>
-		);
+		return <Loading />;
 	}
 	if (!user) {
 		redirect('/login');
@@ -97,24 +93,14 @@ const Dashboard = ({ children }) => {
 										''
 									)}
 									{roleUser?.userRole === 'admin' ? (
-										<div>
-											<p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
-												<NavLink
-													classlist="flex gap-4"
-													href="/dashboard/all-users"
-												>
-													<FaUserInjured className="mt-1 " /> All Users
-												</NavLink>
-											</p>
-											<p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
-												<NavLink
-													classlist="flex gap-4"
-													href="/dashboard/addDoctor"
-												>
-													<FaUserInjured className="mt-1 " /> Add Doctor
-												</NavLink>
-											</p>
-										</div>
+										<p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
+											<NavLink
+												classlist="flex gap-4"
+												href="/dashboard/all-users"
+											>
+												<FaUserInjured className="mt-1 " /> All Users
+											</NavLink>
+										</p>
 									) : (
 										''
 									)}

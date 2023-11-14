@@ -3,8 +3,6 @@ import contact from '@/assets/contact.jpg';
 import { init } from 'emailjs-com';
 
 import Image from 'next/image';
-import Link from 'next/link';
-import { FaArrowCircleRight } from 'react-icons/fa';
 init('n-mJ6Lj9j7HI9fZVB');
 const Contact = () => {
 	const message = document.querySelector('textarea[name="description"]')?.value;
@@ -90,12 +88,13 @@ const Contact = () => {
 				<h1 className="md:text-3xl text-2xl font-bold text-center mb-5 text-slate-500">
 					Send Message
 				</h1>
-				<form className="" onClick={submitEmail}>
-					<div className="md:flex  gap-6 font-bold w-full">
+				<form className="mx-auto" onSubmit={(e) => sendEmail(e)}>
+					<div className=" font-bold w-full">
 						<div className="form-control md:w-1/2 w-full my-2">
 							<input
 								type="text"
 								name="name"
+								required
 								placeholder="Your Name"
 								className="input input-bordered bg-slate-200"
 							/>
@@ -103,16 +102,18 @@ const Contact = () => {
 						<div className="form-control md:w-1/2 w-full my-2">
 							<input
 								type="email"
+								required
 								name="email"
 								placeholder="Your Email"
 								className="input input-bordered bg-slate-200"
 							/>
 						</div>
 					</div>
-					<div className="md:flex gap-6 font-bold  ">
+					<div className="font-bold  ">
 						<div className="form-control md:w-1/2 w-full my-2">
 							<textarea
-								name="description"
+								name="message"
+								required
 								id=""
 								cols="30"
 								rows="10"
@@ -123,13 +124,11 @@ const Contact = () => {
 					</div>
 
 					<div className="flex justify-center mt-6">
-						<Link
-							href=""
+						<input
+							type="submit"
 							className="btn  bg-emerald-500 font-bold  text-white hover:bg-emerald-600 "
-						>
-							Send Message
-							<FaArrowCircleRight></FaArrowCircleRight>
-						</Link>
+							value={` Send Message`}
+						/>
 					</div>
 				</form>
 			</div>
