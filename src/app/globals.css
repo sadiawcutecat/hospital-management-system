@@ -77,29 +77,29 @@
 	/* .table {
     margin-left: 7rem;
   } */
-	.table thead {
-		display: none;
-	}
-	.table,
-	.table tbody,
-	.table tr,
-	.table td {
-		display: block !important;
-	}
-	td {
-		text-align: right;
-		border: 1px solid black;
-	}
-	.table tr {
-		margin-bottom: 2rem;
-	}
-	.table td::before {
-		content: attr(data-label);
-		position: absolute;
-		left: 0;
-		font-weight: bold;
-		padding-left: 10px;
-	}
+  .table thead {
+    display: none;
+  }
+  .table,
+  .table tbody,
+  .table tr,
+  .table td {
+    display: block !important;
+  }
+  td {
+    text-align: right;
+    border: 1px solid black;
+  }
+  .table tr {
+    margin-bottom: 2rem;
+  }
+  .table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+    padding-left: 3rem;
+  }
 }
 @media screen and (max-width: 380px) {
 	.login-button {
