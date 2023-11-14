@@ -128,6 +128,12 @@ const Dashboard = ({ children }) => {
                         </Link>
                       </p>
                       <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
+                        <Link className="flex gap-4" href="/dashboard/prescription">
+                          <AiOutlineFileText className="mt-1 " />
+                          Prescription
+                        </Link>
+                      </p>
+                      <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
                         <Link className="flex gap-4" href="/dashboard/review">
                           <FaStar className="mt-1 " /> Reviews
                         </Link>

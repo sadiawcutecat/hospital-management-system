@@ -1,6 +1,10 @@
+import useAuth from "../hooks/useAuth";
+
 const Form = ({ patient }) => {
+const {user}=useAuth();
   const handlePrescription = (e) => {
     e.preventDefault();
+    
     const form = e.target;
 
     const name = form.name.value;
@@ -17,6 +21,8 @@ const Form = ({ patient }) => {
       Purpose,
       Type,
       Prescription,
+      doctorPhoto : user.photoURL,
+      doctorName : user.displayName
     };
 
     console.log(prescription);
