@@ -138,17 +138,17 @@ const Contact = () => {
             </div>
           </div>
 
-          <div className="flex justify-center mt-6">
-            <input
-              type="submit"
-              className="btn  bg-emerald-500 font-bold  text-white hover:bg-emerald-600 "
-              value={` Send Message`}
-            />
-          </div>
-        </form>
-      </div>
-    </div>
-  );
+					<div className="flex justify-center mt-6">
+						<input
+							type="submit"
+							className="btn  bg-emerald-500 font-bold  text-white hover:bg-emerald-600 "
+							value={` Send Message`}
+						/>
+					</div>
+				</form>
+			</div>
+		</div>
+	);
 };
 
 export default Contact;
