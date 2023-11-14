@@ -116,7 +116,7 @@ const Dashboard = ({ children }) => {
                         </NavLink>
                       </p>
                       <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
-                        <Link className="flex gap-4" href="">
+                        <Link className="flex gap-4" href="/dashboard/chat">
                           <AiFillWechat className="mt-1 text-xl" />
                           Chat
                         </Link>
