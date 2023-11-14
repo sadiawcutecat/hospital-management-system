@@ -1,5 +1,4 @@
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
-import axios from "axios";
 import { useEffect, useState } from "react";
 import { FaStar } from "react-icons/fa";
 import Swal from "sweetalert2";
@@ -89,6 +88,7 @@ const CheckOutForm = ({ doctor, user }) => {
             petainPhoto: user?.photoURL,
             doctor: doctor?.result[0].name,
             doctorId: doctor?.result[0]._id,
+            doctorEmail: doctor?.result[0].email,
             doctorPhoto: doctor?.result[0].image,
             date: new Date(),
             status: "pending",
@@ -103,7 +103,11 @@ const CheckOutForm = ({ doctor, user }) => {
             .then((res) => res.json())
             .then((data) => {
               console.log(data);
-              axios.patch;
+              fetch(`/api/doctors/${doctor?.result[0]._id}`, {
+                method: "PUT",
+              })
+                .then((res) => res.json())
+                .then((data) => console.log(data));
               Swal.fire({
                 position: "center",
                 icon: "success",
@@ -190,7 +194,7 @@ const CheckOutForm = ({ doctor, user }) => {
                           <input
                             className="w-full px-2 text-xs border-1/2 input-xs lg:text-xl"
                             type="text"
-                            value={_id}
+                            value={doctor?.result[0].email}
                             onChange={(e) => setDoctorId(e.target.value)}
                             placeholder={_id}
                           />

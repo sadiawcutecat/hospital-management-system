@@ -52,18 +52,20 @@ const Dashboard = ({ children }) => {
               }`}
                   onClick={() => setOpen(!open)}
                 ></AiOutlineClose>
-                <div className="text-center pt-6">
-                  <img
-                    src={user?.photoURL}
-                    alt=""
-                    className="h-32 w-32 rounded-full mx-auto   border-gray-100 border-8"
-                  />
-                  <h3 className="font-bold my-3">{roleUser?.userName}</h3>
-                  {roleUser?.userRole === "doctor" ? (
-                    <p>{roleUser?.doctorBio}</p>
-                  ) : (
-                    ""
-                  )}
+                <div>
+                  <div className="text-center pt-6 bg-[url('https://res.cloudinary.com/drhtv8dr4/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1699973730/img-01_bdd9qb.jpg?fbclid=IwAR1WlmkSXm3vKFcj9s3ILfoLjaUHC4AgLE3HHP-y1NORCBIICqjFrX5W9Pw')] bg-cover bg-no-repeat">
+                    <img
+                      src={user?.photoURL}
+                      alt=""
+                      className="h-32 w-32 rounded-full mx-auto border-gray-100 border-8"
+                    />
+                    <h3 className="font-bold my-3">{roleUser?.userName}</h3>
+                    {roleUser?.userRole === "doctor" ? (
+                      <p>{roleUser?.doctorBio}</p>
+                    ) : (
+                      ""
+                    )}
+                  </div>
                 </div>
                 <div className="my-8">
                   <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">

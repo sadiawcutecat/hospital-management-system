@@ -1,7 +1,7 @@
 "use client";
-import { useRouter } from "next/navigation";
-import { FaGoogle } from "react-icons/fa";
 import useAuth from "../hooks/useAuth";
+import { usePathname, useRouter } from "next/navigation";
+import { FcGoogle } from "react-icons/fc";
 
 const SocialLogin = () => {
   const router = useRouter();
@@ -32,13 +32,12 @@ const SocialLogin = () => {
 
   return (
     <div>
-      <div className="divider"></div>
       <div className="w-full text-center my-4">
         <button
           onClick={handleGoogleSignIn}
-          className="btn btn-circle btn-outline"
+          className="btn btn-sm btn-circle bg-white text-xl"
         >
-          <FaGoogle></FaGoogle>
+          <FcGoogle />
         </button>
       </div>
     </div>

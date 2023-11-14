@@ -7,6 +7,7 @@ const paid = mongoose.Schema({
   petainPhoto: String,
   doctor: String,
   doctorId: String,
+  doctorEmail: String,
   doctorPhoto: String,
   date: String,
   status: String,

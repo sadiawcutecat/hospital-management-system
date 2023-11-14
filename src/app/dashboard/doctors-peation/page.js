@@ -4,12 +4,20 @@ import { FaCheck, FaEye } from "react-icons/fa";
 import { ImCancelCircle } from "react-icons/im";
 // import React, { useEffect, useState } from "react";
 import Form from "@/Components/Form/Form";
-import { testimonialData } from "@/Data/testimonialData";
+import useAuth from "@/Components/hooks/useAuth";
+import { useEffect, useState } from "react";
 // import { Link } from "react-router-dom";
 
 const DoctorPetain = () => {
   // const { register, handleSubmit } = useForm();
   // const onSubmit = (data) => console.log(data);
+  const { user } = useAuth();
+  const [testimonialData, setTestimonialData] = useState([]);
+  useEffect(() => {
+    fetch(`/api/payment/${user.email}`)
+      .then((res) => res.json())
+      .then((data) => setTestimonialData(data.result));
+  }, []);
 
   return (
     <div>
@@ -67,7 +75,7 @@ const DoctorPetain = () => {
       </div>
       {/* --------------table----------*/}
 
-      <div className="overflow-x-auto bg-white shadow-xl p-16 border-gray-100 border-2">
+      <div className="overflow-x-auto bg-white shadow-xl md:p-16 border-gray-100 border-2">
         <div className="space-x-2 my-6">
           <button className="btn bg-emerald-500 text-white p-4 hover:bg-emerald-700">
             Upcoming
@@ -92,8 +100,8 @@ const DoctorPetain = () => {
           </thead>
           <tbody className="p-10">
             {/* row 1 */}
-            {testimonialData.map((patient) => (
-              <tr key={patient._id}>
+            {testimonialData?.map((patient) => (
+              <tr key={patient.serial}>
                 <td data-label="Name & Photo">
                   <div className="flex items-center  gap-3">
                     <div className="avatar">
