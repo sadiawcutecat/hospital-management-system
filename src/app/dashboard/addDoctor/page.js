@@ -43,6 +43,7 @@ const AppointmentForm = () => {
 			place: form.place.value,
 			rating: parseInt(form.rating.value),
 			price: parseInt(form.price.value),
+			patientCount: 0,
 			Chamber_Appointment: {
 				hospital: form.hospital.value,
 				address: form.address.value,
