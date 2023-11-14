@@ -6,7 +6,9 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { AiOutlineMail } from "react-icons/ai";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { RiLockPasswordFill } from "react-icons/ri";
 
 const Login = () => {
   const router = useRouter();
@@ -37,22 +39,33 @@ const Login = () => {
 
   return (
     <>
-      <div className="hero min-h-screen mt-20">
-        <div className="hero-content flex-col lg:flex-row gap-12">
-          <div className="text-center lg:text-left w-1/2">
-            <img src="https://i.ibb.co/hsLV6cW/login.png" alt="" />
+      <div className="hero min-h-screen my-5 lg:mt-20 p-0">
+        <div className="hero-content flex-col lg:flex-row text-white bg-green-500 p-0">
+          <div className="text-center container lg:text-left  p-0">
+            <img
+              className="lg:min-h-screen  p-0 rounded-r-3xl "
+              src="https://img.freepik.com/free-photo/sign-up-user-password-privacy-concept_53876-123680.jpg?size=626&ext=jpg&ga=GA1.1.1055064272.1680254175&semt=ais"
+              alt=""
+            />
           </div>
-          <div className="card flex-shrink-0 max-w-sm shadow-2xl bg-base-100 w-1/2">
+          <div className="card flex-shrink-0 p-0 shadow-2xl lg:w-1/2">
             <form onSubmit={handleSubmit(onSubmit)}>
               <div className="card-body">
                 <div className="form-control">
+                  <h2 className="text-2xl">Welcome Back !</h2>
+                  <p className="text-md lg:my-2">
+                    The Faster You Fill Up The Faster You Enjoy
+                  </p>
                   <label className="label">
-                    <span className="label-text">Email</span>
+                    <span className="label-text flex items-center gap-2 lg:mt-2 text-white">
+                      <AiOutlineMail />
+                      Email
+                    </span>
                   </label>
                   <input
                     type="text"
                     placeholder="email"
-                    className="input input-bordered"
+                    className="input input-bordered border-white  placeholder-slate-300 bg-inherit"
                     {...register("email", { required: true })}
                   />
                   {errors.email && (
@@ -62,12 +75,15 @@ const Login = () => {
                 <div className="relative">
                   <div className="form-control">
                     <label className="label">
-                      <span className="label-text">Password</span>
+                      <span className="label-text flex items-center gap-2 text-white ">
+                        <RiLockPasswordFill />
+                        Password
+                      </span>
                     </label>
                     <input
                       type={showPassword ? "text" : "password"}
                       placeholder="password"
-                      className="input input-bordered"
+                      className="input input-bordered  bg-inherit  border-white  placeholder-slate-300"
                       name="password"
                       {...register("password", { required: true })}
                     />
@@ -90,23 +106,21 @@ const Login = () => {
                   <input
                     type="submit"
                     value="Login"
-                    className="btn btn-primary"
+                    className="btn bg-white text-green-500 text-xl"
                   />
                 </div>
+                <h2 className="text-center mx-auto mt-5">Or Login With</h2>
+                <SocialLogin />
               </div>
             </form>
-            <p className="m-auto p-3">
+            <p className="m-auto p-3 text-xl">
               <small>
-                New Here?{" "}
-                <Link
-                  href="/register"
-                  className="text-orange-600 underline font-medium"
-                >
-                  Create an account
+                don't have an account?{" "}
+                <Link href="/register" className="underline font-medium">
+                  Sign Up
                 </Link>
               </small>
             </p>
-            <SocialLogin />
           </div>
         </div>
       </div>
