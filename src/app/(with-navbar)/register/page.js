@@ -49,7 +49,7 @@ const Register = () => {
   };
   return (
     <>
-      <div className="hero min-h-screen my-5 lg:mt-20 p-0 ">
+      <div className="hero min-h-screen my-5 mt-20 p-0 ">
         <div className="hero-content flex-col lg:flex-row bg-green-500 p-0 w-3/4">
           <div
             className="hero lg:min-h-screen "
@@ -61,7 +61,7 @@ const Register = () => {
             <div className="hero-overlay bg-opacity-75 rounded-r-3xl"></div>
             <div className="hero-content text-center text-neutral-content">
               <div className="">
-                <h1 className=" text-3xl lg:text-4xl leading-relaxed font-bold mb-48">
+                <h1 className=" text-3xl leading-relaxed font-bold mb-48">
                   We take care of your Billing
                   <br />
                   You take care of Patient
