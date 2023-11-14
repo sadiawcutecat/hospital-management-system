@@ -108,7 +108,7 @@ const Contact = () => {
             <div className="form-control md:w-1/2 w-full my-2">
               <input
                 type="text"
-                name="name"
+                name="from_name"
                 required
                 placeholder="Your Name"
                 className="input input-bordered bg-slate-200"

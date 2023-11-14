@@ -1,4 +1,5 @@
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
+import axios from "axios";
 import { useEffect, useState } from "react";
 import { FaStar } from "react-icons/fa";
 import Swal from "sweetalert2";
@@ -9,6 +10,7 @@ const CheckOutForm = ({ doctor, user }) => {
   const [doctorName, setDoctorName] = useState("");
   const [price, setPrice] = useState(0);
   const [doctorId, setDoctorId] = useState("");
+  const [processing, setProcessing] = useState(true);
 
   const elements = useElements();
   const stripe = useStripe();
@@ -37,6 +39,7 @@ const CheckOutForm = ({ doctor, user }) => {
       });
 
       if (error) throw new Error(error.message);
+      setProcessing(false);
 
       const response = await fetch("/api/checkout", {
         method: "POST",
@@ -76,9 +79,11 @@ const CheckOutForm = ({ doctor, user }) => {
         const { paymentIntent } = await stripe.retrievePaymentIntent(
           data.clientSecret
         );
+        setProcessing(true);
         if (confirm.paymentIntent.id) {
           const paidUser = {
             payment_id: confirm.paymentIntent.id,
+            amount: confirm.paymentIntent.amount,
             petainName: user?.displayName,
             petainEmail: user?.email,
             petainPhoto: user?.photoURL,
@@ -98,6 +103,7 @@ const CheckOutForm = ({ doctor, user }) => {
             .then((res) => res.json())
             .then((data) => {
               console.log(data);
+              axios.patch;
               Swal.fire({
                 position: "center",
                 icon: "success",
@@ -213,6 +219,7 @@ const CheckOutForm = ({ doctor, user }) => {
                               type="button"
                               className="text-white bg-red-600 btn"
                               onClick={handlePayment}
+                              disabled={!stripe || !processing}
                             >
                               Confirm Payment
                             </button>

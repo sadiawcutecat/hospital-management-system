@@ -5,6 +5,7 @@ import { AiOutlineClose, AiOutlineMenuUnfold } from "react-icons/ai";
 import NavLink from "../Common/NavLink/NavLink";
 import PrivetRoute from "../PrivetRoute/PrivetRoute";
 import useAuth from "../hooks/useAuth";
+import useUserinfo from "../hooks/useUserinfo/useUserinfo";
 
 const NavLinks = [
   {
@@ -36,7 +37,8 @@ const NavLinks = [
 
 const Navbar = () => {
   const { user, logout } = useAuth();
-
+  const { data } = useUserinfo();
+  const roleUser = data?.result;
   // console.log(user);
   const [open, setOpen] = useState(false);
   const handleLogOut = () => {
@@ -105,7 +107,13 @@ const Navbar = () => {
                   //   currentPath === path ? " text-[#0b9795] font-bold" : ""
                   // }`}
                   // activeClassName="text-blue-500"
-                  href={`/dashboard/doctors-peation `}
+                  href={`/dashboard/${
+                    roleUser?.userRole === "admin"
+                      ? "all-users"
+                      : roleUser?.userRole === "doctor"
+                      ? "doctors-peation"
+                      : "doctor_appointment"
+                  }`}
                   // className="text-xl "
                 >
                   Dashboard
