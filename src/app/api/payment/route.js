@@ -12,3 +12,8 @@ export const POST = async (req)=>{
 
     return NextResponse.json({result,success:true})
 }
+export const GET = async () => {
+	await mongoose.connect(dbConnection);
+	const result = await patientSchema.find();
+	return NextResponse.json({ result, success: true });
+};

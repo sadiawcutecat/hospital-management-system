@@ -31,7 +31,7 @@ const Dashboard = ({ children }) => {
     redirect("/login");
   } else {
     return (
-      <div>
+      <div >
         <div className="flex justify-between">
           <div
             className={`fixed z-20  ${
