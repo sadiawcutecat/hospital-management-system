@@ -18,10 +18,10 @@ const AdminPayment = () => {
 				<thead>
 					<tr>
 						<th>#</th>
-						<th>Petain Name</th>
-						<th>Petain Email</th>
-						<th>Doctor</th>
-						<th>payment Id</th>
+						<th>Petain Name: </th>
+						<th>Petain Email: </th>
+						<th>Doctor: </th>
+						<th>payment Id: </th>
 					</tr>
 				</thead>
 				<tbody>
