@@ -9,7 +9,7 @@ const UserPayment = () => {
 	console.log(user.email);
 	const [isPayment, setIsPayment] = useState([]);
 	useEffect(() => {
-		fetch(`/api/payment`)
+		fetch(`/api/payment/${user.email}`)
 			.then((res) => res.json())
 			.then((data) => {
 				console.log(data);
@@ -18,7 +18,7 @@ const UserPayment = () => {
 	}, [user.email]);
 
 	const payments = isPayment.filter((p) => p.petainEmail === user.email);
-	console.log(payments);
+	console.log(isPayment	);
 
 	return (
 <>   <Table>

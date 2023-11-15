@@ -79,10 +79,10 @@ const Dashboard = ({ children }) => {
 												</NavLink>
 											</p>
 											<p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
-												<Link className="flex gap-4" href="">
+												<NavLink className="flex gap-4" href="">
 													<AiFillWechat className="mt-1 text-xl" />
 													Chat
-												</Link>
+												</NavLink>
 											</p>
 										</div>
 									) : (
@@ -130,30 +130,25 @@ const Dashboard = ({ children }) => {
 												</NavLink>
 											</p>
 											<p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
-												<Link className="flex gap-4" href="">
+												<NavLink className="flex gap-4" href="">
 													<AiFillWechat className="mt-1 text-xl" />
 													Chat
-												</Link>
+												</NavLink>
 											</p>
+										
 											<p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
-												<Link className="flex gap-4" href="">
-													<AiOutlineFileText className="mt-1 " />
-													Invoices
-												</Link>
-											</p>
-											<p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
-												<Link
+												<NavLink
 													className="flex gap-4"
 													href="/dashboard/userpayment"
 												>
 													<AiOutlineFileText className="mt-1 " />
 													Payment History
-												</Link>
+												</NavLink>
 											</p>
 											<p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
-												<Link className="flex gap-4" href="/dashboard/review">
+												<NavLink className="flex gap-4" href="/dashboard/review">
 													<FaStar className="mt-1 " /> Reviews
-												</Link>
+												</NavLink>
 											</p>
 										</div>
 									) : (
@@ -161,10 +156,10 @@ const Dashboard = ({ children }) => {
 									)}
 
 									{/* <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
-										<Link className="flex gap-4" href="">
+										<NavLink className="flex gap-4" href="">
 											<FaShareAlt className="mt-1 " />
 											Social Media
-										</Link>
+										</NavLink>
 									</p> */}
 
 									<p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
