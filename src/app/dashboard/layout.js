@@ -11,7 +11,14 @@ import {
   AiOutlineClose,
   AiOutlineFileText,
 } from "react-icons/ai";
-import { FaBars, FaCalendarCheck, FaStar, FaUserInjured } from "react-icons/fa";
+import {
+  FaBars,
+  FaCalendarCheck,
+  FaPaypal,
+  FaStar,
+  FaUserInjured,
+  FaUserMd,
+} from "react-icons/fa";
 import { HiOutlineBookOpen, HiOutlineLogout } from "react-icons/hi";
 import { AuthContext } from "../(with-navbar)/context/AuthContext";
 
@@ -75,7 +82,7 @@ const Dashboard = ({ children }) => {
                     <div>
                       <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
                         <NavLink href="/dashboard/doctors-peation">
-                          <span classlist="flex gap-4">
+                          <span className="flex gap-4">
                             <FaUserInjured className="mt-1 " /> My Patients
                           </span>
                         </NavLink>
@@ -94,23 +101,25 @@ const Dashboard = ({ children }) => {
                     <>
                       <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
                         <NavLink href="/dashboard/all-users">
-                          <span classlist="flex gap-4">
-                            <FaUserInjured className="mt-1 " /> All Users
-                          </span>
+                          <div className="flex gap-4">
+                            <FaUserInjured className="mt-1 " />
+
+                            <span>All Users</span>
+                          </div>
                         </NavLink>
                       </p>
                       <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
                         <NavLink href="/dashboard/addDoctor">
-                          <span classlist="flex gap-4">
-                            <FaUserInjured className="mt-1 " /> Add Doctor
+                          <span className="flex gap-4">
+                            <FaUserMd className="mt-1 " /> Add Doctor
                           </span>
                         </NavLink>
                       </p>
                       <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
                         <NavLink href="/dashboard/adminpaymenthistory">
-                          <span classlist="flex gap-4">
+                          <span className="flex gap-4">
                             {" "}
-                            <FaUserInjured className="mt-1 " /> Payment History
+                            <FaPaypal className="mt-1 " /> Payment History
                           </span>
                         </NavLink>
                       </p>
@@ -119,11 +128,11 @@ const Dashboard = ({ children }) => {
                     ""
                   )}
 
-                  {roleUser?.userRole === "user" ? (
+                  {/* {roleUser?.userRole === "user" ? (
                     <div>
                       <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
                         <NavLink
-                          classlist="flex gap-4"
+                          className="flex gap-4"
                           href="/dashboard/doctor_appointment"
                         >
                           <FaCalendarCheck className="mt-1 " /> Appointments
@@ -136,9 +145,10 @@ const Dashboard = ({ children }) => {
                         </NavLink>
                       </p>
                       <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
-                        <NavLink className="flex gap-4" href="">
-                          <AiOutlineFileText className="mt-1 " />
-                          Invoices
+                        <NavLink href="/dashboard/userpayment">
+                          <span className="flex gap-4">
+                            <FaPaypal className="mt-1 " /> Payment History
+                          </span>
                         </NavLink>
                       </p>
                       <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
@@ -161,12 +171,12 @@ const Dashboard = ({ children }) => {
                     </div>
                   ) : (
                     ""
-                  )}
-                  {/* {roleUser?.userRole === "user" ? (
+                  )} */}
+                  {roleUser?.userRole === "user" ? (
                     <div>
                       <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
                         <NavLink href="/dashboard/doctor_appointment">
-                          <span classlist="flex gap-4">
+                          <span className="flex gap-4">
                             <FaCalendarCheck className="mt-1 " /> Appointments
                           </span>
                         </NavLink>
@@ -177,12 +187,18 @@ const Dashboard = ({ children }) => {
                           Chat
                         </NavLink>
                       </p>
-
+                      <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
+                        <NavLink href="/dashboard/prescription">
+                          <span className="flex gap-4">
+                            <AiOutlineFileText className="mt-1 " />
+                            Prescription
+                          </span>
+                        </NavLink>
+                      </p>
                       <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
                         <NavLink href="/dashboard/userpayment">
                           <span className="flex gap-4">
-                            <AiOutlineFileText className="mt-1 " />
-                            Payment History
+                            <FaPaypal className="mt-1 " /> Payment History
                           </span>
                         </NavLink>
                       </p>
@@ -196,7 +212,7 @@ const Dashboard = ({ children }) => {
                     </div>
                   ) : (
                     ""
-                  )} */}
+                  )}
 
                   {/* <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
 										<Link className="flex gap-4" href="">
