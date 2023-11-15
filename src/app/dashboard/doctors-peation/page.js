@@ -5,6 +5,7 @@ import { ImCancelCircle } from "react-icons/im";
 // import React, { useEffect, useState } from "react";
 import Form from "@/Components/Form/Form";
 import useAuth from "@/Components/hooks/useAuth";
+import moment from "moment";
 import { useEffect, useState } from "react";
 // import { Link } from "react-router-dom";
 
@@ -16,7 +17,10 @@ const DoctorPetain = () => {
   useEffect(() => {
     fetch(`/api/payment/${user.email}`)
       .then((res) => res.json())
-      .then((data) => setTestimonialData(data.result));
+      .then((data) => {
+        setTestimonialData(data.result[0]);
+        console.log(data.result[0]);
+      });
   }, []);
 
   return (
@@ -91,11 +95,10 @@ const DoctorPetain = () => {
           <thead>
             <tr className="text-black font-bold text-xl ">
               <th>Patient Name</th>
-              <th>Appt. Date</th>
-              <th>Purpose</th>
+              <th>Date</th>
               <th>Type</th>
               <th>Paid Amount</th>
-              <th>Action</th>
+              <th className="flex justify-center">Action</th>
             </tr>
           </thead>
           <tbody className="p-10">
@@ -107,24 +110,26 @@ const DoctorPetain = () => {
                     <div className="avatar">
                       <div className="mask mask-squircle w-12 h-12">
                         <img
-                          src={patient.picture}
+                          src={patient.petainPhoto}
                           alt="Avatar Tailwind CSS Component"
                         />
                       </div>
                     </div>
                     <div>
-                      <div className="font-bold">{patient.name}</div>
+                      <div className="font-bold">{patient.petainName}</div>
                       <div className="">{patient.serial}</div>
                     </div>
                   </div>
                 </td>
                 <td data-label="date & time">
-                  {patient.date} , {patient.time}
+                  {moment().format("MMMM Do YYYY, h:mm a")}
                 </td>
-                <td data-label="purpose">{patient.purpose}</td>
-                <td data-label="type">{patient.type}</td>
+                <td data-label="type">{patient.status}...</td>
                 <td data-label="price">{patient.paid}</td>
-                <td className="space-x-4 flex items-center " data-label="#">
+                <td
+                  className="space-x-4 flex items-center justify-center "
+                  data-label="#"
+                >
                   {/* The button to open modal */}
                   <label
                     htmlFor={`my-modal-${patient._id}`}

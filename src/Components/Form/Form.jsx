@@ -51,7 +51,7 @@ const Form = ({ patient }) => {
             <input
               type="text"
               name="name"
-              defaultValue={patient.name}
+              defaultValue={patient.petainName}
               placeholder="name"
               className="input input-bordered"
               required
@@ -66,7 +66,7 @@ const Form = ({ patient }) => {
             <input
               type="email"
               name="email"
-              defaultValue={patient.email}
+              defaultValue={patient.petainEmail}
               placeholder="email"
               className="input input-bordered"
               required
@@ -80,6 +80,7 @@ const Form = ({ patient }) => {
               type="datetime-local"
               name="Date_Time"
               placeholder="Date & Time"
+              // defaultValue={}
               className="input input-bordered"
               required
             />
