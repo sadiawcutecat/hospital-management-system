@@ -1,3 +1,5 @@
+@import 'keep-react/src/main.min.css';
+
 /* color we use */
 /* light-bg:E0F4FF */
 
@@ -6,73 +8,73 @@
 @tailwind utilities;
 
 .main-slider .image-layer {
-  @apply bg-no-repeat bg-cover bg-center transition-transform duration-[5000ms] ease-in-out min-h-[700px];
+	@apply bg-no-repeat bg-cover bg-center transition-transform duration-[5000ms] ease-in-out min-h-[700px];
 }
 
 .main-slider .swiper-slide-active .image-layer {
-  @apply scale-150 z-10;
+	@apply scale-150 z-10;
 }
 
 .main-slider .image-layer::before {
-  @apply absolute top-0 left-0 bottom-0 right-0 content-[''] bg-[#1c0c0664] dark:bg-[#1c0c0690] z-0;
+	@apply absolute top-0 left-0 bottom-0 right-0 content-[''] bg-[#1c0c0664] dark:bg-[#1c0c0690] z-0;
 }
 
 .main-slider .swiper-button-next,
 .main-slider .swiper-button-prev {
-  @apply absolute bg-white text-black w-12 h-12 rounded-full hidden sm:flex items-center justify-center;
+	@apply absolute bg-white text-black w-12 h-12 rounded-full hidden sm:flex items-center justify-center;
 }
 
-[data-theme="dark"] .main-slider .swiper-button-next,
-[data-theme="dark"] .main-slider .swiper-button-prev {
-  @apply bg-[#2a303c] text-[#e2e2e2];
+[data-theme='dark'] .main-slider .swiper-button-next,
+[data-theme='dark'] .main-slider .swiper-button-prev {
+	@apply bg-[#2a303c] text-[#e2e2e2];
 }
 
 .main-slider .swiper-button-next::after,
 .main-slider .swiper-button-prev::after {
-  @apply text-2xl;
+	@apply text-2xl;
 }
 
 .main-slider .main-slider__details {
-  @apply invisible;
+	@apply invisible;
 }
 
 .main-slider .swiper-slide-active .main-slider__details {
-  @apply visible animate-[animate-slide_800ms_ease-in-out];
-  animation: animate-slide 800ms ease-in-out;
+	@apply visible animate-[animate-slide_800ms_ease-in-out];
+	animation: animate-slide 800ms ease-in-out;
 }
 .nav-bg-color {
-  background: white;
-  color: black !important;
+	background: white;
+	color: black !important;
 }
 .background {
-  background-image: url("https://hospitalmanagementsystem.org/images/best-practice-management-system.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 100%;
-  height: auto;
+	background-image: url('https://hospitalmanagementsystem.org/images/best-practice-management-system.jpg');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 100%;
+	height: auto;
 }
 .show {
-  opacity: 1;
+	opacity: 1;
 }
 .show-image {
-  transform: translateY(0);
-  opacity: 1;
+	transform: translateY(0);
+	opacity: 1;
 }
 .banner-image-custom-style {
-  border-radius: 51% 40% 31% 35%/50% 46% 28% 60%;
+	border-radius: 51% 40% 31% 35%/50% 46% 28% 60%;
 }
 
 @keyframes animate-slide {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }
 @media screen and (max-width: 740px) {
-  /* .table {
+	/* .table {
     margin-left: 7rem;
   } */
   .table thead {
@@ -96,14 +98,14 @@
     position: absolute;
     left: 0;
     font-weight: bold;
-    padding-left: 10px;
+    padding-left: 3rem;
   }
 }
 @media screen and (max-width: 380px) {
-  .login-button {
-    display: none;
-  }
-  #nav-bg {
-    padding: 0 0.5rem;
-  }
+	.login-button {
+		display: none;
+	}
+	#nav-bg {
+		padding: 0 0.5rem;
+	}
 }

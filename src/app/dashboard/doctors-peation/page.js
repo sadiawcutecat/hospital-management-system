@@ -14,8 +14,8 @@ const DoctorPetain = () => {
 
   return (
     <div>
-      <div className="md:flex justify-center  items-center bg-white shadow-xl mx-auto max-w-screen-xl p-5 border-gray-100 border-2">
-        <div className="flex justify-between items-center">
+      <div className="md:flex justify-center  items-center bg-white shadow-xl mx-auto max-w-screen-xl p-5 border-gray-100 border-2  bg-[url('https://res.cloudinary.com/drhtv8dr4/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1699973730/img-01_bdd9qb.jpg?fbclid=IwAR1WlmkSXm3vKFcj9s3ILfoLjaUHC4AgLE3HHP-y1NORCBIICqjFrX5W9Pw')] bg-cover bg-no-repeat">
+        <div className="flex justify-between items-center ">
           <div className="h-28 w-28 border-pink-600 border-8 rounded-full">
             <img
               src="https://i.ibb.co/grwm3NG/icon-01.png"

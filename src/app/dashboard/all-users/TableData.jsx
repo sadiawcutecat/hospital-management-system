@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 import { HiOutlineTrash } from "react-icons/hi";
 import Swal from "sweetalert2";
-import {  useRouter } from "next/navigation";
 
 const TableData = ({ user }) => {
   const router = useRouter();
@@ -48,7 +48,7 @@ const TableData = ({ user }) => {
             });
             if (res.ok) {
               // throw new Error("Failed to update topic");
-              router.reload();
+              // router.refresh();
             }
           } catch (error) {
             console.log(error);

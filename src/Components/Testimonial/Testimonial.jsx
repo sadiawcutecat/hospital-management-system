@@ -16,7 +16,7 @@ const Testimonial = () => {
   const [isTestimonial, setIsTestimonial] = useState([]);
 
   useEffect(() => {
-    fetch("/api/review")
+    fetch(`/api/review`)
       .then((res) => res?.json())
       .then((data) => {
         setIsTestimonial(data);

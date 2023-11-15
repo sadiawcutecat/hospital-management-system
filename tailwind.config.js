@@ -1,21 +1,26 @@
 /** @type {import('tailwindcss').Config} */
+import keepPreset from 'keep-react/src/keep-preset.js';
+
 module.exports = {
-  content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/**/*.{js,ts,jsx,tsx,mdx}",
-    './node_modules/flowbite-react/**/*.js', './pages/**/*.{ts,tsx}', './public/**/*.html'
-  ],
-  theme: {
-    extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-      },
-    },
-  },
-  darkMode: 'class',
-  plugins: [require("daisyui"),require('flowbite/plugin')],
+	content: [
+		'./src/pages/**/*.{js,ts,jsx,tsx,mdx}',
+		'./src/components/**/*.{js,ts,jsx,tsx,mdx}',
+		'./src/app/**/*.{js,ts,jsx,tsx,mdx}',
+		'./src/**/*.{js,ts,jsx,tsx,mdx}',
+		'./node_modules/flowbite-react/**/*.js',
+		'./pages/**/*.{ts,tsx}',
+		'./public/**/*.html',
+		'node_modules/keep-react/**/*.{js,jsx,ts,tsx}',
+	],
+	presets: [keepPreset],
+	theme: {
+		extend: {
+			backgroundImage: {
+				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+				'gradient-conic':
+					'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+			},
+		},
+	},
+	plugins: [require('daisyui'), require('flowbite/plugin')],
 };
