@@ -18,7 +18,14 @@ export const GET = async () => {
 	}
 	return NextResponse.json({ result: data });
 };
-
+export const POST = async (req) => {
+	const reqData = await req.json();
+	await mongoose.connect(dbConnection);
+	const doctorData = new Doctor(reqData);
+	console.log(doctorData);
+	const result = await doctorData.save();
+	return NextResponse.json({ result, success: true });
+};
 // export const GET=async()=>{
 //   let data = [];
 //   try {
