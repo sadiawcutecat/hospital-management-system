@@ -25,6 +25,32 @@ const DoctorPetain = () => {
 
 	const handleCancel = (id) => {
 		console.log(id);
+
+		fetch(`http://localhost:3000/api/payment/${id}`, {
+			method: 'PUT',
+			headers: {
+				'content-type': 'application/json',
+			},
+			body: JSON.stringify({ status: 'cancel' }),
+		})
+			.then((res) => res.json())
+			.then((data) => {
+				console.log(data);
+			});
+	};
+	const handleAccept = (id) => {
+		console.log(id);
+		fetch(`http://localhost:3000/api/payment/${id}`, {
+			method: 'PUT',
+			headers: {
+				'content-type': 'application/json',
+			},
+			body: JSON.stringify({ status: 'confirm' }),
+		})
+			.then((res) => res.json())
+			.then((data) => {
+				console.log(data);
+			});
 	};
 	return (
 		<div>
