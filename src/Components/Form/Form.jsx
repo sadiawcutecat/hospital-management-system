@@ -83,7 +83,7 @@ const Form = ({ patient }) => {
               required
             />
           </div>
-          <div className="form-control lg:w-1/2 md:w-full ">
+          <div className="form-control md:w-1/2 w-full">
             <label className="label">
               <span className="label-text">APPt.Date</span>
             </label>
@@ -97,7 +97,7 @@ const Form = ({ patient }) => {
           </div>
         </div>
         <div className="flex gap-6 font-bold ">
-          <div className="form-control w-1/2">
+          <div className="form-control md:w-1/2 w-full">
             <label className="label">
               <span className="label-text">Purpose</span>
             </label>
@@ -109,7 +109,7 @@ const Form = ({ patient }) => {
               required
             />
           </div>
-          <div className="form-control w-1/2">
+          <div className="form-control md:w-1/2 w-full">
             <label className="mt-2" htmlFor="category">
               Type
             </label>
@@ -127,7 +127,7 @@ const Form = ({ patient }) => {
         </div>
 
         <div className="flex gap-6 font-bold ">
-          <div className="form-control w-full">
+          <div className="form-control md:w-1/2 w-full">
             <label className="label">
               <span className="label-text">Prescription</span>
             </label>
