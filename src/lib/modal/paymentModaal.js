@@ -2,6 +2,7 @@ const { default: mongoose } = require("mongoose");
 
 const paid = mongoose.Schema({
   payment_id: String,
+  amount: Number,
   petainName: String,
   petainEmail: String,
   petainPhoto: String,

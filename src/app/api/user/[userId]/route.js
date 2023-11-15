@@ -4,7 +4,7 @@ import mongoose from "mongoose";
 // import mongoose from "mongoose";
 import { NextResponse } from "next/server";
 export const GET = async (req, { params }) => {
-  console.log(params);
+  // console.log(params);
   const filter = {
     userEmail: params.userId,
   };

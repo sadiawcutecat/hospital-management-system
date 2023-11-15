@@ -1,4 +1,5 @@
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
+import moment from "moment";
 import { useEffect, useState } from "react";
 import { FaStar } from "react-icons/fa";
 import Swal from "sweetalert2";
@@ -90,7 +91,7 @@ const CheckOutForm = ({ doctor, user }) => {
             doctorId: doctor?.result[0]._id,
             doctorEmail: doctor?.result[0].email,
             doctorPhoto: doctor?.result[0].image,
-            date: new Date(),
+            date: moment().format("MMMM Do YYYY, h:mm a"),
             status: "pending",
           };
           fetch("/api/payment", {
