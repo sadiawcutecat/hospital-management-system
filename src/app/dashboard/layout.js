@@ -119,7 +119,7 @@ const Dashboard = ({ children }) => {
                     ""
                   )}
 
-                  {/* {roleUser?.userRole === "user" ? (
+                  {roleUser?.userRole === "user" ? (
                     <div>
                       <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
                         <NavLink
@@ -161,8 +161,8 @@ const Dashboard = ({ children }) => {
                     </div>
                   ) : (
                     ""
-                  )} */}
-                  {roleUser?.userRole === "user" ? (
+                  )}
+                  {/* {roleUser?.userRole === "user" ? (
                     <div>
                       <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
                         <NavLink href="/dashboard/doctor_appointment">
@@ -196,7 +196,7 @@ const Dashboard = ({ children }) => {
                     </div>
                   ) : (
                     ""
-                  )}
+                  )} */}
 
                   {/* <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
 										<Link className="flex gap-4" href="">
