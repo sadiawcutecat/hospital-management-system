@@ -4,6 +4,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { FcGoogle } from "react-icons/fc";
 
 const SocialLogin = () => {
+
   const router = useRouter();
   const { googleLogin } = useAuth();
 

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import TableData from "./TableData";
 // import { FaCheck, FaEye } from "react-icons/fa";
 // import { ImCancelCircle } from "react-icons/im";
@@ -14,7 +14,7 @@ const DoctorPetain = () => {
         setUser({ data });
       });
   }, []);
-  
+
   return (
     <div>
       <div>
@@ -22,7 +22,7 @@ const DoctorPetain = () => {
       </div>
       {/* --------------table----------*/}
 
-      <div className="overflow-x-auto bg-white shadow-xl p-16 border-gray-100 border-2">
+      <div className="overflow-x-auto bg-white shadow-xl md:p-16 border-gray-100 border-2">
         <table className="table w-full ">
           {/* head */}
 
@@ -36,10 +36,9 @@ const DoctorPetain = () => {
             </tr>
           </thead>
           <tbody className="p-10">
-            {users?.data?.result.map((user) => <TableData 
-              user={user}
-              key={user._id}
-            ></TableData> )}
+            {users?.data?.result.map((user) => (
+              <TableData user={user} key={user._id}></TableData>
+            ))}
             {/* {users?.data?.result.map((user) => (
               <tr key={user._id}>
                 <td data-label="Name & Photo">

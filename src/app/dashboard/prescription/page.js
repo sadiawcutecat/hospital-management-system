@@ -24,7 +24,7 @@ const prescription = () => {
                 prescriptions?.map(prescription => {
                     return (
                         <div key={prescription._id} >
-                            <div className=" flex w-full md:w-[60%] justify-center items-center mx-auto shadow-lg p-8 ">
+                            <div className=" flex w-full justify-center items-center shadow-lg p-8 ">
                                 <img
                                     src={prescription.doctorPhoto}
                                     alt=""
@@ -33,12 +33,16 @@ const prescription = () => {
 
                                 <div className="ms-6">
                                     <h2 className="font-bold">{prescription.doctorName}</h2>
+                                    
+                                    <p> <span className='font-bold'>Date & Time:</span> {prescription.Date_Time}</p>
+                                    <p><span className='font-bold'>Type:</span> {prescription.Type}</p>
+                                    <p><span className='font-bold'>Purpose:</span> {prescription.Purpose}</p>
                                 </div>
-                               
 
-                                    {/* The button to open modal */}
-                                    <div className="flex justify-end items-center  space-x-6 ms-auto">
-                                <label htmlFor={`my-modal-${prescription._id}`} className="btn btn-sm text-emerald-600 bg-emerald-200  hover:bg-emerald-400">
+
+                                {/* The button to open modal */}
+                                <div className="flex justify-end items-center  space-x-6 ms-auto">
+                                    <label htmlFor={`my-modal-${prescription._id}`} className="btn btn-sm text-emerald-600 bg-emerald-200  hover:bg-emerald-400">
                                         Prescription</label>
 
                                     {/* Put this part before </body> tag */}
@@ -47,9 +51,8 @@ const prescription = () => {
                                         <div className="modal-box text-center">
                                             <h2 className='font-bold '>{prescription.name}</h2>
                                             <p><span className='font-bold'>Email:</span> {prescription.email}</p>
-                                            <p> <span className='font-bold'>Date & Time:</span> {prescription.Date_Time}</p>
-                                            <p><span className='font-bold'>Purpose:</span> {prescription.Purpose}</p>
-                                            <p><span className='font-bold'>Type:</span> {prescription.Type}</p>
+                                           
+                                          
                                             <p>{prescription.Prescription}</p>
                                             {/* <Form patient={patient}></Form> */}
                                             <div className="modal-action">
@@ -61,8 +64,8 @@ const prescription = () => {
                                 </div>
 
 
-                            
-                              
+
+
                             </div>
                         </div>
 
