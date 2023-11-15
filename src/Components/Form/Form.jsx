@@ -1,10 +1,11 @@
+import Swal from "sweetalert2";
 import useAuth from "../hooks/useAuth";
 
 const Form = ({ patient }) => {
-const {user}=useAuth();
+  const { user } = useAuth();
   const handlePrescription = (e) => {
     e.preventDefault();
-    
+
     const form = e.target;
 
     const name = form.name.value;
@@ -21,8 +22,8 @@ const {user}=useAuth();
       Purpose,
       Type,
       Prescription,
-      doctorPhoto : user.photoURL,
-      doctorName : user.displayName
+      doctorPhoto: user.photoURL,
+      doctorName: user.displayName
     };
 
     console.log(prescription);
@@ -36,6 +37,15 @@ const {user}=useAuth();
     })
       .then((res) => res.json())
       .then((data) => {
+      if(data.success){
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "Prescription Added Successfully",
+          showConfirmButton: false,
+          timer: 1000,
+        });
+      }
         console.log(data);
       });
   };
@@ -44,13 +54,8 @@ const {user}=useAuth();
     <div>
       <form onSubmit={(e) => handlePrescription(e)}>
         <div className="flex gap-6 font-bold ">
-          {/* <div className="form-control w-1/2">
-                        <label className="label">
-                            <span className="label-text">Photo Url</span>
-                        </label>
-                        <input type="url" name='photo' placeholder="photo url" className="input input-bordered" />
-                    </div> */}
-          <div className="form-control w-1/2">
+
+          <div className="form-control w-full ">
             <label className="label">
               <span className="label-text">Name</span>
             </label>
@@ -64,8 +69,8 @@ const {user}=useAuth();
             />
           </div>
         </div>
-        <div className="flex gap-6 font-bold ">
-          <div className="form-control w-1/2">
+        <div className="md:flex gap-6 font-bold ">
+          <div className="form-control md:w-1/2 w-full  ">
             <label className="label">
               <span className="label-text">email</span>
             </label>
@@ -78,7 +83,7 @@ const {user}=useAuth();
               required
             />
           </div>
-          <div className="form-control w-1/2">
+          <div className="form-control lg:w-1/2 md:w-full ">
             <label className="label">
               <span className="label-text">APPt.Date</span>
             </label>
