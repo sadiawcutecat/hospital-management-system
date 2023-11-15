@@ -11,6 +11,10 @@ export const GET = async (req, { params }) => {
   };
   await mongoose.connect(dbConnection);
   const result = await PaymentModal.find(filter);
-
   return NextResponse.json({ result: [result], success: true });
 };
+// export const GET = async () => {
+// 	await mongoose.connect(dbConnection);
+// 	const result = await PaymentModal.find();
+// 	return NextResponse.json({ result, success: true });
+// };

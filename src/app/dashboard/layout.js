@@ -1,26 +1,23 @@
 "use client";
+import Loading from "@/Components/Common/Loading/Loading";
+import NavLink from "@/Components/Common/NavLink/NavLink";
+import useAuth from "@/Components/hooks/useAuth";
+import useUserinfo from "@/Components/hooks/useUserinfo/useUserinfo";
 import Link from "next/link";
+import { redirect } from "next/navigation";
+import { useContext, useState } from "react";
 import {
   AiFillWechat,
   AiOutlineClose,
   AiOutlineFileText,
 } from "react-icons/ai";
-import { HiOutlineBookOpen, HiOutlineLogout } from "react-icons/hi";
-
-import NavLink from "@/Components/Common/NavLink/NavLink";
-
-import Loading from "@/Components/Common/Loading/Loading";
-import useAuth from "@/Components/hooks/useAuth";
-import useUserinfo from "@/Components/hooks/useUserinfo/useUserinfo";
-import { redirect } from "next/navigation";
-import { useContext, useState } from "react";
 import { FaBars, FaCalendarCheck, FaStar, FaUserInjured } from "react-icons/fa";
+import { HiOutlineBookOpen, HiOutlineLogout } from "react-icons/hi";
 import { AuthContext } from "../(with-navbar)/context/AuthContext";
 
 const Dashboard = ({ children }) => {
   const { data } = useUserinfo();
   const roleUser = data?.result;
-  console.log(roleUser);
   const { logout } = useAuth();
   const [open, setOpen] = useState(false);
   const { user, loading } = useContext(AuthContext);
@@ -95,14 +92,32 @@ const Dashboard = ({ children }) => {
                     ""
                   )}
                   {roleUser?.userRole === "admin" ? (
-                    <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
-                      <NavLink
-                        classlist="flex gap-4"
-                        href="/dashboard/all-users"
-                      >
-                        <FaUserInjured className="mt-1 " /> All Users
-                      </NavLink>
-                    </p>
+                    <>
+                      <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
+                        <NavLink
+                          classlist="flex gap-4"
+                          href="/dashboard/all-users"
+                        >
+                          <FaUserInjured className="mt-1 " /> All Users
+                        </NavLink>
+                      </p>
+                      <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
+                        <NavLink
+                          classlist="flex gap-4"
+                          href="/dashboard/addDoctor"
+                        >
+                          <FaUserInjured className="mt-1 " /> Add Doctor
+                        </NavLink>
+                      </p>
+                      <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
+                        <NavLink
+                          classlist="flex gap-4"
+                          href="/dashboard/adminpaymenthistory"
+                        >
+                          <FaUserInjured className="mt-1 " /> Payment History
+                        </NavLink>
+                      </p>
+                    </>
                   ) : (
                     ""
                   )}
@@ -127,6 +142,15 @@ const Dashboard = ({ children }) => {
                         <Link className="flex gap-4" href="">
                           <AiOutlineFileText className="mt-1 " />
                           Invoices
+                        </Link>
+                      </p>
+                      <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
+                        <Link
+                          className="flex gap-4"
+                          href="/dashboard/userpayment"
+                        >
+                          <AiOutlineFileText className="mt-1 " />
+                          Payment History
                         </Link>
                       </p>
                       <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">

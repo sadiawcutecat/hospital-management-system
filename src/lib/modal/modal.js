@@ -19,6 +19,7 @@ const doctor = new mongoose.Schema({
 	place: String,
 	rating: Number,
 	price: Number,
+	patientCount: Number,
 	Chamber_Appointment: {
 		hospital: String,
 		address: String,

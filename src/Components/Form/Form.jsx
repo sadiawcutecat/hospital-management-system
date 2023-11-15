@@ -37,7 +37,7 @@ const Form = ({ patient }) => {
   return (
     <div>
       <form onSubmit={(e) => handlePrescription(e)}>
-        <div className="flex gap-6 font-bold ">
+        <div className="flex flex-cols-1 lg:flex-cols-2 gap-6 font-bold ">
           {/* <div className="form-control w-1/2">
                         <label className="label">
                             <span className="label-text">Photo Url</span>

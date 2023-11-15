@@ -27,9 +27,9 @@ const OurDoctors = () => {
   });
 
   return (
-    <div className="w-9/12 mx-auto mt-14">
+    <div className="w-9/12 mx-auto mt-14" >
       <div className="md:flex items-center gap-10">
-        <div className="img-slide opacity-0 duration-500">
+        <div className="img-slide opacity-0 duration-500" >
           <img src="https://i.ibb.co/TgnshpW/Our-Doctors.png" alt="" />
         </div>
         <div>

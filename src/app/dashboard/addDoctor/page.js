@@ -43,6 +43,7 @@ const AppointmentForm = () => {
 			place: form.place.value,
 			rating: parseInt(form.rating.value),
 			price: parseInt(form.price.value),
+			patientCount: 0,
 			Chamber_Appointment: {
 				hospital: form.hospital.value,
 				address: form.address.value,
@@ -55,11 +56,11 @@ const AppointmentForm = () => {
 		fetch('/api/doctors', {
 			method: 'POST',
 			headers: {
-				'content-type': 'application/json',
+				'content-type': 'application/json'
 			},
 			body: JSON.stringify(formData),
 		})
-			.then((res) => res.json())
+			.then((res) => res?.json())
 			.then((data) => {
 				console.log(data);
 			});
