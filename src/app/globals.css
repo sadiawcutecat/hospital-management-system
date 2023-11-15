@@ -1,3 +1,5 @@
+@import "keep-react/src/main.min.css";
+
 /* color we use */
 /* light-bg:E0F4FF */
 
@@ -96,7 +98,7 @@
     position: absolute;
     left: 0;
     font-weight: bold;
-    padding-left: 10px;
+    padding-left: 3rem;
   }
 }
 @media screen and (max-width: 380px) {

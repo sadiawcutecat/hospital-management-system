@@ -16,12 +16,13 @@ const Testimonial = () => {
   const [isTestimonial, setIsTestimonial] = useState([]);
 
   useEffect(() => {
-    fetch("/api/review")
+    fetch(`/api/review`)
       .then((res) => res?.json())
       .then((data) => {
         setIsTestimonial(data);
       });
   }, []);
+  console.log(isTestimonial)
 
   return (
     <div className=" md:p-20 p-8 mb-10">

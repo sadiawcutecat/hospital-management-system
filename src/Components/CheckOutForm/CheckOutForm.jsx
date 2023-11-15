@@ -1,4 +1,5 @@
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
+import moment from "moment";
 import { useEffect, useState } from "react";
 import { FaStar } from "react-icons/fa";
 import Swal from "sweetalert2";
@@ -9,6 +10,7 @@ const CheckOutForm = ({ doctor, user }) => {
   const [doctorName, setDoctorName] = useState("");
   const [price, setPrice] = useState(0);
   const [doctorId, setDoctorId] = useState("");
+  const [processing, setProcessing] = useState(true);
 
   const elements = useElements();
   const stripe = useStripe();
@@ -37,6 +39,7 @@ const CheckOutForm = ({ doctor, user }) => {
       });
 
       if (error) throw new Error(error.message);
+      setProcessing(false);
 
       const response = await fetch("/api/checkout", {
         method: "POST",
@@ -76,16 +79,19 @@ const CheckOutForm = ({ doctor, user }) => {
         const { paymentIntent } = await stripe.retrievePaymentIntent(
           data.clientSecret
         );
+        setProcessing(true);
         if (confirm.paymentIntent.id) {
           const paidUser = {
             payment_id: confirm.paymentIntent.id,
+            amount: confirm.paymentIntent.amount,
             petainName: user?.displayName,
             petainEmail: user?.email,
             petainPhoto: user?.photoURL,
             doctor: doctor?.result[0].name,
             doctorId: doctor?.result[0]._id,
+            doctorEmail: doctor?.result[0].email,
             doctorPhoto: doctor?.result[0].image,
-            date: new Date(),
+            date: moment().format("MMMM Do YYYY, h:mm a"),
             status: "pending",
           };
           fetch("/api/payment", {
@@ -98,6 +104,11 @@ const CheckOutForm = ({ doctor, user }) => {
             .then((res) => res.json())
             .then((data) => {
               console.log(data);
+              fetch(`/api/doctors/${doctor?.result[0]._id}`, {
+                method: "PUT",
+              })
+                .then((res) => res.json())
+                .then((data) => console.log(data));
               Swal.fire({
                 position: "center",
                 icon: "success",
@@ -184,7 +195,7 @@ const CheckOutForm = ({ doctor, user }) => {
                           <input
                             className="w-full px-2 text-xs border-1/2 input-xs lg:text-xl"
                             type="text"
-                            value={_id}
+                            value={doctor?.result[0].email}
                             onChange={(e) => setDoctorId(e.target.value)}
                             placeholder={_id}
                           />
@@ -213,6 +224,7 @@ const CheckOutForm = ({ doctor, user }) => {
                               type="button"
                               className="text-white bg-red-600 btn"
                               onClick={handlePayment}
+                              disabled={!stripe || !processing}
                             >
                               Confirm Payment
                             </button>

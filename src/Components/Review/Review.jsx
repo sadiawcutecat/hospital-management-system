@@ -31,7 +31,7 @@ const Review = () => {
     };
     console.log(updateForm);
 
-    fetch("http://localhost:3000/api/review", {
+    fetch("/api/review", {
       method: "POST",
       headers: {
         "content-type": "application/json",
