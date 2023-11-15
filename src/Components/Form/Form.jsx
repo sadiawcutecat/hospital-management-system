@@ -127,7 +127,7 @@ const Form = ({ patient }) => {
         </div>
 
         <div className="flex gap-6 font-bold ">
-          <div className="form-control md:w-1/2 w-full">
+          <div className="form-control  w-full">
             <label className="label">
               <span className="label-text">Prescription</span>
             </label>
