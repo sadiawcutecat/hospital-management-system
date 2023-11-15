@@ -119,6 +119,43 @@ const Dashboard = ({ children }) => {
 										''
 									)}
 
+                  {roleUser?.userRole === "user" ? (
+                    <div>
+                      <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
+                        <NavLink
+                          classlist="flex gap-4"
+                          href="/dashboard/doctor_appointment"
+                        >
+                          <FaCalendarCheck className="mt-1 " /> Appointments
+                        </NavLink>
+                      </p>
+                      <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
+                        <Link className="flex gap-4" href="">
+                          <AiFillWechat className="mt-1 text-xl" />
+                          Chat
+                        </Link>
+                      </p>
+                      <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
+                        <Link className="flex gap-4" href="">
+                          <AiOutlineFileText className="mt-1 " />
+                          Invoices
+                        </Link>
+                      </p>
+                      <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
+                        <Link className="flex gap-4" href="/dashboard/prescription">
+                          <AiOutlineFileText className="mt-1 " />
+                          Prescription
+                        </Link>
+                      </p>
+                      <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
+                        <Link className="flex gap-4" href="/dashboard/review">
+                          <FaStar className="mt-1 " /> Reviews
+                        </Link>
+                      </p>
+                    </div>
+                  ) : (
+                    ""
+                  )}
 									{roleUser?.userRole === 'user' ? (
 										<div>
 											<p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">

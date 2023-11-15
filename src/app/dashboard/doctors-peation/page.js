@@ -2,15 +2,14 @@
 // import { useForm } from "react-hook-form";
 import { ImCancelCircle } from "react-icons/im";
 import { FaEye, FaCheck } from "react-icons/fa";
-// import React, { useEffect, useState } from "react";
+
 import { testimonialData } from "@/Data/testimonialData";
 import Form from "@/Components/Form/Form";
-// import { Link } from "react-router-dom";
+
 
 const DoctorPetain = () => {
 
-  // const { register, handleSubmit } = useForm();
-  // const onSubmit = (data) => console.log(data);
+
 
   return (
     <div>

@@ -1,6 +1,11 @@
+import Swal from "sweetalert2";
+import useAuth from "../hooks/useAuth";
+
 const Form = ({ patient }) => {
+  const { user } = useAuth();
   const handlePrescription = (e) => {
     e.preventDefault();
+
     const form = e.target;
 
     const name = form.name.value;
@@ -17,6 +22,8 @@ const Form = ({ patient }) => {
       Purpose,
       Type,
       Prescription,
+      doctorPhoto: user.photoURL,
+      doctorName: user.displayName
     };
 
     console.log(prescription);
@@ -30,6 +37,15 @@ const Form = ({ patient }) => {
     })
       .then((res) => res.json())
       .then((data) => {
+      if(data.success){
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "Prescription Added Successfully",
+          showConfirmButton: false,
+          timer: 1000,
+        });
+      }
         console.log(data);
       });
   };
@@ -37,14 +53,9 @@ const Form = ({ patient }) => {
   return (
     <div>
       <form onSubmit={(e) => handlePrescription(e)}>
-        <div className="flex flex-cols-1 lg:flex-cols-2 gap-6 font-bold ">
-          {/* <div className="form-control w-1/2">
-                        <label className="label">
-                            <span className="label-text">Photo Url</span>
-                        </label>
-                        <input type="url" name='photo' placeholder="photo url" className="input input-bordered" />
-                    </div> */}
-          <div className="form-control w-1/2">
+        <div className="flex gap-6 font-bold ">
+
+          <div className="form-control w-full ">
             <label className="label">
               <span className="label-text">Name</span>
             </label>
@@ -58,8 +69,8 @@ const Form = ({ patient }) => {
             />
           </div>
         </div>
-        <div className="flex gap-6 font-bold ">
-          <div className="form-control w-1/2">
+        <div className="md:flex gap-6 font-bold ">
+          <div className="form-control md:w-1/2 w-full  ">
             <label className="label">
               <span className="label-text">email</span>
             </label>
@@ -72,7 +83,7 @@ const Form = ({ patient }) => {
               required
             />
           </div>
-          <div className="form-control w-1/2">
+          <div className="form-control md:w-1/2 w-full">
             <label className="label">
               <span className="label-text">APPt.Date</span>
             </label>
@@ -86,7 +97,7 @@ const Form = ({ patient }) => {
           </div>
         </div>
         <div className="flex gap-6 font-bold ">
-          <div className="form-control w-1/2">
+          <div className="form-control md:w-1/2 w-full">
             <label className="label">
               <span className="label-text">Purpose</span>
             </label>
@@ -98,7 +109,7 @@ const Form = ({ patient }) => {
               required
             />
           </div>
-          <div className="form-control w-1/2">
+          <div className="form-control md:w-1/2 w-full">
             <label className="mt-2" htmlFor="category">
               Type
             </label>
@@ -116,7 +127,7 @@ const Form = ({ patient }) => {
         </div>
 
         <div className="flex gap-6 font-bold ">
-          <div className="form-control w-full">
+          <div className="form-control  w-full">
             <label className="label">
               <span className="label-text">Prescription</span>
             </label>
