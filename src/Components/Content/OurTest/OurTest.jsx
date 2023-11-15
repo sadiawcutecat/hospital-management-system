@@ -42,7 +42,7 @@ const OurTest = () => {
               </li>
             </ul>
             <Link
-              href="/dashboard/view-reports"
+              href="/dashboard/prescription"
               className="btn btn-success btn-sm hover:bg-green-500 mt-5"
             >
               View Reports

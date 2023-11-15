@@ -74,11 +74,10 @@ const Dashboard = ({ children }) => {
                   {roleUser?.userRole === "doctor" ? (
                     <div>
                       <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
-                        <NavLink
-                          classlist="flex gap-4"
-                          href="/dashboard/doctors-peation"
-                        >
-                          <FaUserInjured className="mt-1 " /> My Patients
+                        <NavLink href="/dashboard/doctors-peation">
+                          <span classlist="flex gap-4">
+                            <FaUserInjured className="mt-1 " /> My Patients
+                          </span>
                         </NavLink>
                       </p>
                       <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
@@ -94,27 +93,25 @@ const Dashboard = ({ children }) => {
                   {roleUser?.userRole === "admin" ? (
                     <>
                       <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
-                        <NavLink
-                          classlist="flex gap-4"
-                          href="/dashboard/all-users"
-                        >
-                          <FaUserInjured className="mt-1 " /> All Users
+                        <NavLink href="/dashboard/all-users">
+                          <span classlist="flex gap-4">
+                            <FaUserInjured className="mt-1 " /> All Users
+                          </span>
                         </NavLink>
                       </p>
                       <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
-                        <NavLink
-                          classlist="flex gap-4"
-                          href="/dashboard/addDoctor"
-                        >
-                          <FaUserInjured className="mt-1 " /> Add Doctor
+                        <NavLink href="/dashboard/addDoctor">
+                          <span classlist="flex gap-4">
+                            <FaUserInjured className="mt-1 " /> Add Doctor
+                          </span>
                         </NavLink>
                       </p>
                       <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
-                        <NavLink
-                          classlist="flex gap-4"
-                          href="/dashboard/adminpaymenthistory"
-                        >
-                          <FaUserInjured className="mt-1 " /> Payment History
+                        <NavLink href="/dashboard/adminpaymenthistory">
+                          <span classlist="flex gap-4">
+                            {" "}
+                            <FaUserInjured className="mt-1 " /> Payment History
+                          </span>
                         </NavLink>
                       </p>
                     </>
@@ -122,7 +119,7 @@ const Dashboard = ({ children }) => {
                     ""
                   )}
 
-                  {roleUser?.userRole === "user" ? (
+                  {/* {roleUser?.userRole === "user" ? (
                     <div>
                       <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
                         <NavLink
@@ -133,30 +130,68 @@ const Dashboard = ({ children }) => {
                         </NavLink>
                       </p>
                       <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
-                        <Link className="flex gap-4" href="">
+                        <NavLink className="flex gap-4" href="">
                           <AiFillWechat className="mt-1 text-xl" />
                           Chat
-                        </Link>
+                        </NavLink>
                       </p>
                       <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
-                        <Link className="flex gap-4" href="">
+                        <NavLink className="flex gap-4" href="">
                           <AiOutlineFileText className="mt-1 " />
                           Invoices
-                        </Link>
+                        </NavLink>
                       </p>
                       <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
-                        <Link
+                        <NavLink
                           className="flex gap-4"
-                          href="/dashboard/userpayment"
+                          href="/dashboard/prescription"
                         >
                           <AiOutlineFileText className="mt-1 " />
-                          Payment History
-                        </Link>
+                          Prescription
+                        </NavLink>
                       </p>
                       <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
-                        <Link className="flex gap-4" href="/dashboard/review">
+                        <NavLink
+                          className="flex gap-4"
+                          href="/dashboard/review"
+                        >
                           <FaStar className="mt-1 " /> Reviews
-                        </Link>
+                        </NavLink>
+                      </p>
+                    </div>
+                  ) : (
+                    ""
+                  )} */}
+                  {roleUser?.userRole === "user" ? (
+                    <div>
+                      <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
+                        <NavLink href="/dashboard/doctor_appointment">
+                          <span classlist="flex gap-4">
+                            <FaCalendarCheck className="mt-1 " /> Appointments
+                          </span>
+                        </NavLink>
+                      </p>
+                      <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
+                        <NavLink className="flex gap-4" href="">
+                          <AiFillWechat className="mt-1 text-xl" />
+                          Chat
+                        </NavLink>
+                      </p>
+
+                      <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
+                        <NavLink href="/dashboard/userpayment">
+                          <span className="flex gap-4">
+                            <AiOutlineFileText className="mt-1 " />
+                            Payment History
+                          </span>
+                        </NavLink>
+                      </p>
+                      <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
+                        <NavLink href="/dashboard/review">
+                          <span className="flex gap-4">
+                            <FaStar className="mt-1 " /> Reviews
+                          </span>
+                        </NavLink>
                       </p>
                     </div>
                   ) : (
