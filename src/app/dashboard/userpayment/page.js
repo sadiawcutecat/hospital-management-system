@@ -17,6 +17,8 @@ const UserPayment = () => {
       });
   }, [user.email]);
 
+ 
+
   const payments = isPayment.filter((p) => p.petainEmail === user.email);
   console.log(payments);
 
@@ -81,8 +83,10 @@ const UserPayment = () => {
               <Table.Cell>{payment.amount}</Table.Cell>
               <Table.Cell>{payment.date}</Table.Cell>
               <Table.Cell>
-                <button className="bg-red-600 btn btn-sm text-white">
-                  Delete
+              <button
+                className="bg-red-600 btn btn-sm text-white"
+              Delete
+              >
                 </button>
               </Table.Cell>
             </Table.Row>
