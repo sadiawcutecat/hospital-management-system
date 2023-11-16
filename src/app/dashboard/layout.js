@@ -3,7 +3,7 @@ import Loading from "@/Components/Common/Loading/Loading";
 import NavLink from "@/Components/Common/NavLink/NavLink";
 import useAuth from "@/Components/hooks/useAuth";
 import useUserinfo from "@/Components/hooks/useUserinfo/useUserinfo";
-import Link from "next/link";
+
 import { redirect } from "next/navigation";
 import { useContext, useState } from "react";
 import {
@@ -88,10 +88,10 @@ const Dashboard = ({ children }) => {
                         </NavLink>
                       </p>
                       <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
-                        <Link className="flex gap-4" href="">
+                        <NavLink className="flex gap-4" href="/dashboard/chat">
                           <AiFillWechat className="mt-1 text-xl" />
                           Chat
-                        </Link>
+                        </NavLink>
                       </p>
                     </div>
                   ) : (
@@ -182,7 +182,7 @@ const Dashboard = ({ children }) => {
                         </NavLink>
                       </p>
                       <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
-                        <NavLink className="flex gap-4" href="">
+                        <NavLink className="flex gap-4" href="/dashboard/chat">
                           <AiFillWechat className="mt-1 text-xl" />
                           Chat
                         </NavLink>
@@ -214,12 +214,7 @@ const Dashboard = ({ children }) => {
                     ""
                   )}
 
-                  {/* <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
-										<Link className="flex gap-4" href="">
-											<FaShareAlt className="mt-1 " />
-											Social Media
-										</Link>
-									</p> */}
+               
 
                   <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
                     <button className="flex gap-4" onClick={() => logout()}>
