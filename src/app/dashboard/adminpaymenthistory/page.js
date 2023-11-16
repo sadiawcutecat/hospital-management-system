@@ -3,8 +3,10 @@ import Image from "next/image";
 import { Avatar, Badge, Button, Popover, Table } from "keep-react";
 
 import { useEffect, useState } from 'react';
+import Swal from "sweetalert2";
 
 const AdminPayment = () => {
+
 	const [isPayment, setIsPayment] = useState([]);
 	useEffect(() => {
 		fetch('/api/payment')
@@ -13,7 +15,44 @@ const AdminPayment = () => {
 				setIsPayment(data.result);
 			});
 	}, []);
-	console.log(isPayment);
+
+  const handleDelete = async (id) => {
+    try {
+      const result = await Swal.fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!",
+      });
+  
+      if (result.isConfirmed) {
+        const response = await fetch(`/api/payment/${id}`, {
+          method: "DELETE",
+          headers: {
+            "Content-type": "application/json",
+          },
+        });
+  
+        if (response.ok) {
+          // Update the state to remove the deleted payment
+          setIsPayment((prevPayments) =>
+            prevPayments.filter((payment) => payment.payment_id !== id)
+          );
+  
+          Swal.fire("Deleted!", "The payment has been deleted.", "success");
+        } else {
+          Swal.fire("Error!", "Failed to delete payment.", "error");
+        }
+      }
+    } catch (error) {
+      console.error("Error deleting payment:", error);
+      Swal.fire("Error!", "Failed to delete payment.", "error");
+    }
+  };
+ 
 
 	return (
 
@@ -88,7 +127,7 @@ const AdminPayment = () => {
 			{payment.date} 
             </Table.Cell>
             <Table.Cell>
-             <button className="bg-red-600 btn btn-sm text-white">Delete</button>
+             <button   onClick={() => handleDelete(payment.payment_id)} className="bg-red-600 btn btn-sm text-white">Delete</button>
             </Table.Cell>
 			</Table.Row>))}
         </Table.Body>

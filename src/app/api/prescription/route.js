@@ -11,7 +11,7 @@ export const POST = async(req)=>{
     await mongoose.connect(dbConnection);
    const prescriptionSchema = new Prescription(prescription);
    const result = await prescriptionSchema.save();
-return NextResponse.json({result});
+return NextResponse.json({result, success:true});
     
   } catch (error) {
     return NextResponse.json({error: error});
