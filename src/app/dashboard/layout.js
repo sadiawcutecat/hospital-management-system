@@ -88,9 +88,9 @@ const Dashboard = ({ children }) => {
                         </NavLink>
                       </p>
                       <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
-                        <NavLink className="flex gap-4" href="/dashboard/chat">
-                          <AiFillWechat className="mt-1 text-xl" />
-                          Chat
+                        <NavLink  href="/dashboard/chat">
+                        <span className="flex gap-4">  <AiFillWechat className="mt-1 text-xl" />
+                          Chat</span>
                         </NavLink>
                       </p>
                     </div>
@@ -182,9 +182,9 @@ const Dashboard = ({ children }) => {
                         </NavLink>
                       </p>
                       <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
-                        <NavLink className="flex gap-4" href="/dashboard/chat">
-                          <AiFillWechat className="mt-1 text-xl" />
-                          Chat
+                        <NavLink  href="/dashboard/chat">
+                        <span className="flex gap-4">  <AiFillWechat className="mt-1 text-xl" />
+                          Chat</span>
                         </NavLink>
                       </p>
                       <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
