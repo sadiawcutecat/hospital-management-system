@@ -9,8 +9,8 @@ import { HiOutlineLocationMarker, HiOutlinePhone } from "react-icons/hi";
 // const resend = new Resend("re_7zcSdR2s_ExsXq82wLyWEcAFMR9h77HJv");
 const Contact = () => {
   return (
-    <div className="container mt-20 w-full mx-auto">
-      <div className="w-full h-96 mx-auto bg-[#E0F4FF]  flex flex-col items-center pt-24 lg:pt-20">
+    <div className="container-fluid lg:mt-20 w-full mx-auto">
+      <div className="w-full h-96 mx-auto bg-[#E0F4FF]  flex flex-col items-center pt-24 lg:pt-20 px-3">
         <h1 className="leading-loose text-teal-500 lg:text-4xl font-serif">
           Wether you're at home or in the wild we are here for you.
           <br />
@@ -21,7 +21,7 @@ const Contact = () => {
         </button>
       </div>
       <div className="bg-base-200">
-        <div className="flex flex-col items-center space-y-8">
+        <div className="flex flex-col items-center space-y-8 px-3">
           <h1 className="text-3xl lg:text-5xl font-serif pt-16">Get in Touch</h1>
           <p className="lg:text-xl text-center">
             Duis aute irure dolor in reprehenderit in voluptate velit <br />{" "}
@@ -30,8 +30,8 @@ const Contact = () => {
         </div>
         <div className="flex flex-col lg:flex-row px-4 lg:px-20 gap-8 w-full mx-auto mt-14 pb-20">
           <div className="card lg:w-96 bg-base-100 shadow-xl">
-            <figure className="px-14 lg:px-10 pt-10">
-              <h2 className="rounded-full w-1/3 p-5 text-white text-5xl bg-blue-400">
+            <figure className=" pt-10 mx-auto">
+              <h2 className="rounded-full mx-auto p-3 text-white text-9xl bg-blue-400">
                 <AiOutlineMail />
               </h2>
             </figure>
@@ -48,8 +48,8 @@ const Contact = () => {
             </div>
           </div>
           <div className="card lg:w-96 bg-base-100 shadow-xl">
-            <figure className="px-14 lg:px-10 pt-10">
-              <h1 className="rounded-full w-1/3 p-5 text-white text-5xl bg-blue-400">
+            <figure className="pt-10 mx-auto">
+              <h1 className="rounded-full p-3 text-white text-9xl bg-blue-400">
                 <HiOutlineLocationMarker />
               </h1>
             </figure>
@@ -68,8 +68,8 @@ const Contact = () => {
             </div>
           </div>
           <div className="card lg:w-96 bg-base-100 shadow-xl">
-            <figure className="px-14 lg:px-10 pt-10">
-              <h1 className="rounded-full w-1/3 p-5 text-white text-5xl bg-blue-400">
+            <figure className="mx-auto pt-10">
+              <h1 className="rounded-full p-3 text-white text-9xl bg-blue-400">
                 <HiOutlinePhone />
               </h1>
             </figure>
