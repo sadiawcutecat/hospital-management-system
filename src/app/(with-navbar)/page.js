@@ -1,10 +1,10 @@
 // import About from "@/Components/About/About";
 // import AllDoctors from "@/Components/AllDoctors/AllDoctors";
 // import About from "@/Components/About/About";
-import Appointment from "@/Components/Appointment/Appointment";
 import BannerSlider from "@/Components/Banner/BannerSlider";
 import OurDoctors from "@/Components/Content/OurDoctors/OurDoctors";
 import OurTest from "@/Components/Content/OurTest/OurTest";
+import Faq from "@/Components/Faq/Faq";
 import PopularDoctors from "@/Components/PopularDoctors/PopularDoctors";
 import Testimonial from "@/Components/Testimonial/Testimonial";
 
@@ -16,7 +16,7 @@ export default function Home() {
       <OurDoctors />
       <OurTest />
       <PopularDoctors></PopularDoctors>
-      <Appointment></Appointment>
+      <Faq></Faq>
       <Testimonial></Testimonial>
     </main>
   );

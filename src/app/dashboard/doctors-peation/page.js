@@ -68,7 +68,7 @@ const DoctorPetain = () => {
       </div>
       {/* --------------table----------*/}
 
-      <div className="overflow-x-auto bg-white shadow-xl p-16 border-gray-100 border-2">
+      <div className="overflow-x-auto bg-white shadow-xl p-4 lg:p-16 border-gray-100 border-2">
         <div className="space-x-2 my-6">
           <button className="btn bg-emerald-500 text-white p-4 hover:bg-emerald-700">
             Upcoming
@@ -91,12 +91,12 @@ const DoctorPetain = () => {
               <th>Action</th>
             </tr>
           </thead>
-          <tbody className="p-10">
+          <tbody className="lg:p-10">
             {/* row 1 */}
             {testimonialData.map((patient) => (
               <tr key={patient._id}>
-                <td data-label="Name & Photo">
-                  <div className="flex items-center  gap-3">
+                <td data-label="Name & Photo" className="items-center">
+                  <div className="lg:flex lg:flex-row lg:items-center  md:flex-col items-end gap-3">
                     <div className="avatar">
                       <div className="mask mask-squircle w-12 h-12">
                         <img

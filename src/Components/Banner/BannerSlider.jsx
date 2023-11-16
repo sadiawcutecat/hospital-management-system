@@ -7,6 +7,7 @@ import { useEffect } from "react";
 // import mainSlider from "@/Data/mainSlider";
 // import SingleBannerSlider from "./SingleBannerSlider";
 import Image from "next/image";
+import Link from "next/link";
 const BannerSlider = () => {
   useEffect(() => {
     const banner = document.querySelector("#banner");
@@ -56,7 +57,7 @@ const BannerSlider = () => {
           </SwiperSlide>
         ))}
       </Swiper> */}
-      <div className="md:flex ">
+      <div className="lg:flex mx-auto w-full ">
         <div className=" md:w-10/12 w-full flex  items-center mt-10">
           <div className="md:w-8/12 w-11/12 mx-auto md:text-left text-center">
             <h1 className="md:text-4xl text-3xl font-bold">
@@ -70,7 +71,7 @@ const BannerSlider = () => {
             <button className="btn btn-success">Make appointment</button>
           </div>
         </div>
-        <div className="md:flex gap-4 w-full mt-10 ">
+        <div className="md:flex gap-4 w-full mt-10 mx-auto md:ps-6 ">
           <div className="w-8/12 mx-auto">
             <div
               className=" bg-[#00A9FF]/80  md:w-[300px] w-[250px] md:h-[300px] h-[250px] banner-image-custom-style   -z-10 overflow-hidden translate-y-32 opacity-0 duration-500"

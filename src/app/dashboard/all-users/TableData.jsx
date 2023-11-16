@@ -59,7 +59,7 @@ const TableData = ({ user }) => {
   };
 
   return (
-    <tr className="mx-auto">
+    <tr className="mx-auto w-full">
       <td data-label="Name">
         <div className="avatar mask mask-squircle w-12 h-12">
           <img src={userPhoto} alt="Avatar Tailwind CSS Component" />
