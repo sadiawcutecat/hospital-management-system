@@ -19,7 +19,7 @@ const DoctorPetain = () => {
       .then((res) => res.json())
       .then((data) => {
         setTestimonialData(data.result[0]);
-        console.log(data.result[0]);
+        // console.log(data.result[0]);
       });
   }, []);
 

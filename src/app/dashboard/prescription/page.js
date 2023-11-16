@@ -11,7 +11,7 @@ const prescription = () => {
             .then(res => res.json())
             .then(data => {
                 setPrescriptions(data.result[0])
-                console.log(data.result);
+                // console.log(data.result);
             }
             )
 

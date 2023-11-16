@@ -17,17 +17,3 @@ const patientsData = mongoose.Schema({
 })
 
 export const Patient = mongoose.models.patients || mongoose.model("patients", patientsData);
-
-// name: String,
-// picture: String,
-// serial: String,
-// purpose: String,
-// date: String,
-// time: String,
-// type: String,
-// paid: String,
-// email: String,
-// profession: String,
-// comments: String,
-// location: String,
-// contact: String
