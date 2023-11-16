@@ -43,6 +43,7 @@ const AppointmentForm = () => {
 			place: form.place.value,
 			rating: parseInt(form.rating.value),
 			price: parseInt(form.price.value),
+			email: form.email.value,
 			patientCount: 0,
 			Chamber_Appointment: {
 				hospital: form.hospital.value,
@@ -56,11 +57,11 @@ const AppointmentForm = () => {
 		fetch('/api/doctors', {
 			method: 'POST',
 			headers: {
-				'content-type': 'application/json'
+				'content-type': 'application/json',
 			},
 			body: JSON.stringify(formData),
 		})
-			.then((res) => res?.json())
+			.then((res) => res.json())
 			.then((data) => {
 				console.log(data);
 			});
@@ -164,7 +165,16 @@ const AppointmentForm = () => {
 						/>
 					</label>
 				</div>
-
+				<label className="w-1/2">
+					<span className="block mb-2">Email:</span>
+					<input
+						type="text"
+						name="email"
+						// value={formData.price}
+						onChange={handleChange}
+						className="p-2 border border-gray-300 rounded-md w-full"
+					/>
+				</label>
 				<h2 className="text-xl font-semibold mb-4">Chamber Appointment</h2>
 
 				<div className="w-full md:flex gap-8">
