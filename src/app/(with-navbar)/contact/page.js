@@ -1,65 +1,89 @@
-"use client";
-// import useAuth from "@/Components/hooks/useAuth";
-// import { Resend } from "resend";
-import emailjs from "@emailjs/browser";
+import contact from "@/assets/contact.jpg";
 import Image from "next/image";
-import { useRef } from "react";
-import Swal from "sweetalert2";
+import Link from "next/link";
+import { AiOutlineMail } from "react-icons/ai";
+import { FaArrowCircleRight, FaPhoneAlt } from "react-icons/fa";
+import { FaLocationDot } from "react-icons/fa6";
+import { HiOutlineLocationMarker, HiOutlinePhone } from "react-icons/hi";
 
 // const resend = new Resend("re_7zcSdR2s_ExsXq82wLyWEcAFMR9h77HJv");
 const Contact = () => {
-  const form = useRef();
-
-  const sendEmail = (e) => {
-    e.preventDefault();
-    emailjs
-      .sendForm(
-        "service_g3lqplj",
-        "template_1ro30j1",
-        form.current,
-        "7TDLTQ9I1JwjgJLhl"
-      )
-      .then(
-        (result) => {
-          Swal.fire({
-            position: "center",
-            icon: "success",
-            title: "Email is sended",
-            showConfirmButton: false,
-            timer: 1500,
-          });
-        },
-        (error) => {
-          Swal.fire({
-            position: "center",
-            icon: "error",
-            title: "Your work has been saved",
-            showConfirmButton: false,
-            timer: 1500,
-          });
-        }
-      );
-  };
-
   return (
-    <div>
-      <div className=" mt-24">
-        <div className="relative">
-          <Image
-            width={5000}
-            height={5000}
-            src="https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg"
-            className=" w-[100vw] h-[80vh] mx-auto object-cover "
-            alt=""
-          />
-          <div className=" absolute  w-full bg-black/30 h-full top-0 flex justify-center items-center">
-            <h1 className="text-4xl font-bold text-white w-full bg-black/40 text-center py-4">
-              Feel Free To Contact Us
-            </h1>
+    <div className="container mt-20 w-full mx-auto">
+      <div className="w-full h-96 mx-auto bg-[#E0F4FF]  flex flex-col items-center pt-24 lg:pt-20">
+        <h1 className="leading-loose text-teal-500 lg:text-4xl font-serif">
+          Wether you're at home or in the wild we are here for you.
+          <br />
+          There is a good chance your question has been answered
+        </h1>
+        <button className="lg:text-xl btn bg-[#E0F4FF] border-teal-500 border-4 rounded-3xl lg:w-1/6 mt-8">
+          Contact Us
+        </button>
+      </div>
+      <div className="bg-base-200">
+        <div className="flex flex-col items-center space-y-8">
+          <h1 className="text-3xl lg:text-5xl font-serif pt-16">Get in Touch</h1>
+          <p className="lg:text-xl text-center">
+            Duis aute irure dolor in reprehenderit in voluptate velit <br />{" "}
+            esse cillum dolore eu fugiat nulla pariatur.
+          </p>
+        </div>
+        <div className="flex flex-col lg:flex-row px-4 lg:px-20 gap-8 w-full mx-auto mt-14 pb-20">
+          <div className="card lg:w-96 bg-base-100 shadow-xl">
+            <figure className="px-14 lg:px-10 pt-10">
+              <h2 className="rounded-full w-1/3 p-5 text-white text-5xl bg-blue-400">
+                <AiOutlineMail />
+              </h2>
+            </figure>
+            <div className="card-body items-center text-center">
+              <h2 className="card-title text-xl mb-6 font-bold">Mail to us</h2>
+              <p className="text-blue-600 font-bold">
+                Our friendly team is here to help.
+              </p>
+              <div className="card-actions">
+                <h1 className="hover:text-yellow-400 font-bold">
+                  sraboni@gmail.com
+                </h1>
+              </div>
+            </div>
+          </div>
+          <div className="card lg:w-96 bg-base-100 shadow-xl">
+            <figure className="px-14 lg:px-10 pt-10">
+              <h1 className="rounded-full w-1/3 p-5 text-white text-5xl bg-blue-400">
+                <HiOutlineLocationMarker />
+              </h1>
+            </figure>
+            <div className="card-body items-center text-center">
+              <h2 className="card-title mb-6 font-bold">Office</h2>
+              <p className="text-blue-600 font-bold">
+              Come say hello at our office.
+              </p>
+              <div className="card-actions">
+                <h1 className="font-bold">
+                  Dhaka, Bangladesh
+                  <br />
+                  Chattogram, Bangladesh
+                </h1>
+              </div>
+            </div>
+          </div>
+          <div className="card lg:w-96 bg-base-100 shadow-xl">
+            <figure className="px-14 lg:px-10 pt-10">
+              <h1 className="rounded-full w-1/3 p-5 text-white text-5xl bg-blue-400">
+                <HiOutlinePhone />
+              </h1>
+            </figure>
+            <div className="card-body items-center text-center">
+              <h2 className="card-title mb-6 font-bold">Phone</h2>
+              <p className="text-blue-600 font-bold">Mon-Fri from 8am to 5am</p>
+              <div className="card-actions">
+                <h1 className="font-bold">018********</h1>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <div className="md:flex justify-between items-center  my-20 w-8/12 mx-auto bg-white  ">
+      {/* <div className="md:flex justify-between items-center  my-20 w-8/12 mx-auto bg-white  ">
         <div className="w-full flex justify-center">
           <div className="text-xl">
             <h1 className="md:text-3xl text-2xl font-semibold mb-8">
@@ -98,18 +122,17 @@ const Contact = () => {
             </p>
           </div>
         </div>
-      </div>
+      </div> */}
       <div className="mt-10 md:w-8/12 w-11/12 mx-auto my-10">
         <h1 className="md:text-3xl text-2xl font-bold text-center mb-5 text-slate-500">
           Send Message
         </h1>
-        <form className="mx-auto" ref={form} onSubmit={(e) => sendEmail(e)}>
-          <div className=" font-bold w-full">
+        <form className="">
+          <div className="md:flex  gap-6 font-bold w-full">
             <div className="form-control md:w-1/2 w-full my-2">
               <input
                 type="text"
-                name="from_name"
-                required
+                name="YourName"
                 placeholder="Your Name"
                 className="input input-bordered bg-slate-200"
               />
@@ -117,18 +140,16 @@ const Contact = () => {
             <div className="form-control md:w-1/2 w-full my-2">
               <input
                 type="email"
-                required
                 name="email"
                 placeholder="Your Email"
                 className="input input-bordered bg-slate-200"
               />
             </div>
           </div>
-          <div className="font-bold  ">
+          <div className="md:flex gap-6 font-bold  ">
             <div className="form-control md:w-1/2 w-full my-2">
               <textarea
-                name="message"
-                required
+                name="description"
                 id=""
                 cols="30"
                 rows="10"
@@ -138,17 +159,19 @@ const Contact = () => {
             </div>
           </div>
 
-					<div className="flex justify-center mt-6">
-						<input
-							type="submit"
-							className="btn  bg-emerald-500 font-bold  text-white hover:bg-emerald-600 "
-							value={` Send Message`}
-						/>
-					</div>
-				</form>
-			</div>
-		</div>
-	);
+          <div className="flex justify-center mt-6">
+            <Link
+              href=""
+              className="btn  bg-emerald-500 font-bold  text-white hover:bg-emerald-600 "
+            >
+              Send Message
+              <FaArrowCircleRight></FaArrowCircleRight>
+            </Link>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
 };
 
 export default Contact;
