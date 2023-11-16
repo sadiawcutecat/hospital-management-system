@@ -108,66 +108,6 @@ const DoctorPetain = () => {
 			</div>
 			{/* --------------table----------*/}
 
-<<<<<<< HEAD
-			<div className="overflow-x-auto bg-white shadow-xl p-16 border-gray-100 border-2">
-				<div className="space-x-2 my-6">
-					<button className="btn bg-emerald-500 text-white p-4 hover:bg-emerald-700">
-						Upcoming
-					</button>
-					<button className="btn bg-orange-400 text-white p-4  hover:bg-orange-700 ">
-						Today
-					</button>
-				</div>
-				<hr />
-				<table className="table w-full ">
-					{/* head */}
-
-					<thead>
-						<tr className="text-black font-bold text-xl ">
-							<th>Patient Name</th>
-							<th>Date</th>
-							<th>Type</th>
-							<th>Paid Amount</th>
-							<th className="flex justify-center">Action</th>
-						</tr>
-					</thead>
-					<tbody className="p-10">
-						{/* row 1 */}
-						{testimonialData.map((patient) => (
-							<tr key={patient._id}>
-								<td data-label="Name & Photo">
-									<div className="flex items-center  gap-3">
-										<div className="avatar">
-											<div className="mask mask-squircle w-12 h-12">
-												<img
-													src={patient.petainPhoto}
-													alt="Avatar Tailwind CSS Component"
-												/>
-											</div>
-										</div>
-										<div>
-											<div className="font-bold">{patient.petainName}</div>
-											<div className="">{patient.serial}</div>
-										</div>
-									</div>
-								</td>
-								<td data-label="date & time">
-									{moment().format('MMMM Do YYYY, h:mm a')}
-								</td>
-								<td data-label="type">{patient.status}...</td>
-								<td data-label="price">{patient.paid}</td>
-								<td
-									className="space-x-4 flex items-center justify-center "
-									data-label="#"
-								>
-									{/* The button to open modal */}
-									<label
-										htmlFor={`my-modal-${patient._id}`}
-										className="btn btn-sm text-emerald-600 bg-emerald-200  hover:bg-emerald-400"
-									>
-										<FaEye className=" h-4 w-4" /> View
-									</label>
-=======
       <div className="overflow-x-auto bg-white shadow-xl p-4 lg:p-16 border-gray-100 border-2">
         <div className="space-x-2 my-6">
           <button className="btn bg-emerald-500 text-white p-4 hover:bg-emerald-700">
@@ -218,7 +158,6 @@ const DoctorPetain = () => {
                 <td data-label="type">{patient.type}</td>
                 <td data-label="price">{patient.paid}</td>
                 <td className="space-x-4 flex items-center " data-label="#">
->>>>>>> Sraboni
 
 									{/* Put this part before </body> tag */}
 									<input

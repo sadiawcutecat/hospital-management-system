@@ -17,12 +17,7 @@ export default function Home() {
       <OurDoctors />
       <OurTest />
       <PopularDoctors></PopularDoctors>
-<<<<<<< HEAD
-      <Appointment></Appointment>
-      <Service></Service>
-=======
       <Faq></Faq>
->>>>>>> Sraboni
       <Testimonial></Testimonial>
     </main>
   );
