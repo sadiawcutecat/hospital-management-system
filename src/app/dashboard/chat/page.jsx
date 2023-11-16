@@ -6,10 +6,11 @@ import { FaCircleInfo, FaLinkSlash, FaMicrophoneLines } from 'react-icons/fa6';
 import io from 'socket.io-client';
 
 const Chat = () => {
-  const {user}=useAuth();
+  const { user } = useAuth();
   const [messages, setMessages] = useState([]);
   const [messageInput, setMessageInput] = useState('');
   const [socket, setSocket] = useState(null);
+  const recipient = ''; // Replace with the actual recipient
 
   useEffect(() => {
     // Connect to the Socket.io server

@@ -120,14 +120,12 @@ const Dashboard = ({ children }) => {
                   )}
 
              
-{roleUser?.userRole === "user" ? (
+                  {roleUser?.userRole === "user" ? (
                     <div>
                       <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
-                        <NavLink href="/dashboard/doctor_appointment">
-                          <span className="flex gap-4">
-                            <FaCalendarCheck className="mt-1 " /> Appointments
-                          </span>
-
+                      <NavLink className="flex gap-4" href="/dashboard/doctor_appointment">
+                          <FaCalendarCheck className="mt-1 text-xl" />
+                          Appointment
                         </NavLink>
                       </p>
                       <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
@@ -136,18 +134,12 @@ const Dashboard = ({ children }) => {
                           Chat
                         </NavLink>
                       </p>
-                      <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
-                        <NavLink href="/dashboard/prescription">
-                          <span className="flex gap-4">
-                            <AiOutlineFileText className="mt-1 " />
-                            Prescription
-                          </span>
-                        </NavLink>
-                      </p>
+
                       <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
                         <NavLink href="/dashboard/userpayment">
                           <span className="flex gap-4">
-                            <FaPaypal className="mt-1 " /> Payment History
+                            <AiOutlineFileText className="mt-1 " />
+                            Payment History
                           </span>
                         </NavLink>
                       </p>
