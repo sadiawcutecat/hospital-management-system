@@ -14,12 +14,12 @@ const Faq = () => {
     >
       <div className="text-center">
         <h3 className="md:text-3xl text-xl  font-semibold">
-          Frequently Asked Questions <span className="text-4xl font-bold">?</span>
+          Frequently Asked Questions <span className="text-4xl text-cyan-400 font-bold">?</span>
         </h3>
       </div>
       <div className="flex w-full mx-auto mt-5 gap-5 flex-col lg:flex-row">
         <div className="w-full mx-auto lg:w-1/2">
-          <img className=" lg:min-h-screen"
+          <img className="h-full lg:h-[750px] "
             src="https://img.freepik.com/free-vector/questions-concept-illustration_114360-1513.jpg?size=626&ext=jpg&ga=GA1.1.1055064272.1680254175&semt=ais"
             alt=""
           />
@@ -61,15 +61,8 @@ const Faq = () => {
                 </p>
               </Accordion.Content>
             </Accordion.Panel>
-            <Accordion.Panel>
-              <Accordion.Title className=" hover:bg-slate-400 hover:uppercase">How Can I book appoinment?</Accordion.Title>
-              <Accordion.Content>
-                <p className="leading-7 shadow-md p-5">
-                  In banner section have a Make Appoinment button.By click on
-                  this button you can see a Book Appointment.
-                </p>
-              </Accordion.Content>
-            </Accordion.Panel>
+            
+             
             <Accordion.Panel>
               <Accordion.Title className=" hover:bg-slate-400 hover:uppercase">Is there a Payment system here?</Accordion.Title>
               <Accordion.Content>
