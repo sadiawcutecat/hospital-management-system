@@ -8,6 +8,7 @@ import TableData from './TableData';
 const DoctorPetain = () => {
 	const [users, setUsers] = useState([]);
 
+<<<<<<< HEAD
 	useEffect(() => {
 	  fetch('/api/allUser')
 		.then((res) => res.json())
@@ -75,6 +76,31 @@ const DoctorPetain = () => {
 			</div>
 		</div>
 	);
+=======
+      <div className="overflow-x-auto bg-white shadow-xl p-3 lg:p-16 border-gray-100 border-2">
+        <table className="table w-full ">
+          {/* head */}
+
+          <thead>
+            <tr className="text-black font-bold text-xl ">
+              <th>User Image</th>
+              <th>User Name</th>
+              <th>User Email</th>
+              <th>User Role</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody className="lg:p-10">
+            {users?.data?.result.map((user) => <TableData 
+              user={user}
+              key={user._id}
+            ></TableData> )}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
+>>>>>>> Sraboni
 };
 
 export default DoctorPetain;
