@@ -49,12 +49,10 @@ const UserPayment = () => {
           <Table.HeadCell className="min-w-[215px] text-white">
             Date & Time
           </Table.HeadCell>
-          <Table.HeadCell className="min-w-[80px] text-white">
-            Action
-          </Table.HeadCell>
+         
           <Table.HeadCell className="min-w-[100px]" />
         </Table.Head>
-        <Table.Body className="divide-y divide-gray-25">
+        <Table.Body className="divide-y divide-gray-25 w-full">
           {payments?.map((payment, index) => (
             <Table.Row className="bg-white">
               <Table.Cell key={index}>{index + 1}</Table.Cell>
@@ -82,13 +80,7 @@ const UserPayment = () => {
               <Table.Cell>{payment.payment_id}</Table.Cell>
               <Table.Cell>{payment.amount}</Table.Cell>
               <Table.Cell>{payment.date}</Table.Cell>
-              <Table.Cell>
-              <button
-                className="bg-red-600 btn btn-sm text-white"
-              Delete
-              >
-                </button>
-              </Table.Cell>
+            
             </Table.Row>
           ))}
         </Table.Body>
