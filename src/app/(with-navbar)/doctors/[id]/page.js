@@ -3,9 +3,9 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { FaHospital } from "react-icons/fa";
 import { FaUserDoctor } from "react-icons/fa6";
-import { FcFeedback, FcGraduationCap, FcLike } from "react-icons/fc";
+import { FcGraduationCap, FcLike } from "react-icons/fc";
 import { GrUserExpert } from "react-icons/gr";
-import { ImLocation2 } from "react-icons/im";
+import { ImClock, ImLocation2 } from "react-icons/im";
 import { PiCurrencyDollarFill } from "react-icons/pi";
 
 const SingleDoctors = ({ params }) => {
@@ -19,9 +19,9 @@ const SingleDoctors = ({ params }) => {
   }, []);
 
   return (
-    <div className="mt-28 my-28">
+    <div className="mt-28 my-32 mb-32">
       {allDoctors?.result?.map(
-        ({ 
+        ({
           _id,
           image,
           name,
@@ -76,29 +76,30 @@ const SingleDoctors = ({ params }) => {
                 </div>
                 <div className="w-1/2 mx-auto lg:mt-3">
                   <div>
-                    <h2 className="flex items-center gap-3">
+                    <h2 className="flex items-center gap-3 mt-2">
                       <span className="text-xl">
                         <FcLike />
                       </span>
                       90%
                     </h2>
-                    <h2 className="flex items-center gap-3">
-                      <span className="text-xl">
-                        <FcFeedback />
-                      </span>{" "}
-                      20 Feedback
-                    </h2>
-                    <h2 className="flex items-center gap-3">
+
+                    <h2 className="flex items-center gap-3 mt-2">
                       <span className="text-xl">
                         <PiCurrencyDollarFill />
                       </span>
                       ${price}
                     </h2>
-                    <h2 className="flex items-center gap-3">
+                    <h2 className="flex items-center gap-3 mt-2">
                       <span className="text-xl">
                         <ImLocation2 />
                       </span>
                       {Chamber_Appointment.address}
+                    </h2>
+                    <h2 className="flex items-center gap-3 mt-2">
+                      <span className="text-xl">
+                        <ImClock />
+                      </span>
+                      {Chamber_Appointment.visiting_Hour}
                     </h2>
                   </div>
                   <div className="flex items-center gap-7">

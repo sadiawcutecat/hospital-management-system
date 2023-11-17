@@ -104,7 +104,7 @@ const Navbar = () => {
           </h1>
         </div>
         <ul
-          className={` md:static absolute md:bg-transparent bg-[#0b9795] md:p-0 p-10 md:w-auto text-center w-full   md:flex nav-box duration-300 ${
+          className={` md:static absolute md:bg-transparent bg-[#2192FF] md:p-0 p-10 md:w-auto text-center w-full   md:flex nav-box duration-300 ${
             open ? "left-0 top-0 " : "left-[-500rem] top-0"
           } `}
         >
@@ -112,6 +112,7 @@ const Navbar = () => {
             return (
               <li
                 key={path}
+                onClick={() => setOpen(false)}
                 className="mr-4 md:hover:text-[#0b9795] hover:text-black navBar-list md:mt-0 mt-10"
               >
                 <NavLink
