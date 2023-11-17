@@ -29,6 +29,11 @@
 .banner-image-custom-style {
   border-radius: 51% 40% 31% 35%/50% 46% 28% 60%;
 }
+.popular-doctor {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+}
 
 @keyframes animate-slide {
   0% {
@@ -38,10 +43,63 @@
     opacity: 1;
   }
 }
+
+@media screen and (max-width: 1000px) {
+  /* .table {
+    margin-left: 7rem;
+  } */
+  .popular-doctor {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+  }
+}
 @media screen and (max-width: 740px) {
   /* .table {
     margin-left: 7rem;
   } */
+  .popular-doctor {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+  }
+  .nav-bg-color ul {
+    color: rgb(255, 255, 255) !important;
+  }
+  .table thead {
+    display: none;
+  }
+  .table,
+  .table tbody,
+  .table tr,
+  .table td {
+    display: block !important;
+  }
+  td {
+    text-align: right;
+    border: 1px solid black;
+  }
+  .table tr {
+    margin-bottom: 2rem;
+  }
+  .table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+    padding-left: 3rem;
+  }
+}
+@media screen and (max-width: 520px) {
+  /* .table {
+    margin-left: 7rem;
+  } */
+  .popular-doctor {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 10px;
+  }
+
   .table thead {
     display: none;
   }

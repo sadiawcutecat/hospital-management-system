@@ -1,8 +1,10 @@
 import Link from "next/link";
-import React from "react";
+
 import { FaArrowCircleRight } from "react-icons/fa";
 
+
 const Appointment = () => {
+
   return (
     <div className=" mb-20 md:p-20 p-8 mx-auto mt-10 img-slide opacity-0 duration-1000">
       <div className="text-center">

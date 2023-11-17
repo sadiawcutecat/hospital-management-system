@@ -23,7 +23,7 @@ const PopularDoctors = () => {
           Architecto, doloribus!
         </p>
       </div>
-      <div className="grid md:grid-cols-3 grid-cols-1 gap-5 mt-20 w-10/12 mx-auto text-center text-white">
+      <div className=" popular-doctor grid md:grid-cols-3 grid-cols-1 gap-5 mt-20 w-10/12 mx-auto text-center text-white">
         {popularDoctor?.map((doctor) => {
           return (
             <div
