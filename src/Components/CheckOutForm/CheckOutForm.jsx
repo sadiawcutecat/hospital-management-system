@@ -83,7 +83,7 @@ const CheckOutForm = ({ doctor, user }) => {
         if (confirm.paymentIntent.id) {
           const paidUser = {
             payment_id: confirm.paymentIntent.id,
-            amount: confirm.paymentIntent.amount,
+            amount: confirm.paymentIntent.amount / 100,
             petainName: user?.displayName,
             petainEmail: user?.email,
             petainPhoto: user?.photoURL,

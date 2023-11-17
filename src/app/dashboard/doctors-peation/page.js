@@ -7,6 +7,7 @@ import Form from "@/Components/Form/Form";
 import useAuth from "@/Components/hooks/useAuth";
 import moment from "moment";
 import { useEffect, useState } from "react";
+import Swal from "sweetalert2";
 // import { Link } from "react-router-dom";
 
 const DoctorPetain = () => {
@@ -23,6 +24,47 @@ const DoctorPetain = () => {
       });
   }, []);
 
+  const handleCancel = (id) => {
+    console.log(id);
+
+    fetch(`http://localhost:3000/api/payment/${id}`, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({ status: "cancel" }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "You Cancel your patient",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      });
+  };
+  const handleAccept = (id) => {
+    console.log(id);
+    fetch(`http://localhost:3000/api/payment/${id}`, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({ status: "confirm" }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "You Approve your patient",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      });
+  };
   return (
     <div>
       <div className="md:flex justify-center  items-center bg-white shadow-xl mx-auto max-w-screen-xl p-5 border-gray-100 border-2  bg-[url('https://res.cloudinary.com/drhtv8dr4/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1699973730/img-01_bdd9qb.jpg?fbclid=IwAR1WlmkSXm3vKFcj9s3ILfoLjaUHC4AgLE3HHP-y1NORCBIICqjFrX5W9Pw')] bg-cover bg-no-repeat">
@@ -79,7 +121,7 @@ const DoctorPetain = () => {
       </div>
       {/* --------------table----------*/}
 
-      <div className="overflow-x-auto bg-white shadow-xl p-16 border-gray-100 border-2">
+      <div className="overflow-x-auto bg-white shadow-xl p-4 lg:p-16 border-gray-100 border-2">
         <div className="space-x-2 my-6">
           <button className="btn bg-emerald-500 text-white p-4 hover:bg-emerald-700">
             Upcoming
@@ -95,22 +137,23 @@ const DoctorPetain = () => {
           <thead>
             <tr className="text-black font-bold text-xl ">
               <th>Patient Name</th>
-              <th>Date</th>
-              <th>Type</th>
+              <th>Appt. Date</th>
+              {/* <th>Purpose</th> */}
+              <th>Status</th>
               <th>Paid Amount</th>
-              <th className="flex justify-center">Action</th>
+              <th className="text-center">Action</th>
             </tr>
           </thead>
-          <tbody className="p-10">
+          <tbody className="lg:p-10">
             {/* row 1 */}
             {testimonialData.map((patient) => (
               <tr key={patient._id}>
-                <td data-label="Name & Photo">
-                  <div className="flex items-center  gap-3">
+                <td data-label="Name & Photo" className="items-center">
+                  <div className="lg:flex lg:flex-row lg:items-center  md:flex-col items-end gap-3">
                     <div className="avatar">
                       <div className="mask mask-squircle w-12 h-12">
                         <img
-                          src={patient.petainPhoto}
+                          src={patient.picture}
                           alt="Avatar Tailwind CSS Component"
                         />
                       </div>
@@ -124,8 +167,12 @@ const DoctorPetain = () => {
                 <td data-label="date & time">
                   {moment().format("MMMM Do YYYY, h:mm a")}
                 </td>
-                <td data-label="type">{patient.status}...</td>
-                <td data-label="price">{patient.paid}</td>
+                {/* <td data-label="type">{patient.status}...</td> */}
+                <td data-label="Status">{patient.status}</td>
+                <td data-label="price" className="text-center">
+                  ${patient.amount}
+                </td>
+
                 <td
                   className="space-x-4 flex items-center justify-center "
                   data-label="#"
@@ -135,7 +182,8 @@ const DoctorPetain = () => {
                     htmlFor={`my-modal-${patient._id}`}
                     className="btn btn-sm text-emerald-600 bg-emerald-200  hover:bg-emerald-400"
                   >
-                    <FaEye className=" h-4 w-4" /> View
+                    <FaEye className=" h-4 w-4" />
+                    Prescription
                   </label>
 
                   {/* Put this part before </body> tag */}
@@ -161,10 +209,16 @@ const DoctorPetain = () => {
                   {/* <button className="btn btn-sm text-emerald-600 bg-emerald-200  hover:bg-emerald-400">
                     <FaEye className=" h-4 w-4" /> View
                   </button> */}
-                  <button className="btn btn-sm text-orange-600 bg-orange-200 my-2 hover:bg-orange-400 ">
+                  <button
+                    onClick={() => handleAccept(patient._id)}
+                    className="btn btn-sm text-orange-600 bg-orange-200 my-2 hover:bg-orange-400 "
+                  >
                     <FaCheck className=" h-4 w-4" /> Accept
                   </button>
-                  <button className="btn btn-sm text-red-600 bg-red-200  hover:bg-red-400 ">
+                  <button
+                    onClick={() => handleCancel(patient._id)}
+                    className="btn btn-sm text-red-600 bg-red-200  hover:bg-red-400 "
+                  >
                     <ImCancelCircle className=" h-4 w-4" /> Cancel
                   </button>
                 </td>

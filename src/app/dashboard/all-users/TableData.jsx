@@ -1,12 +1,17 @@
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { HiOutlineTrash } from "react-icons/hi";
 import Swal from "sweetalert2";
 
-const TableData = ({ user }) => {
+const TableData = ({ users,setUsers }) => {
   const router = useRouter();
   const [newRole, setNewRole] = useState();
-  const { userPhoto, userEmail, userName, userRole, _id } = user;
+  const [userRole, setUserRole] = useState(users.userRole); // Initialize with the user role
+  const { userPhoto, userEmail, userName, _id } = users;
+
+  useEffect(() => {
+    setUserRole(users.userRole); // Update the local state when the user role changes
+  }, [users.userRole]);
 
   const handleSubmit = async (id) => {
     try {
@@ -18,8 +23,8 @@ const TableData = ({ user }) => {
         },
       });
       if (res.ok) {
-        router.reload();
-        // throw new Error("Failed to update topic");
+        // Update the local state with the new role
+        setUserRole(newRole);
       }
     } catch (error) {
       console.log(error);
@@ -27,39 +32,40 @@ const TableData = ({ user }) => {
   };
 
   const removeTopic = async (id) => {
-    const proceed = Swal.fire({
-      title: "Are you sure?",
+    const proceed = await Swal.fire({
+      title: 'Are you sure?',
       text: "You won't be able to revert this!",
-      icon: "warning",
+      icon: 'warning',
       showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        if (proceed) {
-          try {
-            const res = fetch(`/api/allUser/${id}`, {
-              method: "DELETE",
-              body: JSON.stringify(),
-              headers: {
-                "Content-type": "application/json",
-              },
-            });
-            if (res.ok) {
-              // throw new Error("Failed to update topic");
-              // router.refresh();
-            }
-          } catch (error) {
-            console.log(error);
-          }
-        }
-      }
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!',
     });
+  
+    if (proceed.isConfirmed) {
+      try {
+        const res = await fetch(`/api/allUser/${id}`, {
+          method: 'DELETE',
+          headers: {
+            'Content-type': 'application/json',
+          },
+        });
+  
+        if (res.ok) {
+          // Remove the deleted user from the local state
+          setUsers((prevUsers) => prevUsers.filter((user) => user._id !== id));
+          Swal.fire('Deleted!', 'The user has been deleted.', 'success');
+        } else {
+          Swal.fire('Error!', 'Failed to delete user.', 'error');
+        }
+      } catch (error) {
+        console.error('Error deleting user:', error);
+      }
+    }
   };
 
   return (
-    <tr className="mx-auto">
+    <tr className="mx-auto w-full">
       <td data-label="Name">
         <div className="avatar mask mask-squircle w-12 h-12">
           <img src={userPhoto} alt="Avatar Tailwind CSS Component" />

@@ -6,12 +6,16 @@ import TableData from "./TableData";
 // import { ImCancelCircle } from "react-icons/im";
 
 const DoctorPetain = () => {
-  const [users, setUser] = useState([]);
+  const [users, setUsers] = useState([]);
+
   useEffect(() => {
     fetch("/api/allUser")
       .then((res) => res.json())
       .then((data) => {
-        setUser({ data });
+        setUsers(data.result);
+      })
+      .catch((error) => {
+        console.error("Error fetching user data:", error);
       });
   }, []);
 
@@ -36,9 +40,14 @@ const DoctorPetain = () => {
             </tr>
           </thead>
           <tbody className="p-10">
-            {users?.data?.result.map((user) => (
-              <TableData user={user} key={user._id}></TableData>
+            {users.map((user) => (
+              <TableData
+                setUsers={setUsers}
+                users={user}
+                key={user._id}
+              ></TableData>
             ))}
+
             {/* {users?.data?.result.map((user) => (
               <tr key={user._id}>
                 <td data-label="Name & Photo">

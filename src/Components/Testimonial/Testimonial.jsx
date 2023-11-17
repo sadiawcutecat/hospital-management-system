@@ -22,7 +22,7 @@ const Testimonial = () => {
         setIsTestimonial(data);
       });
   }, []);
-  console.log(isTestimonial)
+  // console.log(isTestimonial)
 
   return (
     <div className=" md:p-20 p-8 mb-10">

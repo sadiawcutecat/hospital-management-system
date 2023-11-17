@@ -3,7 +3,7 @@ import Loading from "@/Components/Common/Loading/Loading";
 import NavLink from "@/Components/Common/NavLink/NavLink";
 import useAuth from "@/Components/hooks/useAuth";
 import useUserinfo from "@/Components/hooks/useUserinfo/useUserinfo";
-import Link from "next/link";
+
 import { redirect } from "next/navigation";
 import { useContext, useState } from "react";
 import {
@@ -88,10 +88,10 @@ const Dashboard = ({ children }) => {
                         </NavLink>
                       </p>
                       <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
-                        <Link className="flex gap-4" href="">
-                          <AiFillWechat className="mt-1 text-xl" />
-                          Chat
-                        </Link>
+                        <NavLink  href="/dashboard/chat">
+                        <span className="flex gap-4">  <AiFillWechat className="mt-1 text-xl" />
+                          Chat</span>
+                        </NavLink>
                       </p>
                     </div>
                   ) : (
@@ -182,9 +182,9 @@ const Dashboard = ({ children }) => {
                         </NavLink>
                       </p>
                       <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
-                        <NavLink className="flex gap-4" href="">
-                          <AiFillWechat className="mt-1 text-xl" />
-                          Chat
+                        <NavLink  href="/dashboard/chat">
+                        <span className="flex gap-4">  <AiFillWechat className="mt-1 text-xl" />
+                          Chat</span>
                         </NavLink>
                       </p>
                       <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
@@ -214,12 +214,7 @@ const Dashboard = ({ children }) => {
                     ""
                   )}
 
-                  {/* <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
-										<Link className="flex gap-4" href="">
-											<FaShareAlt className="mt-1 " />
-											Social Media
-										</Link>
-									</p> */}
+               
 
                   <p className="border-t-2 border-gray-200 p-4 hover:text-red-500 text-sm">
                     <button className="flex gap-4" onClick={() => logout()}>
@@ -234,9 +229,7 @@ const Dashboard = ({ children }) => {
           <div>
             <div
               className={`absolute   ${
-                // open
-                // ? "left-[300px] md:w-[calc(100%-300px)] w-0 "
-                // : "md:left-[100px] md:w-[calc(100%-100px)] w-full duration-300"
+             
                 " md:left-[20%] md:w-[calc(100%-20%)] w-full "
               } overflow-hidden md:duration-300 `}
             >
