@@ -138,10 +138,10 @@ const DoctorPetain = () => {
             <tr className="text-black font-bold text-xl ">
               <th>Patient Name</th>
               <th>Appt. Date</th>
-              <th>Purpose</th>
-              <th>Type</th>
+              {/* <th>Purpose</th> */}
+              <th>Status</th>
               <th>Paid Amount</th>
-              <th>Action</th>
+              <th className="text-center">Action</th>
             </tr>
           </thead>
           <tbody className="lg:p-10">
@@ -167,8 +167,12 @@ const DoctorPetain = () => {
                 <td data-label="date & time">
                   {moment().format("MMMM Do YYYY, h:mm a")}
                 </td>
-                <td data-label="type">{patient.status}...</td>
-                <td data-label="price">{patient.paid}</td>
+                {/* <td data-label="type">{patient.status}...</td> */}
+                <td data-label="Status">{patient.status}</td>
+                <td data-label="price" className="text-center">
+                  ${patient.amount}
+                </td>
+
                 <td
                   className="space-x-4 flex items-center justify-center "
                   data-label="#"
@@ -178,7 +182,8 @@ const DoctorPetain = () => {
                     htmlFor={`my-modal-${patient._id}`}
                     className="btn btn-sm text-emerald-600 bg-emerald-200  hover:bg-emerald-400"
                   >
-                    <FaEye className=" h-4 w-4" /> View
+                    <FaEye className=" h-4 w-4" />
+                    Prescription
                   </label>
 
                   {/* Put this part before </body> tag */}
