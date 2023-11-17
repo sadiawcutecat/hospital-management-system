@@ -1,11 +1,12 @@
 "use client";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AiOutlineClose, AiOutlineMenuUnfold } from "react-icons/ai";
 import NavLink from "../Common/NavLink/NavLink";
 import PrivetRoute from "../PrivetRoute/PrivetRoute";
 import useAuth from "../hooks/useAuth";
 import useUserinfo from "../hooks/useUserinfo/useUserinfo";
+import { FaMoon, FaSun } from "react-icons/fa";
 
 const NavLinks = [
   {
@@ -28,29 +29,56 @@ const NavLinks = [
     path: "/doctors",
     // icon: <FaUserDoctor fontSize={20} ></FaUserDoctor>
   },
-  // {
-  //   label: "Dashboard",
-  //   path: "/dashboard/doctors-peation",
-  //   // icon: <RxDashboard fontSize={20} />,
-  // },
+  {
+    label: "Gallery",
+    path: "/gallery",
+    // icon: <RxDashboard fontSize={20} />,
+  },
 ];
 
 const Navbar = () => {
   const { user, logout } = useAuth();
   const { data } = useUserinfo();
   const roleUser = data?.result;
-  // console.log(user);
+ 
   const [open, setOpen] = useState(false);
+  const [theme, setTheme] = useState('light');
+
+  useEffect(() => {
+    const storedTheme = localStorage.getItem('theme');
+    setTheme(storedTheme || 'light');
+    document.documentElement.setAttribute('data-theme', storedTheme || 'light');
+  }, []);
+
+  const toggleTheme = () => {
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+    setTheme(newTheme);
+    localStorage.setItem('theme', newTheme);
+    document.documentElement.setAttribute('data-theme', newTheme);
+  };
   const handleLogOut = () => {
     logout()
       .then(() => {})
       .catch((error) => console.log(error));
   };
+  // const handleToggle=(e)=>{
+  //   console.log(e)
+  //   if(e.target.checked){
+  //     setTheme("dark")
+  //   }
+  //   else{
+  //     setTheme("light")
+  //   }
+  // }
   return (
     <div
-      className={` px-3 md:py-4 py-2 fixed z-10 top-0 left-0 w-full bg-black/20 text-white duration-400`}
-      id="nav-bg"
-    >
+    className={`px-3 md:py-4 py-2 fixed z-10 top-0 left-0 w-full bg-black/20 text-white duration-400`}
+    id="nav-bg"
+    style={{
+      background: theme === 'dark' ? '#13005A' : 'rgba(0, 0, 0, 0.2)',
+      color: theme === 'dark' ? '#fff' : '#000',
+    }}
+  >
       <nav className="flex justify-between items-center">
         <div className="font-bold z-20 duration-200 menu-bars  md:hidden inline-block">
           {open ? (
@@ -126,7 +154,10 @@ const Navbar = () => {
         </ul>
         {user ? (
           <>
-            <div>
+      <div className="flex items-center gap-4">
+        <button className="text-2xl"  onClick={toggleTheme}>
+          {theme === 'light' ? <FaMoon /> : <FaSun />}
+        </button>
               <div className="dropdown dropdown-end z-50">
                 <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                   <div className="w-10 rounded-full">
@@ -150,9 +181,14 @@ const Navbar = () => {
             </div>
           </>
         ) : (
-          <Link href="/login" className="btn btn-success z-[100]">
+          <div className="flex items-center gap-4">
+          <button className="text-2xl"  onClick={toggleTheme}>
+            {theme === 'light' ? <FaMoon /> : <FaSun />}
+          </button><Link href="/login" className="btn btn-success z-[100]">
             <button className="z-50">Login</button>
           </Link>
+          </div>
+          
         )}
       </nav>
     </div>
