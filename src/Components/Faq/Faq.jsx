@@ -1,7 +1,6 @@
 "use client";
 import { Accordion } from "keep-react";
 import { CaretDown, CaretUp } from "phosphor-react";
-import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
 
 const Faq = () => {
   return (
@@ -13,13 +12,15 @@ const Faq = () => {
       // }}
     >
       <div className="text-center">
-        <h3 className="md:text-3xl text-xl  font-semibold">
-          Frequently Asked Questions <span className="text-4xl text-cyan-400 font-bold">?</span>
+        <h3 className="md:text-3xl text-xl  font-bold">
+          Frequently Asked Questions{" "}
+          <span className="text-4xl font-bold">?</span>
         </h3>
       </div>
       <div className="flex w-full mx-auto mt-5 gap-5 flex-col lg:flex-row">
         <div className="w-full mx-auto lg:w-1/2">
-          <img className="h-full lg:h-[750px] "
+          <img
+            className=" lg:min-h-screen object-cover"
             src="https://img.freepik.com/free-vector/questions-concept-illustration_114360-1513.jpg?size=626&ext=jpg&ga=GA1.1.1055064272.1680254175&semt=ais"
             alt=""
           />
@@ -31,8 +32,10 @@ const Faq = () => {
             iconPosition="right"
             flush={true}
           >
-            <Accordion.Panel>
-              <Accordion.Title className=" hover:bg-slate-400 hover:uppercase">How can i login?</Accordion.Title>
+            {/* <Accordion.Panel>
+              <Accordion.Title className=" hover:bg-slate-400 hover:uppercase">
+                How can i login?
+              </Accordion.Title>
               <Accordion.Content>
                 <p className="leading-7 shadow-md p-5">
                   You can login with Google and Email
@@ -40,9 +43,11 @@ const Faq = () => {
                   Or if you have no account, you can make an account.
                 </p>
               </Accordion.Content>
-            </Accordion.Panel>
+            </Accordion.Panel> */}
             <Accordion.Panel>
-              <Accordion.Title className=" hover:bg-slate-400 hover:uppercase">How can I see doctors details?</Accordion.Title>
+              <Accordion.Title className=" hover:bg-slate-400 ">
+                How can I see doctors details?
+              </Accordion.Title>
               <Accordion.Content>
                 <p className="leading-7 shadow-md p-5">
                   In navbar there is a Doctor button.By click on this button,
@@ -52,31 +57,52 @@ const Faq = () => {
                 </p>
               </Accordion.Content>
             </Accordion.Panel>
-            <Accordion.Panel>
-              <Accordion.Title className=" hover:bg-slate-400 hover:uppercase">Can I book appoinment?</Accordion.Title>
+            {/* <Accordion.Panel>
+              <Accordion.Title className=" hover:bg-slate-400 hover:uppercase">
+                Can I book appoinment?
+              </Accordion.Title>
               <Accordion.Content>
                 <p className="leading-7 shadow-md p-5">
                   Yes, In banner section have a Make Appoinment button.By click
                   on this button you can see a Book Appointment.
                 </p>
               </Accordion.Content>
-            </Accordion.Panel>
-            
-             
+            </Accordion.Panel> */}
             <Accordion.Panel>
-              <Accordion.Title className=" hover:bg-slate-400 hover:uppercase">Is there a Payment system here?</Accordion.Title>
+              <Accordion.Title className=" hover:bg-slate-400 ">
+                How Can I book appoinment?
+              </Accordion.Title>
               <Accordion.Content>
-                <p className="leading-7 shadow-md p-5">Yes, you can payment easily.</p>
+                <p className="leading-7 shadow-md p-5">
+                  In banner section have a Make Appoinment button.By click on
+                  this button you can see a Book Appointment.
+                </p>
               </Accordion.Content>
             </Accordion.Panel>
             <Accordion.Panel>
-              <Accordion.Title className=" hover:bg-slate-400 hover:uppercase">Can I contact a doctor?</Accordion.Title>
+              <Accordion.Title className=" hover:bg-slate-400 ">
+                Is there a Payment system here?
+              </Accordion.Title>
               <Accordion.Content>
-                <p className="leading-7 shadow-md p-5">Yes, you can contact easily.</p>
+                <p className="leading-7 shadow-md p-5">
+                  Yes, you can payment easily.
+                </p>
               </Accordion.Content>
             </Accordion.Panel>
             <Accordion.Panel>
-              <Accordion.Title className=" hover:bg-slate-400 hover:uppercase">Can I chat with you?</Accordion.Title>
+              <Accordion.Title className=" hover:bg-slate-400 ">
+                Can I contact a doctor?
+              </Accordion.Title>
+              <Accordion.Content>
+                <p className="leading-7 shadow-md p-5">
+                  Yes, you can contact easily.
+                </p>
+              </Accordion.Content>
+            </Accordion.Panel>
+            <Accordion.Panel>
+              <Accordion.Title className=" hover:bg-slate-400 ">
+                Can I chat with you?
+              </Accordion.Title>
               <Accordion.Content>
                 <p className="leading-7 shadow-md p-5">
                   Yes, you can chat us.If you login, you can see dashboard. In
@@ -85,7 +111,7 @@ const Faq = () => {
               </Accordion.Content>
             </Accordion.Panel>
             <Accordion.Panel>
-              <Accordion.Title className=" hover:bg-slate-400 hover:uppercase">
+              <Accordion.Title className=" hover:bg-slate-400 ">
                 How can I review on your website.?
               </Accordion.Title>
               <Accordion.Content>
@@ -96,11 +122,13 @@ const Faq = () => {
               </Accordion.Content>
             </Accordion.Panel>
             <Accordion.Panel>
-              <Accordion.Title className=" hover:bg-slate-400 hover:uppercase">
+              <Accordion.Title className=" hover:bg-slate-400 ">
                 Can I get prescription of doctors?
               </Accordion.Title>
               <Accordion.Content>
-                <p className="leading-7 shadow-md p-5">Yes.Doctor give you prescription</p>
+                <p className="leading-7 shadow-md p-5">
+                  Yes.Doctor give you prescription
+                </p>
               </Accordion.Content>
             </Accordion.Panel>
           </Accordion>

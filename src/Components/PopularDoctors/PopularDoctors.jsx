@@ -1,8 +1,16 @@
 "use client";
 
+import Link from "next/link";
+import { useEffect, useState } from "react";
 import { FaArrowCircleRight } from "react-icons/fa";
 
 const PopularDoctors = () => {
+  const [popularDoctor, setPopularDoctor] = useState([]);
+  useEffect(() => {
+    fetch("/api/popularDoctor")
+      .then((res) => res.json())
+      .then((data) => setPopularDoctor(data.result));
+  }, []);
   return (
     <div className="my-10 background flex flex-col justify-center items-center  text-white py-20 mt-24">
       <div className="img-slide opacity-0 duration-1000">
@@ -15,34 +23,38 @@ const PopularDoctors = () => {
           Architecto, doloribus!
         </p>
       </div>
-      <div className="grid md:grid-cols-3 grid-cols-1 gap-5 mt-20 w-10/12 mx-auto text-center text-white">
-        <div className="p-7 border rounded img-slide opacity-0 duration-1000 hover:bg-white/30 hover:scale-[1.03] ">
-          <div>
-            <img
-              className="w-32 h-32 mx-auto rounded-full"
-              src="https://www.kauveryhospital.com/doctorimage/recent/Dr-Deepak-Kumar2022-09-12-11:55:50am.jpg"
-              alt=""
-            />
-          </div>
-          <div>
-            <h1 className="text-xl font-semibold">Dr.David</h1>
-            <p className="text-md my-2 uppercase text-slate-400">
-              Child Specialist
-            </p>
-            <p className="text-slate-300">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi
-              voluptates quo aliquid velit facilis adipisci placeat culpa
-              distinctio nemo nostrum!
-            </p>
-            <button className="btn btn-success my-3 hover:bg-emerald-500">
-              <span>Get Appointment</span>
-              <span>
-                <FaArrowCircleRight></FaArrowCircleRight>
-              </span>
-            </button>
-          </div>
-        </div>
-        <div className="p-7 border rounded hover:bg-white/30 hover:scale-[1.03] img-slide opacity-0 duration-1000">
+      <div className=" popular-doctor grid md:grid-cols-3 grid-cols-1 gap-5 mt-20 w-10/12 mx-auto text-center text-white">
+        {popularDoctor?.map((doctor) => {
+          return (
+            <div
+              key={doctor._id}
+              className="p-7 border rounded  duration-1000 hover:bg-white/30 hover:scale-[1.03] "
+            >
+              <div>
+                <img
+                  className="w-32 h-32 mx-auto rounded-full object-cover"
+                  src={doctor.image}
+                  alt=""
+                />
+              </div>
+              <div>
+                <h1 className="text-xl font-semibold">{doctor.name}</h1>
+                <p className="text-sm my-2 uppercase text-slate-400">
+                  {doctor.place}
+                </p>
+                <p className="text-slate-300">{doctor.specialist}</p>
+                <Link href={`/payment/${doctor._id}`}>
+                  <button className="btn btn-success my-3 hover:bg-emerald-500">
+                    Book Appointment
+                    <FaArrowCircleRight></FaArrowCircleRight>
+                  </button>
+                </Link>
+              </div>
+            </div>
+          );
+        })}
+
+        {/* <div className="p-7 border rounded hover:bg-white/30 hover:scale-[1.03] img-slide opacity-0 duration-1000">
           <div>
             <img
               className="w-32 h-32 mx-auto rounded-full"
@@ -93,7 +105,7 @@ const PopularDoctors = () => {
               </span>
             </button>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

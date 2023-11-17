@@ -1,28 +1,64 @@
-import contact from "@/assets/contact.jpg";
-import Image from "next/image";
-import Link from "next/link";
+"use client";
+import emailjs from "@emailjs/browser";
+import { useRef } from "react";
 import { AiOutlineMail } from "react-icons/ai";
-import { FaArrowCircleRight, FaPhoneAlt } from "react-icons/fa";
-import { FaLocationDot } from "react-icons/fa6";
 import { HiOutlineLocationMarker, HiOutlinePhone } from "react-icons/hi";
+import Swal from "sweetalert2";
 
 // const resend = new Resend("re_7zcSdR2s_ExsXq82wLyWEcAFMR9h77HJv");
 const Contact = () => {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    emailjs
+      .sendForm(
+        "service_g3lqplj",
+        "template_1ro30j1",
+        form.current,
+        "7TDLTQ9I1JwjgJLhl"
+      )
+      .then(
+        (result) => {
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Email is sended",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        },
+        (error) => {
+          Swal.fire({
+            position: "center",
+            icon: "error",
+            title: "Your work has been saved",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        }
+      );
+  };
+
   return (
     <div className="container-fluid lg:mt-20 w-full mx-auto">
-      <div className="w-full h-96 mx-auto bg-[#E0F4FF]  flex flex-col items-center pt-24 lg:pt-20 px-3">
-        <h1 className="leading-loose text-teal-500 lg:text-4xl font-serif">
-          Wether you're at home or in the wild we are here for you.
-          <br />
-          There is a good chance your question has been answered
-        </h1>
-        <button className="lg:text-xl btn bg-[#E0F4FF] border-teal-500 border-4 rounded-3xl lg:w-1/6 mt-8">
-          Contact Us
-        </button>
+      <div className="w-full h-96 mx-auto bg-[url('https://images.pexels.com/photos/326576/pexels-photo-326576.jpeg?auto=compress&cs=tinysrgb&w=800')] bg-no-repeat bg-cover bg-attach contact-banner flex flex-col items-center pt-24 lg:pt-20 px-3">
+        <div className="w-full bg-black/40 text-center">
+          <p className="lg:text-7xl text-2xl font-bold text-white ">
+            Feel Free To Contact Use
+          </p>
+          <h1 className="leading-loose text-slate-300 lg:text-xl font-serif">
+            Wether you're at home or in the wild we are here for you.
+            <br />
+            There is a good chance your question has been answered
+          </h1>
+        </div>
       </div>
       <div className="bg-base-200">
         <div className="flex flex-col items-center space-y-8 px-3">
-          <h1 className="text-3xl lg:text-5xl font-serif pt-16">Get in Touch</h1>
+          <h1 className="text-3xl lg:text-5xl font-serif pt-16">
+            Get in Touch
+          </h1>
           <p className="lg:text-xl text-center">
             Duis aute irure dolor in reprehenderit in voluptate velit <br />{" "}
             esse cillum dolore eu fugiat nulla pariatur.
@@ -42,7 +78,7 @@ const Contact = () => {
               </p>
               <div className="card-actions">
                 <h1 className="hover:text-yellow-400 font-bold">
-                  sraboni@gmail.com
+                  health@care.com
                 </h1>
               </div>
             </div>
@@ -56,7 +92,7 @@ const Contact = () => {
             <div className="card-body items-center text-center">
               <h2 className="card-title mb-6 font-bold">Office</h2>
               <p className="text-blue-600 font-bold">
-              Come say hello at our office.
+                Come say hello at our office.
               </p>
               <div className="card-actions">
                 <h1 className="font-bold">
@@ -123,52 +159,55 @@ const Contact = () => {
           </div>
         </div>
       </div> */}
-      <div className="mt-10 md:w-8/12 w-11/12 mx-auto my-10">
-        <h1 className="md:text-3xl text-2xl font-bold text-center mb-5 text-slate-500">
-          Send Message
-        </h1>
-        <form className="">
-          <div className="md:flex  gap-6 font-bold w-full">
-            <div className="form-control md:w-1/2 w-full my-2">
-              <input
-                type="text"
-                name="YourName"
-                placeholder="Your Name"
-                className="input input-bordered bg-slate-200"
-              />
+      <div className="mt-10 md:w-full  mx-auto my-10 relative">
+        <div>
+          <h1 className="md:text-4xl text-2xl font-bold text-center mb-5 text-slate-800">
+            Do Hou Have Any Confusion Feel Free To Mail Us
+          </h1>
+        </div>
+        <div className="contact-bg  h-[90vh] "></div>
+        <div className="md:w-7/12 w-9/12  contact-form ">
+          <form className="" ref={form} onSubmit={(e) => sendEmail(e)}>
+            <div className="md:flex  gap-6 font-bold w-full">
+              <div className="form-control md:w-1/2 w-full my-2">
+                <input
+                  type="text"
+                  name="from_name"
+                  placeholder="Your Name"
+                  className="input  bg-[#E0F4FF] border-[#6c9eb3]"
+                />
+              </div>
+              <div className="form-control md:w-1/2 w-full my-2">
+                <input
+                  type="email"
+                  name="form_email"
+                  placeholder="Your Email"
+                  className="input bg-[#E0F4FF] border-[#6c9eb3] "
+                />
+              </div>
             </div>
-            <div className="form-control md:w-1/2 w-full my-2">
-              <input
-                type="email"
-                name="email"
-                placeholder="Your Email"
-                className="input input-bordered bg-slate-200"
-              />
-            </div>
-          </div>
-          <div className="md:flex gap-6 font-bold  ">
-            <div className="form-control md:w-1/2 w-full my-2">
+            {/* <div className="md:flex gap-6 font-bold  "> */}
+            <div className="form-control md:w-full w-full my-10">
               <textarea
-                name="description"
+                name="message"
                 id=""
                 cols="30"
-                rows="10"
+                rows="3"
                 placeholder="Write Here..."
-                className=" border-2 border-slate-300 rounded-md bg-slate-200 p-2 outline-none focus:outline-slate-300"
+                className=" w-full  rounded-md bg-[rgb(224,244,255)] p-2 border-[#6c9eb3]  focus:outline-slate-300 font-bold "
               ></textarea>
             </div>
-          </div>
+            {/* </div> */}
 
-          <div className="flex justify-center mt-6">
-            <Link
-              href=""
-              className="btn  bg-emerald-500 font-bold  text-white hover:bg-emerald-600 "
-            >
-              Send Message
-              <FaArrowCircleRight></FaArrowCircleRight>
-            </Link>
-          </div>
-        </form>
+            <div className="flex justify-center mt-6">
+              <input
+                type="submit"
+                className="btn border-none bg-[#03506F] font-bold  text-white hover:bg-[#1D3E53] "
+                value={` Send Message`}
+              />
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   );
