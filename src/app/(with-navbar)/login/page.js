@@ -3,7 +3,7 @@
 import SocialLogin from "@/Components/SocialLogin/SocialLogin";
 import useAuth from "@/Components/hooks/useAuth";
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { AiOutlineMail } from "react-icons/ai";
@@ -14,27 +14,33 @@ const Login = () => {
   const router = useRouter();
   const { signIn } = useAuth();
   const [showPassword, setShowPassword] = useState(false);
+  const [error, setError] = useState("");
   const {
     register,
     handleSubmit,
     reset,
     formState: { errors },
   } = useForm();
-  const location = usePathname();
-  console.log(location);
+  // const location = usePathname();
+  // console.log(location);
 
   const onSubmit = (data) => {
     console.log(data);
+    if (error) {
+      return;
+    }
     signIn(data.email, data.password)
       .then((result) => {
         const loggedUser = result.user;
         reset();
         console.log(loggedUser);
-        router.push("/");
       })
       .catch((error) => {
+        setError(error);
         console.log(error);
+        return;
       });
+    // router.push("/");
   };
 
   return (
@@ -112,6 +118,7 @@ const Login = () => {
                 <h2 className="text-center mx-auto mt-5">Or Login With</h2>
                 <SocialLogin />
               </div>
+              <p>{error}</p>
             </form>
             <p className="m-auto p-3 text-xl">
               <small>

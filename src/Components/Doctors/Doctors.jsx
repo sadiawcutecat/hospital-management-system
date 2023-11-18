@@ -44,12 +44,12 @@ const Doctors = ({ allDoctor }) => {
   });
 
   return (
-    <div className="grid grid-cols-1 row lg:grid-cols-2 mx-auto card m-3 img-slide opacity-0 duration-1000">
+    <div className="grid grid-cols-1  lg:grid-cols-2 mx-auto card m-3 img-slide opacity-0  duration-1000">
       <figure>
-        <img className="w-1/2 p-4 shadow-lg rounded-lg" src={image} alt="" />
+        <img className="w-1/2  p-4 shadow-lg rounded-lg" src={image} alt="" />
       </figure>
       <div className="mx-4 my-4">
-        <p className="font-bold text-black text-xl">{name}</p>
+        <p className="font-bold  text-xl">{name}</p>
         <p className="flex gap-3">
           <span className="text-2xl">
             <FcGraduationCap />
@@ -75,7 +75,7 @@ const Doctors = ({ allDoctor }) => {
           {place}
         </p>
         <p className="flex items-center gap-2">
-          <span className="">{rating}</span>
+          <span className="flex gap-2 items-center"> <FaStar/> {rating}</span>
         </p>
         <div className="flex items-center gap-7">
           <Link href={`/doctors/${_id}`}>
