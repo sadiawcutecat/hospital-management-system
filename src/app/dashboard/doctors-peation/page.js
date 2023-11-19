@@ -27,7 +27,7 @@ const DoctorPetain = () => {
   const handleCancel = (id) => {
     console.log(id);
 
-    fetch(`http://localhost:3000/api/payment/${id}`, {
+    fetch(`/api/payment/${id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -47,7 +47,7 @@ const DoctorPetain = () => {
   };
   const handleAccept = (id) => {
     console.log(id);
-    fetch(`http://localhost:3000/api/payment/${id}`, {
+    fetch(`/api/payment/${id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
