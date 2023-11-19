@@ -3,7 +3,15 @@
 import { googleProvider } from "@/Components/Firebase/firebase.auth";
 
 import app from "@/Components/Firebase/firebase.config";
-import {  createUserWithEmailAndPassword,  getAuth,  onAuthStateChanged,  signInWithEmailAndPassword,  signInWithPopup,  signOut,  updateProfile,} from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  getAuth,
+  onAuthStateChanged,
+  signInWithEmailAndPassword,
+  signInWithPopup,
+  signOut,
+  updateProfile,
+} from "firebase/auth";
 import { useEffect, useState } from "react";
 import { AuthContext } from "./AuthContext";
 

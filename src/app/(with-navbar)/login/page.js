@@ -29,10 +29,12 @@ const Login = () => {
     if (error) {
       return;
     }
+
     signIn(data.email, data.password)
       .then((result) => {
         const loggedUser = result.user;
         reset();
+        router.push("/");
         console.log(loggedUser);
       })
       .catch((error) => {
@@ -40,7 +42,6 @@ const Login = () => {
         console.log(error);
         return;
       });
-    // router.push("/");
   };
 
   return (
