@@ -7,6 +7,7 @@ import useAuth from "@/Components/hooks/useAuth";
 
 const WithNavbar = ({ children }) => {
   const { loading } = useAuth();
+
   if (loading) {
     return <Loading></Loading>;
   }

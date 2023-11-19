@@ -42,8 +42,8 @@ const Contact = () => {
 
   return (
     <div className="container-fluid lg:mt-20 w-full mx-auto">
-      <div className="w-full h-96 mx-auto bg-[url('https://images.pexels.com/photos/326576/pexels-photo-326576.jpeg?auto=compress&cs=tinysrgb&w=800')] bg-no-repeat bg-cover bg-attach contact-banner flex flex-col items-center pt-24 lg:pt-20 px-3">
-        <div className="w-full bg-black/40 text-center">
+      <div className="w-full h-96 mx-auto  bg-[url('https://images.pexels.com/photos/326576/pexels-photo-326576.jpeg?auto=compress&cs=tinysrgb&w=800')] bg-no-repeat bg-cover bg-attach contact-banner flex flex-col items-center pt-24 lg:pt-20 px-3">
+        <div className="w-full bg-black/40 text-center py-7">
           <p className="lg:text-7xl text-2xl font-bold text-white ">
             Feel Free To Contact Use
           </p>
@@ -64,7 +64,7 @@ const Contact = () => {
             esse cillum dolore eu fugiat nulla pariatur.
           </p>
         </div>
-        <div className="flex flex-col lg:flex-row px-4 lg:px-20 gap-8 w-full mx-auto mt-14 pb-20">
+        <div className="flex flex-col lg:flex-row px-4 lg:px-20 gap-8 max-w-screen-xl w-full mx-auto mt-14 pb-20">
           <div className="card lg:w-96 bg-base-100 shadow-xl">
             <figure className=" pt-10 mx-auto">
               <h2 className="rounded-full mx-auto p-3 text-white text-9xl bg-blue-400">
@@ -159,12 +159,18 @@ const Contact = () => {
           </div>
         </div>
       </div> */}
+      <div className="font-serif">
+        <h1 className="md:text-4xl text-2xl font-bold text-center  text-slate-800">
+          Do You Have Any Confusion Feel Free To Mail Us
+        </h1>
+        <p className="md:w-5/12 w-11/12 mx-auto text-center text-sm text-slate-400 mb-6">
+          Aught where for childe so scape yet ye heralds suits delphis, though
+          so sighed dome then thence and did land,.Breast aisle to he he feere,
+          lines had sadness but are there visit nor was wassailers, and and been
+          his.
+        </p>
+      </div>
       <div className="mt-10 md:w-full  mx-auto my-10 relative">
-        <div>
-          <h1 className="md:text-4xl text-2xl font-bold text-center mb-5 text-slate-800">
-            Do Hou Have Any Confusion Feel Free To Mail Us
-          </h1>
-        </div>
         <div className="contact-bg  h-[90vh] "></div>
         <div className="md:w-7/12 w-9/12  contact-form ">
           <form className="" ref={form} onSubmit={(e) => sendEmail(e)}>
