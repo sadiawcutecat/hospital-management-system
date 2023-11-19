@@ -5,8 +5,8 @@ import { loadStripe } from "@stripe/stripe-js";
 
 import CheckOutForm from "@/Components/CheckOutForm/CheckOutForm";
 import Loading from "@/Components/Common/Loading/Loading";
+import { redirect } from "next/navigation";
 import { useEffect, useState } from "react";
-import Login from "../../login/page";
 const stripePromise = loadStripe(
   process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
 );
@@ -28,7 +28,7 @@ const paymentPage = ({ params }) => {
   }
   return (
     <Elements stripe={stripePromise}>
-      {user ? <CheckOutForm doctor={doctor} user={user} /> : <Login />}
+      {user ? <CheckOutForm doctor={doctor} user={user} /> : redirect("/login")}
     </Elements>
   );
 };
